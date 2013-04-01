@@ -1,8 +1,6 @@
-#Listado de cosas que deberia hacer el sistema
-#Relevamiento de acuerdo al enunciado del TP
-#Deberia iterarse para refinar y pasarlos a User Stories
-#Algunos ítems no están en el enunciado, pero pueden servir de pauta
-#para el diseño del sistema. De todas formas consultar con el Tutor. 
+#Relevamiento inicial
+
+Listado de cosas que deberia hacer el sistema Relevamiento de acuerdo al enunciado del TP Deberia iterarse para refinar y pasarlos a User Stories Algunos ítems no están en el enunciado, pero pueden servir de pauta para el diseño del sistema. De todas formas consultar con el Tutor. 
 
 * Buscar y analizar tweets generados por los usuarios
 
