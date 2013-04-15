@@ -123,7 +123,8 @@ US44 &	Como usuario quiero buscar por zona para realizar las compras cercanas a 
 
 \subsection{Sprint Backlog}
 
-
+\bigskip
+\center
 \begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
 \hline
 \hline
@@ -142,5 +143,161 @@ US93&Como usuario quiero buscar por producto para poder elegir el lugar/precio q
 \hline
 \hline
 \end{tabular}
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US74&Investigar tecnologías de desarrollo&3&2\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{Decidir cuáles son los lenguajes y tecnologías que se van a utilizar para la implementación de las user stories del sprint}\\
+\multicolumn{4}{|p{13cm}|}{Generar una estrategia de testing adecuada para disminuir la cantidad de bugs generados y aumentar la cantidad de bugs detectados}\\
+\multicolumn{4}{|p{13cm}|}{Tener un modelo para persistir información de configuración}\\
+\multicolumn{4}{|p{13cm}|}{Identificar cuáles son los beneficios e inconvenientes de la utilización de dichas tecnologías}\\
+\hline
+\hline
+\end{tabular}
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US75&Investigar en la api de twitter para poder estimar las tareas de código&5&3\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{Obtener un análisis de la correcta utilización de la API teniendo en cuenta autenticación y búsqueda}\\
+\multicolumn{4}{|p{13cm}|}{Obtener un análisis de la factibilidad de un modelo para poder persistir información de tweets}\\
+\hline
+\hline
+\end{tabular}
+
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US72&Generar los diseños necesarios del sistema&8&2\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{Generar todos los diagramas necesarios para explicar correctamente el funcionamiento del sistema.}\\
+\hline
+\hline
+\end{tabular}
+
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US115&Como sistema quiero identificar y extraer la información útil en un tweet para poder utilizarla en las búsquedas.&5&7\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. El sistema lee un tweet para procesar.}\\
+\multicolumn{4}{|p{13cm}|}{2. El sistema extrae la información del producto.}\\
+\multicolumn{4}{|p{13cm}|}{3. El sistema extrae la información del precio.}\\
+\multicolumn{4}{|p{13cm}|}{4. El sistema extrae la información de la unidad.}\\
+\multicolumn{4}{|p{13cm}|}{5. El sistema extrae la información del lugar.}\\
+\multicolumn{4}{|p{13cm}|}{6. El sistema extrae el hashtag.}\\
+\multicolumn{4}{|p{13cm}|}{7. El sistema descarta tweets con datos faltantes.}\\
+\multicolumn{4}{|p{13cm}|}{8. El sistema descarta tweets con productos no habilitados.}\\
+\multicolumn{4}{|p{13cm}|}{9. El sistema descarta tweets con precios inválidos.}\\
+\multicolumn{4}{|p{13cm}|}{10. El sistema descarta tweets con unidades no soportadas por el producto.}\\
+\multicolumn{4}{|p{13cm}|}{11. El sistema descarta tweets sin el hashtag $\#$PrecioJusto.}\\
+\hline
+\hline
+\end{tabular}
+
+
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US114&Generar datos para la demo&1&1\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. Los datos deberán ser twits para poder probar la aplicación}\\
+\multicolumn{4}{|p{13cm}|}{2. Los datos deberán cubrir casos de filtrado por producto, dirección, precio, unidad y hashtag}\\
+\multicolumn{4}{|p{13cm}|}{3. Los datos deben permitir la búsqueda sobre tres productos y las unidades asociadas a los mismos para que se puedan realizar búsquedas}\\
+\hline
+\hline
+\end{tabular}
+
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US93&Como usuario quiero buscar por producto para poder elegir el lugar/precio que mejor se ajuste a mi necesidad.& 8& 7\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. El usuario puede seleccionar un producto habilitado.}\\
+\multicolumn{4}{|p{13cm}|}{2.  El usuario puede iniciar una búsqueda para este producto.}\\
+\multicolumn{4}{|p{13cm}|}{3. El usuario puede ver los resultados para el producto buscado, con información de lugar y precio.}\\
+\hline
+\hline
+\end{tabular}
+
+
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US42&Armar UI para soportar funcionalidades básicas& 5& 4\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. La interfaz es visualizable en un dispositivo y resolución standard.}\\
+\multicolumn{4}{|p{13cm}|}{2. Se identifica la aplicación y los logos.}\\
+\multicolumn{4}{|p{13cm}|}{3. Tiene diferenciadas las distintas secciones: opciones de búsqueda, resultados.}\\
+\multicolumn{4}{|p{13cm}|}{4. Se integra con las funcionalidades de la aplicación de una manera clara y consistente.}\\
+\multicolumn{4}{|p{13cm}|}{5. Es extensible a nuevas funcionalidades.}\\
+\hline
+\hline
+\end{tabular}
+
 \newpage
 \end{document}
