@@ -10,17 +10,16 @@
 
 # require 'controller/searchstrategy'
 
-module Controller 
-    class Action; end
+class Action; end
 
-    class ActionSearch < Action
-        def initialize(search_strategy)
-            @search_strategy = search_strategy
-        end
-
-        def do
-            @search_strategy.do
-        end
+class ActionSearch < Action
+    def initialize(offers_ref, search_obj)
+        @offers_ref = offers_ref
+        @search_obj = search_obj
     end
 
+    def do
+        @search_strategy.do
+    end
 end
+

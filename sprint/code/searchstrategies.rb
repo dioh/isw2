@@ -7,28 +7,32 @@
   * License: TODO
 =end
 
-module Controller
-  
-  class SearchStrategy; end
-  
-  class SearchByPrice < SearchStrategy
-    def initialize(args)
-      # TODO
+class Search; 
+    def initialize(filters)
+        @filters = filters
     end
-  
-    def runSearch
-      # TODO
-    end 
-  end
-  
-  class SearchByProduct < SearchStrategy
-    def initialize(args)
-      # TODO
+
+    def do
+        # TODO
     end
-  
-    def runSearch
-      # TODO
-    end 
-  end
+end
+
+class Filter
+    def apply offers, condition
+        return offers.select &condition
+    end
+end
+
+class FilterByPrice < Filter
+    def initialize
+        # TODO
+    end
 
 end
+
+class FilterByProduct < Filter
+    def initialize
+        # TODO
+    end 
+end
+
