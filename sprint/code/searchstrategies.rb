@@ -18,21 +18,20 @@ class Search;
 end
 
 class Filter
-    def apply offers, condition
-        return offers.select &condition
+
+    def initialize condition
+        @condition = condition
+    end
+
+    def apply offers
+        return offers.select &@condition
     end
 end
 
 class FilterByPrice < Filter
-    def initialize
-        # TODO
-    end
 
 end
 
 class FilterByProduct < Filter
-    def initialize
-        # TODO
-    end 
 end
 

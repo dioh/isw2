@@ -13,8 +13,8 @@ class TestFiltering < Test::Unit::TestCase
      
     def test_create
         # Create a filter
-        filterByProd = FilterByProduct.new 
-        filterByPrice = FilterByPrice.new 
+        filterByProd = FilterByProduct.new  Proc.new {}
+        filterByPrice = FilterByPrice.new  Proc.new {}
     end
 
     def test_create_offers
@@ -29,14 +29,24 @@ class TestFiltering < Test::Unit::TestCase
 
         offers = [of1, of2]
 
-        filterByPrice = FilterByPrice.new
+        filterByPrice = FilterByPrice.new Proc.new{|x| x.price? > 30}
 
         # priceCondition = Proc.new {|x| x > 30 }
-        filteredOffers = filterByPrice.apply offers, Proc.new{|x| x.price? > 30}
-        assert_equal(filteredOffers.size, 1, "offers are not filtered!")
+        filteredOffers = filterByPrice.apply offers
+        assert_equal(filteredOffers.size, 1, "offers are not filtered!") 
+    end
 
+    def test_filter_by_product
+        of1 = Offer.new "Belgrano", "Naranjas", 30
+        of2 = Offer.new "Saavedra", "Peras", 35 
 
+        offers = [of1, of2]
 
+        filterByProduct = FilterByProduct.new Proc.new{|x| x.product? == "Naranjas"}
+
+        # priceCondition = Proc.new {|x| x > 30 }
+        filteredOffers = filterByProduct.apply offers
+        assert_equal(filteredOffers.size, 1, "offers are not filtered!") 
     end
 
 end
