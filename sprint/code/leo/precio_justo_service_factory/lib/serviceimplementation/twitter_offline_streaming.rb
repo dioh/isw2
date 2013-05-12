@@ -8,10 +8,10 @@ class TwitterOfflineStreaming
   end
 
   def start
-    @search_api.track('microsoft') { |status|
-      puts "#{status.text}"
-      #command = "insert into oferta(producto,precio,unidad,lugar) values('tomate',10.05,'kg','#{status.text}')"
-      #@connection.execute(command)
+    @search_api.track('tomate') { |status|
+      #puts "#{status.text}"
+      command = "insert into oferta(producto,precio,unidad,lugar) values('tomate',10.05,'kg','#{status.text}')"
+      @connection.execute(command)
     }
   end
 end
