@@ -7,6 +7,15 @@
   * License: TODO
 =end
 
+class SearchParams
+    :attr_accesor :product, :price, :location 
+    def initialize(args_dict)
+        @product = args_dict[:product]
+        @price  = args_dict[:price]
+        @location = args_dict[:location]
+    end 
+end
+
 class Search; 
     def initialize(filters)
         @filters = filters
