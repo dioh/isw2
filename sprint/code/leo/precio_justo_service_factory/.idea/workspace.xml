@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/.idea/twitter_stream_test.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/access_db_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/twitter_stream_test01_oauth.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/twitter_stream_test02_oauth.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/twitter_stream_test03_basic.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/twitter_stream_test04_basic.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/twitter_streaming_api.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/twitter_streaming_api_test_oauth.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../twitter_stream_test/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/precio_justo.db" afterPath="$PROJECT_DIR$/bin/precio_justo.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/setup_db.rb" afterPath="$PROJECT_DIR$/bin/setup_db.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/sqlite3/sqlite3_client.rb" afterPath="$PROJECT_DIR$/lib/sqlite3/sqlite3_client.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/serviceimplementation/twitter_offline_streaming.rb" afterPath="$PROJECT_DIR$/lib/serviceimplementation/twitter_offline_streaming.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/twitter_offline_streaming_service.rb" afterPath="$PROJECT_DIR$/bin/twitter_offline_streaming_service.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/access_db_test.rb" afterPath="$PROJECT_DIR$/test/access_db_test.rb" />
     </list>
     <ignored path="PrecioJustoServiceFactory.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,7 +55,7 @@
     <file path="/twitter_stream_test04_basic.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368390851879" ignored="false" />
     <file path="/twitter_stream_test03_basic.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368391412633" ignored="false" />
     <file path="/twitter_streaming_api_test_oauth.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368391646630" ignored="false" />
-    <file path="/access_db_test.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368392313244" ignored="false" />
+    <file path="/access_db_test.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368392838067" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,19 +84,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup_db.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/setup_db.rb">
+      <file leaf-file-name="sqlite3_server.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/sqlite3_server.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
+            <state line="3" column="0" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="access_db_test.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/access_db_test.rb">
+      <file leaf-file-name="setup_db.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/setup_db.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="18" selection-start="347" selection-end="347" vertical-scroll-proportion="0.43965518">
+            <state line="3" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,28 +111,28 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="access_db_test.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/access_db_test.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="27" selection-start="364" selection-end="364" vertical-scroll-proportion="0.39130434">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kernel.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/kernel.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1557" column="8" selection-start="68716" selection-end="68716" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="drb.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://C:/Ruby193/lib/ruby/1.9.1/drb/drb.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="1510" column="0" selection-start="47409" selection-end="47409" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="twitter_streaming_api.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/twitter/twitter_streaming_api.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="551" selection-end="551" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sqlite3_db_connection.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/sqlite3/sqlite3_db_connection.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -459,7 +439,9 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/bin/twitter_offline_streaming_service.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <RunnerSettings RunnerId="RubyDebugRunner" />
+      <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
     <configuration default="false" name="access_db_test" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
@@ -477,7 +459,9 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/test/access_db_test.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <RunnerSettings RunnerId="RubyDebugRunner" />
+      <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
@@ -571,9 +555,9 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Ruby.access_db_test" />
-        <item index="1" class="java.lang.String" itemvalue="Ruby.setup_db" />
-        <item index="2" class="java.lang.String" itemvalue="Ruby.twitter_offline_streaming_service" />
-        <item index="3" class="java.lang.String" itemvalue="Ruby.sqlite3_server" />
+        <item index="1" class="java.lang.String" itemvalue="Ruby.twitter_offline_streaming_service" />
+        <item index="2" class="java.lang.String" itemvalue="Ruby.sqlite3_server" />
+        <item index="3" class="java.lang.String" itemvalue="Ruby.setup_db" />
         <item index="4" class="java.lang.String" itemvalue="Ruby.precio_justo_online_test" />
       </list>
     </recent_temporary>
@@ -626,17 +610,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="776" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26666668" sideWeight="0.6049005" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39509955" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26666668" sideWeight="0.6707504" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39509955" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39969373" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924962" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -837,16 +821,6 @@
           <line>2</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/test/access_db_test.rb</url>
-          <line>5</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/test/access_db_test.rb</url>
-          <line>6</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -855,13 +829,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/serviceimplementation/precio_justo_offline_service.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/entity/oferta.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
@@ -883,23 +850,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/sqlite3_server.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/sqlite3/sqlite3_server.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/twitter_offline_streaming_service.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -914,13 +867,6 @@
     <entry file="file://$PROJECT_DIR$/lib/sqlite3/sqlite3_db_connection.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="0" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/serviceimplementation/twitter_offline_streaming.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="7" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -960,9 +906,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/kernel.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1557" column="8" selection-start="68716" selection-end="68716" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/sqlite3_server.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/twitter_offline_streaming_service.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/serviceimplementation/twitter_offline_streaming.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="7" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/access_db_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="347" selection-end="347" vertical-scroll-proportion="0.43965518">
+        <state line="9" column="27" selection-start="364" selection-end="364" vertical-scroll-proportion="0.39130434">
           <folding />
         </state>
       </provider>
