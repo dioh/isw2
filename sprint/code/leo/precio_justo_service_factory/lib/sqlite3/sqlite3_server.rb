@@ -1,5 +1,5 @@
 require 'drb/drb'
-require File.dirname(__FILE__) + '/sqlite3_db_connection_manager'
+require_relative 'sqlite3_db_connection_manager'
 
 class Sqlite3Server
 

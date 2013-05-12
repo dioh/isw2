@@ -1,4 +1,4 @@
-require '../lib/sqlite3/sqlite3_client'
+require_relative 'sqlite3_client'
 
 class Sqlite3DBConnectionManagerProxy
 

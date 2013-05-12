@@ -1,4 +1,4 @@
-require '../lib/serviceimplementation/precio_justo_offline_service'
+require_relative '../lib/serviceimplementation/precio_justo_offline_service'
 
 service = PrecioJustoOfflineService.new()
 results = service.search('tomate')

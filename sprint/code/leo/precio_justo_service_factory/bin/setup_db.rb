@@ -1,4 +1,4 @@
-require '../lib/sqlite3/sqlite3_db_connection_manager_proxy'
+require_relative '../lib/sqlite3/sqlite3_db_connection_manager_proxy'
 
 if __FILE__ == $PROGRAM_NAME
   connManager = Sqlite3DBConnectionManagerProxy.instance()

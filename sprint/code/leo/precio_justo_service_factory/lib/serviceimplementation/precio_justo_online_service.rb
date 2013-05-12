@@ -1,4 +1,4 @@
-require '../lib/twitter/twitter_search_api'
+require_relative '../twitter/twitter_search_api'
 
 class PrecioJustoOnlineService
 

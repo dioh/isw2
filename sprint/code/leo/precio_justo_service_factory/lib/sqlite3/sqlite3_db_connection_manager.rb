@@ -1,5 +1,5 @@
 require 'sqlite3'
-require '../lib/sqlite3/sqlite3_db_connection'
+require_relative 'sqlite3_db_connection'
 
 class Sqlite3DBConnectionManager
 

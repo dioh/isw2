@@ -1,5 +1,6 @@
-require '../lib/sqlite3/sqlite3_db_connection_manager_proxy'
-require '../lib/twitter/twitter_streaming_api'
+require_relative '../sqlite3/sqlite3_db_connection_manager_proxy'
+require_relative '../twitter/twitter_streaming_api'
+
 class TwitterOfflineStreaming
 
   def initialize(connection_string, consumer_key, consumer_secret, oauth_token, oauth_token_secret)
