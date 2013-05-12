@@ -8,6 +8,10 @@ class Offers
 end
 
 class Offer
+    def Offer.fromHash fromHash
+        
+    end
+
     def initialize(location, product, price)
         @location = location
         @prod = product
