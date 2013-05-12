@@ -7,7 +7,7 @@ class Sqlite3Client
   end
 
   def start
-    DRb.start_service()
+     DRb.start_service()
 
     trap('INT') {
       DRb.stop_service()
