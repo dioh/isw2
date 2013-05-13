@@ -6,14 +6,16 @@
 
 require "./offers"
 require "./offer_from_tweet"
-require "twitter/tweet"
+require "twitter"
 require "test/unit"
 
 class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
      
     def setup
         aTweetToOfferExtractor= TweetOfferPositionalExtractor.new
+
         @aTweetToOffer = OfferFromTweet.new aTweetToOfferExtractor
+
         @invalidOffer = InvalidOffer.new 
     end
 
@@ -25,7 +27,7 @@ class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
         aTweetText= "Naranja 15 pesos kilo Moreno 678 #PrecioJusto"
         expectedOffer = Offer.new "Moreno 678", "naranja", 15
 
-        aTweet= Tweet.new :id => 1, :text => aTweetText
+        aTweet= Twitter::Tweet.new :id => 1, :text => aTweetText
         anOffer= @aTweetToOffer.extractFrom aTweet
 
         assert_equal(expectedOffer,anOffer)
@@ -33,10 +35,10 @@ class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
 
     def test_valid_tweet_with_geo
         aTweetText= "Naranja 15 pesos kilo #PrecioJusto"
-        aTweetPoint= Tweet::Geo::Point :lat => 0, :long => 0
+        aTweetPoint = Twitter::Geo::Point :lat => 0, :long => 0
         expectedOffer = Offer.new aTweetPoint, "naranja", 15
 
-        aTweet= Tweet.new :id => 1, :text => aTweetText, :geo => aTweetPoint
+        aTweet= Twitter::Tweet.new :id => 1, :text => aTweetText, :geo => aTweetPoint
         anOffer= @aTweetToOffer.extractFrom aTweet
 
         assert_equal(expectedOffer,anOffer)        
@@ -45,7 +47,7 @@ class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
     def test_no_valid_product_tweet
         aTweetText= "Gorila 15 pesos kilo Martinez de Hoz 666 #PrecioJusto"
 
-        aTweet= Tweet.new :id => 1, :text => aTweetText
+        aTweet= Twitter::Tweet.new :id => 1, :text => aTweetText
         anOffer= @aTweetToOffer.extractFrom aTweet
 
         assert_equal(@invalidOffer,anOffer)        
@@ -55,7 +57,7 @@ class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
     def test_no_location_in_tweet
         aTweetText= "Naranja 15 pesos kilo #PrecioJusto"
 
-        aTweet= Tweet.new :id => 1, :text => aTweetText
+        aTweet= Twitter::Tweet.new :id => 1, :text => aTweetText
         anOffer= @aTweetToOffer.extractFrom aTweet
 
         assert_equal(@invalidOffer,anOffer)                
@@ -64,7 +66,7 @@ class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
     def test_no_price_in_tweet
         aTweetText= "Gorila kilo Martinez de Hoz 666 #PrecioJusto"
 
-        aTweet= Tweet.new :id => 1, :text => aTweetText
+        aTweet= Twitter::Tweet.new :id => 1, :text => aTweetText
         anOffer= @aTweetToOffer.extractFrom aTweet
 
         assert_equal(@invalidOffer,anOffer)                
@@ -73,7 +75,7 @@ class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
     def test_no_unit_in_tweet
         aTweetText= "Gorila 15 pesos Martinez de Hoz 666#PrecioJusto"
 
-        aTweet= Tweet.new :id => 1, :text => aTweetText
+        aTweet= Twitter::Tweet.new :id => 1, :text => aTweetText
         anOffer= @aTweetToOffer.extractFrom aTweet
 
         assert_equal(@invalidOffer,anOffer)                

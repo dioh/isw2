@@ -66,7 +66,7 @@ class FilterByPrice < Filter
     def self.for; return "price"; end
     def initialize value
         super
-        @condition = Proc.new{|x| x.price? <= @value }
+        @condition = Proc.new{|x| x.price? <= @value.to_i }
     end
 end
 

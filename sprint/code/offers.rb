@@ -21,9 +21,9 @@ class Offer
     def Offer.fromHash hash
         aProduct= Product.new hash[:product] 
         aPrice= hash[:price]
-        aUnit= Unit.new hash[:unit]
-        anAddressLocation= Location.fromAddressStr hash[:address]
-        aGeoLocation= Location.fromGeo hash[:geo]
+        aUnit= hash[:unit]
+        anAddressLocation= hash[:address]
+        aGeoLocation= hash[:geo]
 
         if (aProduct.class != InvalidProduct &&
             aPrice.class != InvalidPrice &&
@@ -50,6 +50,16 @@ class Offer
         return @price
     end
 end
+
+class InvalidUnit
+    def ==(other)
+        return false
+    end
+    def !=(other)
+        return true
+    end
+end
+
 
 class InvalidProduct
     def ==(other)
