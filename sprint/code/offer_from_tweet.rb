@@ -18,15 +18,40 @@ end
 class TweetOfferPositionalExtractor < OfferDataFromTweetExtractor
 	#Extract data from tweet where text is:
 	#"product $float unit addressIsTextWithinUnintAndHashtag #hashtag
+    def initialize
+        @productRegExp= /(?<product>[[:alpha:]]+)[[:blank:]]*(?<rest>[[:alpha:]].*)/
+        @priceRegExp= /(((?<currency_sign>\$)[[:blank:]]*(?<price_value>\d+(\.\d+)?))|(?<price_value>\d+(\.\d+)?)[[:blank:]]*(?<currency_name>(?i:peso(s)?)))[[:blank:]]*(?<rest>[[:alpha:]].*)/
+        @unitRegExp= /(?<unit>[[:alpha:]]+)[[:blank:]]*(?<rest>[[:alpha:]].*)/
+        @addressRegExp= /(?<address>(([[:alpha:]]|[[:blank:]])+[[:blank:]]*(\d+)))[[:blank:]]*(?<rest>[[:alpha:]].*)/
+    end
+    
 	def extractFrom aTweet
-		tweetSplitedText= aTweet.text.split
-		priceStr= tweetSplitedText.slice(1..2)
-		tweetSplitedText.slice!(0..2)
-		address_text= tweetSlicedText.take_while(|i| i.starts_with?("#") * " "
-		return { "product" => aTweet.text.split[0],
-		         "price" => Price.fromString (priceStr * " "), 
-				 "unit" => aTweet.text.split[2],
-  			     "address" => address,
+        aText= aTweet.text
+        
+        #More abstraction needed
+        aMatchData= @productRegExp.match(aText)        
+        productStr= aMatchData[:product]
+        aText= aMatchData[:rest]
+        
+        aMatchData= @priceRegExp.match(aText)        
+        priceStr= aMatchData[:price]
+        aText= aMatchData[:rest]
+
+        aMatchData= @priceRegExp.match(aText)        
+        priceStr= aMatchData[:price]
+        aText= aMatchData[:rest]
+
+        aMatchData= @unitRegExp.match(aText)        
+        priceStr= aMatchData[:unit]
+        aText= aMatchData[:rest]
+
+        aMatchData= @addressRegExp.match(aText)        
+        addressStr= aMatchData[:adress]
+        
+		return { "product" => productStr,
+		         "price" => priceStr.to_f, 
+				 "unit" => unitStr,
+  			     "address" => addressStr,
 				 "geo" => aTweet.geo 
 				}
 	end
@@ -38,7 +63,7 @@ class OfferFromTweet
 	end
 
 	def extractFrom aTweet
-		data= @dataExtractor aTweet
+		data= @dataExtractor.extractFrom aTweet
 		return Offer.fromHash data
 	end
 end
