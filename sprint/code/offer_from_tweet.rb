@@ -20,10 +20,11 @@ class TweetOfferPositionalExtractor < OfferDataFromTweetExtractor
 	#"product $float unit addressIsTextWithinUnintAndHashtag #hashtag
 	def extractFrom aTweet
 		tweetSplitedText= aTweet.text.split
-		tweetSlicedText= tweetSplitedText.slice!(0..2)
+		priceStr= tweetSplitedText.slice(1..2)
+		tweetSplitedText.slice!(0..2)
 		address_text= tweetSlicedText.take_while(|i| i.starts_with?("#") * " "
 		return { "product" => aTweet.text.split[0],
-		         "price" => aTweet.text.split[1].splice(1..-1), 
+		         "price" => Price.fromString (priceStr * " "), 
 				 "unit" => aTweet.text.split[2],
   			     "address" => address,
 				 "geo" => aTweet.geo 
