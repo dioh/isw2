@@ -2,7 +2,7 @@ require_relative '../twitter/twitter_search_api'
 
 class PrecioJustoOnlineService
 
-  def initialize()
+  def initialize
     @search_api = TwitterSearchAPI.new()
   end
 
