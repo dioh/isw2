@@ -7,9 +7,28 @@ class Offers
     
 end
 
+class InvalidOffer
+    #TODO Check if makes sense
+    attr_read :location, :product, :price 
+end
+
 class Offer
-    def Offer.fromHash fromHash
-        price= Price
+    def Offer.fromHash hash
+        aProduct= Product.new hash[:product] 
+        aPrice= hash[:price]
+        aUnit= Unit.new hash[:unit]
+        anAddressLocation= Location.fromAddressStr hash[:address]
+        aGeoLocation= Location.fromGeo hash[:geo]
+
+        if (aProduct.class != InvalidProduct &&
+            aPrice != InvalidPrice &&
+            aUnit != InvalidUnit &&
+            (anAddressLocation != InvalidLocation ||
+             aGeoLocation != InvalidLocation))
+            Offer.new (anAddressLocation != InvalidLocation? anAddressLocation : aGeoLocation), aProduct, aPrice            
+        else
+            InvalidOffer.new
+        end
     end
 
     def initialize(location, product, price)
