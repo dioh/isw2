@@ -9,10 +9,10 @@ require "./offer_from_tweet"
 require "twitter/tweet"
 require "test/unit"
 
-class TestOfferFromTweetExtractor < Test::Unit::TestCase
+class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
      
     def setup
-        @aTweetToOffer = OfferFromTweet.new
+        @aTweetToOffer = OfferFromTweet.new(TweetOfferPositionalExtractor.new)
         @invalidOffer = InvalidOffer.new 
     end
 
