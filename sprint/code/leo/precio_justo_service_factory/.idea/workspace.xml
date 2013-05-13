@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../.gitignore" afterPath="$PROJECT_DIR$/../../.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/el_precio_justo.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/controller/el_precio_justo.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/serviceimplementation/el_precio_justo_service.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/entity/offer.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/strategy/searchstrategies.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/precio_justo.db" afterPath="$PROJECT_DIR$/bin/precio_justo.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PrecioJustoServiceFactory.iml" afterPath="$PROJECT_DIR$/.idea/PrecioJustoServiceFactory.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/serviceimplementation/precio_justo_offline_service.rb" afterPath="$PROJECT_DIR$/lib/serviceimplementation/precio_justo_offline_service.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/serviceimplementation/precio_justo_online_service.rb" afterPath="$PROJECT_DIR$/lib/serviceimplementation/precio_justo_online_service.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PrecioJustoServiceFactory.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,16 +28,16 @@
     <file path="/twitter_streaming_api.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368382380449" ignored="false" />
     <file path="/Ruby Console" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1367808785015" ignored="false" />
     <file path="/twitter_search_api.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1367808556236" ignored="false" />
-    <file path="/precio_justo_offline_service.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368401893730" ignored="false" />
+    <file path="/precio_justo_offline_service.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368415768173" ignored="false" />
     <file path="/sqlite3_db_manager.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368300817145" ignored="false" />
-    <file path="/Dummy.txt" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368402659925" ignored="false" />
+    <file path="/Dummy.txt" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368405167619" ignored="false" />
     <file path="$PROJECT_DIR$/../sqlite3_server/lib/sq_lite3_server.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368308648047" ignored="false" />
     <file path="$PROJECT_DIR$/../sqlite3_server/lib/sqlite3_server.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368317417982" ignored="false" />
     <file path="$PROJECT_DIR$/../sqlite3_server/bin/sqlite3_server.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368318616696" ignored="false" />
     <file path="/sqlite3_server.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368400376199" ignored="false" />
     <file path="$PROJECT_DIR$/../sqlite3_server/lib/sqlite3/sqlite3_db_connection.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368311867744" ignored="false" />
     <file path="$PROJECT_DIR$/../sqlite3_server/lib/sqlite3/sqlite3_db_connection_manager.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368312430820" ignored="false" />
-    <file path="/temp.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368373790284" ignored="false" />
+    <file path="/temp.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368405355002" ignored="false" />
     <file path="/sqlite3_db_connection_manager.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368400547560" ignored="false" />
     <file path="/sqlite3_db_connection.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368377311568" ignored="false" />
     <file path="/sqlite3_client.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368337713748" ignored="false" />
@@ -55,6 +64,8 @@
     <file path="/twitter_stream_test03_basic.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368391412633" ignored="false" />
     <file path="/twitter_streaming_api_test_oauth.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368391646630" ignored="false" />
     <file path="/access_db_test.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368401718484" ignored="false" />
+    <file path="/el_precio_justo.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368415558548" ignored="false" />
+    <file path="/el_precio_justo_service.rb" changelist="cdc1b554-d1b7-4dd3-a29a-30344ef4dfea" time="1368415921857" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,46 +85,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="sqlite3_server.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/sqlite3/sqlite3_server.rb">
+      <file leaf-file-name="el_precio_justo.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/el_precio_justo.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="48" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0">
+            <state line="1" column="0" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="twitter_search_api.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/twitter/twitter_search_api.rb">
+      <file leaf-file-name="el_precio_justo.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/controller/el_precio_justo.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="15" column="2" selection-start="350" selection-end="350" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="twitter_streaming_api.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/twitter/twitter_streaming_api.rb">
+      <file leaf-file-name="main.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Ruby193/lib/ruby/gems/1.9.1/gems/sinatra-1.4.2/lib/sinatra/main.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="5" selection-start="592" selection-end="592" vertical-scroll-proportion="0.0">
+            <state line="10" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="access_db_test.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/access_db_test.rb">
+      <file leaf-file-name="index.haml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/view/index.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="precio_justo_offline_service.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="precio_justo_offline_service.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/serviceimplementation/precio_justo_offline_service.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="35" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
+            <state line="11" column="0" selection-start="305" selection-end="305" vertical-scroll-proportion="0.47582698">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Ruby193/lib/ruby/gems/1.9.1/gems/sinatra-1.4.2/lib/sinatra/base.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="898" column="0" selection-start="28345" selection-end="28345" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="el_precio_justo_service.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/serviceimplementation/el_precio_justo_service.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="0" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchstrategies.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/strategy/searchstrategies.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="0" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="offer.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/entity/offer.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="4" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -122,34 +169,7 @@
       <file leaf-file-name="precio_justo_online_service.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/serviceimplementation/precio_justo_online_service.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="precio_justo_online_test.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/precio_justo_online_test.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="15" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sqlite3_db_connection_manager_proxy.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/sqlite3/sqlite3_db_connection_manager_proxy.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sqlite3_db_connection_manager.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/sqlite3/sqlite3_db_connection_manager.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="4" column="16" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -173,10 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/bin/precio_justo_offline_test.rb" />
-        <option value="$PROJECT_DIR$/bin/offline_twitter_service.rb" />
-        <option value="$PROJECT_DIR$/lib/twitter/twitter_streaming_api.rb" />
-        <option value="$PROJECT_DIR$/lib/sqlite3/sqlite3_client.rb" />
         <option value="$PROJECT_DIR$/bin/sqlite3_server.rb" />
         <option value="$PROJECT_DIR$/lib/sqlite3/sqlite3_server.rb" />
         <option value="$PROJECT_DIR$/lib/sqlite3/sqlite3_db_connection_manager.rb" />
@@ -186,9 +202,13 @@
         <option value="$PROJECT_DIR$/lib/sqlite3/sqlite3_db_connection_manager_proxy.rb" />
         <option value="$PROJECT_DIR$/bin/setup_db.rb" />
         <option value="$PROJECT_DIR$/test/precio_justo_offline_test.rb" />
+        <option value="$PROJECT_DIR$/test/precio_justo_online_test.rb" />
+        <option value="$PROJECT_DIR$/lib/entity/offers.rb" />
+        <option value="$PROJECT_DIR$/bin/el_precio_justo.rb" />
         <option value="$PROJECT_DIR$/lib/serviceimplementation/precio_justo_offline_service.rb" />
         <option value="$PROJECT_DIR$/lib/serviceimplementation/precio_justo_online_service.rb" />
-        <option value="$PROJECT_DIR$/test/precio_justo_online_test.rb" />
+        <option value="$PROJECT_DIR$/lib/serviceimplementation/el_precio_justo_service.rb" />
+        <option value="$PROJECT_DIR$/lib/controller/el_precio_justo.rb" />
       </list>
     </option>
   </component>
@@ -261,7 +281,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PrecioJustoServiceFactory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="precio_justo_service_factory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="twitter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PrecioJustoServiceFactory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="precio_justo_service_factory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="strategy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -329,6 +385,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PrecioJustoServiceFactory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="precio_justo_service_factory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="bin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -349,17 +423,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\leonardot\Documents\GitHub\isw2\sprint\code\leo\precio_justo_service_factory\lib\serviceimplementation" />
       <recent name="C:\Users\leonardot\Documents\GitHub\isw2\sprint\code\leo\precio_justo_service_factory\test" />
       <recent name="C:\Users\leonardot\RubymineProjects\precio_justo_service_factory\lib\sqlite3" />
       <recent name="C:\Users\leonardot\RubymineProjects\precio_justo_service_factory" />
       <recent name="C:\Users\leonardot\RubymineProjects\preciojustoservicefactory\lib\serviceimplementation" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\leonardot\Documents\GitHub\isw2\sprint\code\leo\precio_justo_service_factory\lib\strategy" />
       <recent name="C:\Users\leonardot\RubymineProjects\precio_justo_service_factory\test" />
       <recent name="C:\Users\leonardot\RubymineProjects\preciojustoservicefactory\lib\serviceimplementation" />
     </key>
   </component>
-  <component name="RunManager" selected="Ruby.precio_justo_offline_test">
+  <component name="RunManager" selected="Ruby.sqlite3_server">
     <configuration default="false" name="sqlite3_server" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="PrecioJustoServiceFactory" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -420,24 +496,6 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="precio_justo_online_test" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-      <module name="PrecioJustoServiceFactory" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/test" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
-      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/test/precio_justo_online_test.rb" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="precio_justo_offline_test" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="PrecioJustoServiceFactory" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -453,6 +511,26 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/test/precio_justo_offline_test.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="el_precio_justo_service" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="PrecioJustoServiceFactory" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/bin" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/bin/el_precio_justo.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
@@ -541,16 +619,16 @@
       <item index="0" class="java.lang.String" itemvalue="Ruby.sqlite3_server" />
       <item index="1" class="java.lang.String" itemvalue="Ruby.twitter_offline_streaming_service" />
       <item index="2" class="java.lang.String" itemvalue="Ruby.access_db_test" />
-      <item index="3" class="java.lang.String" itemvalue="Ruby.precio_justo_online_test" />
-      <item index="4" class="java.lang.String" itemvalue="Ruby.precio_justo_offline_test" />
+      <item index="3" class="java.lang.String" itemvalue="Ruby.precio_justo_offline_test" />
+      <item index="4" class="java.lang.String" itemvalue="Ruby.el_precio_justo_service" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Ruby.precio_justo_offline_test" />
+        <item index="0" class="java.lang.String" itemvalue="Ruby.el_precio_justo_service" />
         <item index="1" class="java.lang.String" itemvalue="Ruby.sqlite3_server" />
-        <item index="2" class="java.lang.String" itemvalue="Ruby.precio_justo_online_test" />
-        <item index="3" class="java.lang.String" itemvalue="Ruby.access_db_test" />
-        <item index="4" class="java.lang.String" itemvalue="Ruby.twitter_offline_streaming_service" />
+        <item index="2" class="java.lang.String" itemvalue="Ruby.access_db_test" />
+        <item index="3" class="java.lang.String" itemvalue="Ruby.twitter_offline_streaming_service" />
+        <item index="4" class="java.lang.String" itemvalue="Ruby.precio_justo_offline_test" />
       </list>
     </recent_temporary>
   </component>
@@ -606,18 +684,18 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32824427" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27575758" sideWeight="0.6707504" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39509955" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27575758" sideWeight="0.67175573" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39389312" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39969373" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890856" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32824427" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -682,74 +760,33 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/lib/serviceimplementation/el_precio_justo_service.rb</url>
+          <line>12</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/lib/serviceimplementation/el_precio_justo_service.rb</url>
+          <line>19</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/lib/serviceimplementation/precio_justo_offline_service.rb</url>
+          <line>11</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="57" />
+      <option name="time" value="80" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/sqlite3_server.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="17" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/twitter_offline_streaming_service.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="29" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/entity/oferta.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/serviceimplementation/twitter_offline_streaming.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/sqlite3/sqlite3_client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/sqlite3/sqlite3_db_connection.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/sqlite3/sqlite3_db_connection_manager.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/sqlite3/sqlite3_db_connection_manager_proxy.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="18" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/serviceimplementation/precio_justo_online_service.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="21" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/precio_justo_online_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="15" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/serviceimplementation/precio_justo_offline_service.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="35" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
+        <state line="5" column="15" selection-start="169" selection-end="169" vertical-scroll-proportion="0.20531401">
           <folding />
         </state>
       </provider>
@@ -782,7 +819,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/access_db_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
+        <state line="4" column="23" selection-start="182" selection-end="182" vertical-scroll-proportion="0.17302799">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/view/index.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Ruby193/lib/ruby/gems/1.9.1/gems/sinatra-1.4.2/lib/sinatra/main.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Ruby193/lib/ruby/gems/1.9.1/gems/sinatra-1.4.2/lib/sinatra/base.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="898" column="0" selection-start="28345" selection-end="28345" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/serviceimplementation/precio_justo_online_service.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="16" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/el_precio_justo.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/entity/offer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="4" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/strategy/searchstrategies.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/controller/el_precio_justo.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="2" selection-start="350" selection-end="350" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/serviceimplementation/el_precio_justo_service.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="529" selection-end="529" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/serviceimplementation/precio_justo_offline_service.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="305" selection-end="305" vertical-scroll-proportion="0.47582698">
           <folding />
         </state>
       </provider>
