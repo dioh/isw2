@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>El Precio Justo!</title>
+    <meta content="">
+    <style></style>
+  </head>
+  <body><center>
+  <form action="localhost:4567/search" method="get" >
+  <table border=0 width="900px" >
+
+      <tr><td colspan=2 align="center" bgcolor="lightblue" tcolor="white"><p style="font-size:40px;color:#ffffff;"> <b>El precio justo!</b></p></td></tr>
+
+      <tr><td align="center" bgcolor="lightblue" height="30px" width="50%"><p style="font-size:15px;color:#000000;">Ingrese el nombre del producto <br><input onclick="document.getElementById('producto1').disabled = false;document.getElementById('producto2').disabled = true;document.getElementById('dir1').disabled = false; document.getElementById('dir2').disabled = true;document.getElementById('barrio1').disabled = false;document.getElementById('barrio2').disabled = true;" type="radio" name="type"></p></td>
+    <td align="center" bgcolor="lightblue"><p style="font-size:15px;color:#000000;">Seleccione el producto que est&aacute; buscando <br><input onclick="document.getElementById('producto1').disabled = true;document.getElementById('producto2').disabled = false;document.getElementById('dir1').disabled = true; document.getElementById('dir2').disabled = false;document.getElementById('barrio1').disabled = true;document.getElementById('barrio2').disabled = false;" type="radio" name="type"></p> </td></tr>
+      
+      <tr><td align="center"><input type="text" name="producto" id= "producto1"></td>
+	  <td align="center"><select name="producto" id="producto2" disabled ><option></option><option>producto 1</option><option>producto 2</option><option>producto 3</option></select></td></tr>
+
+      <tr><td align="center" bgcolor="lightblue" height="30px" width="50%"><p style="font-size:15px;color:#000000;">Ingrese la Direcci&oacute;n (Nombre de la calle y altura)</p></td>
+	  <td align="center" bgcolor="lightblue"><p style="font-size:15px;color:#000000;">Seleccione la calle y altura</p></td></tr>
+
+      <tr><td align="center"><input type="text" name="direccion" id="dir1"></td>
+	  <td align="center"><select name="direccion" id="dir2" disabled><option></option><option>calle 1</option><option>calle 2</option><option>calle 3</option></select></td></tr>
+
+      <tr><td align="center" bgcolor="lightblue" height="30px" width="50%"><p style="font-size:15px;color:#000000;">Ingrese el Barrio</p></td>
+	  <td align="center" bgcolor="lightblue"><p style="font-size:15px;color:#000000;">Seleccione el barrio</p></td></tr>
+
+      <tr><td align="center"><input type="text" name="barrio" id="barrio1"></td>
+	  <td align="center"><select name="barrio" id="barrio2" disabled><option></option><option>barrio 1</option><option>barrio 2</option><option>barrio 3</option></select></td></tr>
+
+      <tr><td colspan=2 align="center" bgcolor="lightblue" height="30px"><p style="font-size:15px;color:#000000;">Ingrese el rango de precios</p></td></tr>
+
+      <tr><td align="right">min. <input type="text" name="precio_minimo"></td><td>max. <input type="text" name="precio_maximo"></td></tr>
+
+      <tr><td colspan=2 align="center" bgcolor="lightblue" height="30px"><input type="submit" value="Buscar"></td></tr>
+
+  </table>
+</form>
+</body>
+</html>
