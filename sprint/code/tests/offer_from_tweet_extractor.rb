@@ -16,7 +16,7 @@ class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
 
         @aTweetToOffer = OfferFromTweet.new aTweetToOfferExtractor
 
-        @invalidOffer = InvalidOffer.new 
+        #@invalidOffer = Offer.new nil, nil, nil 
     end
 
     def test_create
@@ -35,7 +35,7 @@ class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
 
     def test_valid_tweet_with_geo
         aTweetText= "Naranja 15 pesos kilo #PrecioJusto"
-        aTweetPoint = Twitter::Geo::Point :lat => 0, :long => 0
+        aTweetPoint = Twitter::Geo::Point.new :lat => 0, :long => 0
         expectedOffer = Offer.new aTweetPoint, "naranja", 15
 
         aTweet= Twitter::Tweet.new :id => 1, :text => aTweetText, :geo => aTweetPoint
@@ -45,12 +45,12 @@ class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
     end
 
     def test_no_valid_product_tweet
-        aTweetText= "Gorila 15 pesos kilo Martinez de Hoz 666 #PrecioJusto"
+        aTweetText= "1Gorila 15 pesos kilo Martinez de Hoz 666 #PrecioJusto"
 
         aTweet= Twitter::Tweet.new :id => 1, :text => aTweetText
         anOffer= @aTweetToOffer.extractFrom aTweet
 
-        assert_equal(@invalidOffer,anOffer)        
+        assert(anOffer.product?.nil?)        
         
     end
 
@@ -60,7 +60,7 @@ class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
         aTweet= Twitter::Tweet.new :id => 1, :text => aTweetText
         anOffer= @aTweetToOffer.extractFrom aTweet
 
-        assert_equal(@invalidOffer,anOffer)                
+        assert(anOffer.location?.nil?)                
     end
 
     def test_no_price_in_tweet
@@ -69,16 +69,17 @@ class TestOfferFromTweetPostionalExtractor < Test::Unit::TestCase
         aTweet= Twitter::Tweet.new :id => 1, :text => aTweetText
         anOffer= @aTweetToOffer.extractFrom aTweet
 
-        assert_equal(@invalidOffer,anOffer)                
+        assert(anOffer.price?.nil?)                
     end
 
-    def test_no_unit_in_tweet
-        aTweetText= "Gorila 15 pesos Martinez de Hoz 666#PrecioJusto"
+    # Units must be checked inside Offer creation
+    # def test_no_unit_in_tweet
+    #     aTweetText= "Gorila 15 pesos Martinez de Hoz 666#PrecioJusto"
 
-        aTweet= Twitter::Tweet.new :id => 1, :text => aTweetText
-        anOffer= @aTweetToOffer.extractFrom aTweet
+    #     aTweet= Twitter::Tweet.new :id => 1, :text => aTweetText
+    #     anOffer= @aTweetToOffer.extractFrom aTweet
 
-        assert_equal(@invalidOffer,anOffer)                
-    end
+    #     assert(anOffer.product?.nil?)                
+    # end
 
 end

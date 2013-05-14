@@ -8,6 +8,7 @@
 =end
 
 require './offers'
+require 'twitter'
 
 class OfferDataFromTweetExtractor
     def extractFrom aTweet
@@ -20,41 +21,42 @@ class TweetOfferPositionalExtractor
     #Extract data from tweet where text is:
     #"product $float unit addressIsTextWithinUnintAndHashtag #hashtag
     def initialize
-        @productRegExp= /(?<product>[[:alpha:]]+)[[:blank:]]*(?<rest>[[:alpha:]].*)/
-            @priceRegExp= /(((?<currency_sign>\$)[[:blank:]]*(?<price_value>\d+(\.\d+)?))|(?<price_value>\d+(\.\d+)?)[[:blank:]]*(?<currency_name>(?i:peso(s)?)))[[:blank:]]*(?<rest>[[:alpha:]].*)/
-            @unitRegExp= /(?<unit>[[:alpha:]]+)[[:blank:]]*(?<rest>[[:alpha:]].*)/
-            @addressRegExp= /(?<address>(([[:alpha:]]|[[:blank:]])+(\d+)))/
+        @productRegExp = Regexp.new("(?<product>[[:alpha:]]+)[[:blank:]]*(?<rest>[[:alpha:]].*)")
+        @priceRegExp = Regexp.new("(((?<currency_sign>\$)[[:blank:]]*(?<price_value>\d+(\.\d+)?))|(?<price_value>\d+(\.\d+)?)[[:blank:]]*(?<currency_name>(?i:peso(s)?)))[[:blank:]]*(?<rest>[[:alpha:]].*)")
+        @unitRegExp = Regexp.new("(?<unit>[[:alpha:]]+)[[:blank:]]*(?<rest>[[:alpha:]].*)")
+        @addressRegExp = Regexp.new("/(?<address>(([[:alpha:]]|[[:blank:]])+(\d+)))")
     end
+
+    # def extractMatchFromText aText, regExp, aMatch 
+    #     aMatchData= regExp.match(aText)        
+    #     aValue= aMatchData != nil ? aMatchData[aMatch] : nil
+    #     return aValue, aMatchData[:rest]
+    # end
 
     def extractFrom aTweet
         aText= aTweet.text
+        aGeo= aTweet.geo
+        offerData= { :geo => aGeo}
 
         #More abstraction needed
-        aMatchData= @productRegExp.match(aText)        
-        productStr= aMatchData[:product]
-        aText= aMatchData[:rest]
+        #Check extractMatchFromText
+
+        aMatchData = @productRegExp.match(aText)        
+        offerData[:producto] = aMatchData != nil ? aMatchData[:product] : nil 
+        aText = aMatchData.nil? ? "" : aMatchData[:rest]
 
         aMatchData = @priceRegExp.match(aText)        
-        priceStr = aMatchData[:price_value]
-        aText = aMatchData[:rest]
+        offerData[:price_value] = aMatchData != nil ? aMatchData[:price_value] : nil 
+        aText = aMatchData.nil? ? "" : aMatchData[:rest]
 
         aMatchData= @unitRegExp.match(aText)        
-        unitStr= aMatchData[:unit]
-        aText= aMatchData[:rest]
-
-        puts "El texto es #{aText}"
+        offerData[:unit]= aMatchData != nil ? aMatchData[:unit] : nil
+        aText= aMatchData.nil? ? "" : aMatchData[:rest]
 
         aMatchData= @addressRegExp.match(aText)        
-        puts "El match es #{aMatchData}"
+        addressStr= aMatchData != nil ? aMatchData[:address] : nil
 
-        addressStr= aMatchData[:address]
-
-        return { "product" => productStr,
-            "price" => priceStr.to_f, 
-            "unit" => unitStr,
-            "address" => addressStr,
-            "geo" => aTweet.geo 
-        }
+        return offerData
     end
 end
 

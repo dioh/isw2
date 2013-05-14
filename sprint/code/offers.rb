@@ -7,39 +7,27 @@ class Offers
     
 end
 
-class InvalidOffer
-    #TODO Check if makes sense
-    attr_reader :location, :product, :price
-    def initialize
-        @location= InvalidLocation.new
-        @product= InvalidProduct.new
-        @price= InvalidPrice.new
-    end
-end
-
 class Offer
     def Offer.fromHash hash
-        aProduct= Product.new hash[:product] 
+        aProduct= hash[:product] 
         aPrice= hash[:price]
         aUnit= hash[:unit]
         anAddressLocation= hash[:address]
         aGeoLocation= hash[:geo]
+          
+	    aLocation= anAddressLocation.nil? ? aGeoLocation : anAddressLocation
 
-        if (aProduct.class != InvalidProduct &&
-            aPrice.class != InvalidPrice &&
-            aUnit.class != InvalidUnit &&
-            (anAddressLocation.class != InvalidLocation ||
-             aGeoLocation.class != InvalidLocation))
-            Offer.new (anAddressLocation.class != InvalidLocation ? anAddressLocation : aGeoLocation), aProduct, aPrice            
-        else
-            InvalidOffer.new
-        end
+        Offer.new aLocation, aProduct, aPrice            
     end
 
     def initialize(location, product, price)
         @location = location
         @prod = product
         @price = price 
+    end
+
+    def location?
+        return @location
     end 
 
     def product?
@@ -51,56 +39,66 @@ class Offer
     end
 end
 
-class InvalidUnit
-    def ==(other)
-        return false
-    end
-    def !=(other)
-        return true
-    end
-end
+# class Product
+#     def initialize(args)
+#         # TODO
+#     end
+# end
+
+# class InvalidProduct
+#     def ==(other)
+#         return false
+#     end
+#     def !=(other)
+#         return true
+#     end
+# end
+
+# class InvalidUnit
+#     def ==(other)
+#         return false
+#     end
+#     def !=(other)
+#         return true
+#     end
+# end
 
 
-class InvalidProduct
-    def ==(other)
-        return false
-    end
-    def !=(other)
-        return true
-    end
-end
+# class InvalidOffer
+#     #TODO Check if makes sense
+#     attr_reader :location, :product, :price
+#     def initialize
+#         @location= InvalidLocation.new
+#         @product= InvalidProduct.new
+#         @price= InvalidPrice.new
+#     end
+# end
 
-class Product
-    def initialize(args)
-        # TODO
-    end
-end
+# class InvalidPrice
+#     def >(aValue)
+#         return false
+#     end
+#     def <(aValue)
+#         return false
+#     end
+#     def ==(aValue)
+#         return false
+#     end
+#     def >=(aValue)
+#         return false
+#     end
+#     def <=(aValue)
+#         return false
+#     end
+#     def !=(aValue)
+#         #? Is this correct?
+#         return true
+#     end
+# end
 
-class InvalidPrice
-    def >(aValue)
-        return false
-    end
-    def <(aValue)
-        return false
-    end
-    def ==(aValue)
-        return false
-    end
-    def >=(aValue)
-        return false
-    end
-    def <=(aValue)
-        return false
-    end
-    def !=(aValue)
-        #? Is this correct?
-        return true
-    end
-end
-
-class InvalidLocation
-    #TODO DO
-end
+# class InvalidLocation
+#     #TODO DO
+# end
 
 #Code under this is not needed
 
