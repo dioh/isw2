@@ -1,8 +1,13 @@
+- require 'yaml'
+- productos = YAML.load(File.read("productos.yaml"))
+- direcciones = YAML.load(File.read("direcciones.yaml"))
+!!!
 %html
   %head
     %title El Precio Justo!
   %body
-    %form{:action => "/search", :method => "get"}
+    %center
+    %form{:action => "localhost:4567/search", :method => "get"}
       %center
       %table{:border => "0", :width => "900px"}
         %tr
@@ -22,11 +27,10 @@
               %input{:name => "type", :onclick => "document.getElementById('producto1').disabled = true;document.getElementById('producto2').disabled = false;document.getElementById('dir1').disabled = true; document.getElementById('dir2').disabled = false;", :type => "radio"}/
         %tr
           %td{:align => "center"}
-            %input#producto1{:name => "product", :type => "text"}/
+            %input#producto1{:name => "producto", :type => "text"}/
           %td{:align => "center"}
-            %select#producto2{:disabled => "", :name => "producto"}
-              - @productos = ['','producto1','producto2','producto3','producto4']
-              - @productos.each do |f| 
+            %select#producto2{:disabled => "", :name => "producto"}      
+              - productos['producto'].each do |f| 
                 %option #{f} 
         %tr
           %td{:align => "center", :bgcolor => "lightblue", :height => "30px", :width => "50%"}
@@ -35,11 +39,10 @@
             %p{:style => "font-size:15px;color:#000000;"} Seleccione la calle y altura
         %tr
           %td{:align => "center"}
-            %input#dir1{:name => "location", :type => "text"}/
+            %input#dir1{:name => "direccion", :type => "text"}/
           %td{:align => "center"}
             %select#dir2{:disabled => "", :name => "direccion"}
-              - @direcciones = ['','calle1','calle2','calle3','calle4']
-              - @direcciones.each do |f| 
+              - direcciones['direccion'].each do |f| 
                 %option #{f} 
         %tr
           %td{:align => "center", :bgcolor => "lightblue", :colspan => "2", :height => "30px"}
@@ -47,8 +50,9 @@
         %tr
           %td{:align => "center"}
             max.
-            %input{:name => "price", :type => "text"}/
+            %input{:name => "precio_maximo", :type => "text"}/
         %tr
           %td{:align => "center", :bgcolor => "lightblue", :colspan => "2", :height => "30px"}
             %input{:type => "submit", :value => "Buscar"}/
+                     
              
