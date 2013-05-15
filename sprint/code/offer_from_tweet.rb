@@ -21,10 +21,10 @@ class TweetOfferPositionalExtractor
     #Extract data from tweet where text is:
     #"product $float unit addressIsTextWithinUnintAndHashtag #hashtag
     def initialize
-        @productRegExp = Regexp.new("(?<product>[[:alpha:]]+)[[:blank:]]*(?<rest>[[:alpha:]].*)")
-        @priceRegExp = Regexp.new("(((?<currency_sign>\$)[[:blank:]]*(?<price_value>\d+(\.\d+)?))|(?<price_value>\d+(\.\d+)?)[[:blank:]]*(?<currency_name>(?i:peso(s)?)))[[:blank:]]*(?<rest>[[:alpha:]].*)")
-        @unitRegExp = Regexp.new("(?<unit>[[:alpha:]]+)[[:blank:]]*(?<rest>[[:alpha:]].*)")
-        @addressRegExp = Regexp.new("/(?<address>(([[:alpha:]]|[[:blank:]])+(\d+)))")
+        @productRegExp = Regexp.new("^(?<product>[[:alpha:]]+)(?<rest>.*)")
+        @priceRegExp = Regexp.new("([[:blank:]]*)(((?<currency_sign>\\$)[[:blank:]]*(?<price_value>\\d+(\\.\\d+)?))|(?<price_value>\\d+(\\.\\d+)?)[[:blank:]]*(?<currency_name>(?i:peso(s)?)))(?<rest>.*)")
+        @unitRegExp = Regexp.new("(?<unit>[[:alpha:]]+)[[:blank:]]*(?<rest>.*)")
+        @addressRegExp = Regexp.new("(?<address>(([[:alpha:]]|[[:blank:]])+(\\d+)))")
     end
 
     # def extractMatchFromText aText, regExp, aMatch 
@@ -41,12 +41,12 @@ class TweetOfferPositionalExtractor
         #More abstraction needed
         #Check extractMatchFromText
 
-        aMatchData = @productRegExp.match(aText)        
-        offerData[:producto] = aMatchData != nil ? aMatchData[:product] : nil 
+        aMatchData = @productRegExp.match(aText)
+        offerData[:product] = aMatchData != nil ? aMatchData[:product].downcase : nil 
         aText = aMatchData.nil? ? "" : aMatchData[:rest]
 
-        aMatchData = @priceRegExp.match(aText)        
-        offerData[:price_value] = aMatchData != nil ? aMatchData[:price_value] : nil 
+        aMatchData = @priceRegExp.match(aText)
+        offerData[:price] = aMatchData != nil ? aMatchData[:price_value].to_f : nil 
         aText = aMatchData.nil? ? "" : aMatchData[:rest]
 
         aMatchData= @unitRegExp.match(aText)        
@@ -54,7 +54,7 @@ class TweetOfferPositionalExtractor
         aText= aMatchData.nil? ? "" : aMatchData[:rest]
 
         aMatchData= @addressRegExp.match(aText)        
-        addressStr= aMatchData != nil ? aMatchData[:address] : nil
+        offerData[:address]= aMatchData != nil ? aMatchData[:address] : nil
 
         return offerData
     end

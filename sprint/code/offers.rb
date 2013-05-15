@@ -8,14 +8,15 @@ class Offers
 end
 
 class Offer
-    def Offer.fromHash hash
-        aProduct= hash[:product] 
-        aPrice= hash[:price]
-        aUnit= hash[:unit]
-        anAddressLocation= hash[:address]
-        aGeoLocation= hash[:geo]
+    def Offer.fromHash aHash
+        aProduct= aHash[:product] 
+        aPrice= aHash[:price]
+        aUnit= aHash[:unit]
+        anAddressLocation= AddressLocation.new aHash[:address]
+        aGeo= (aHash[:geo] != nil ? aHash[:geo] : nil)
+        aGeoLocation= GeoLocation.new aGeo.lat, aGeo.long unless aGeo.nil?
           
-	    aLocation= anAddressLocation.nil? ? aGeoLocation : anAddressLocation
+	    aLocation= aHash[:address].nil? ? aGeoLocation : anAddressLocation
 
         Offer.new aLocation, aProduct, aPrice            
     end
@@ -39,6 +40,27 @@ class Offer
     end
 end
 
+class GeoLocation
+    attr_reader :latitude, :longitude
+    def initialize latitude, longitude
+        @latitude= latitude
+        @longitude= longitude
+    end
+
+    def to_s
+        return @latitude.to_s + "," + @longitude.to_s 
+    end
+end
+
+class AddressLocation
+    attr_reader :address
+    def initialize address
+        @address= address
+    end
+    def to_s
+        return @address
+    end
+end
 # class Product
 #     def initialize(args)
 #         # TODO
