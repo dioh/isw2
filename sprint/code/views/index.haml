@@ -1,1 +1,54 @@
-.content Hello, World!
+%html
+  %head
+    %title El Precio Justo!
+  %body
+    %form{:action => "localhost:4567/search", :method => "get"}
+      %center
+      %table{:border => "0", :width => "900px"}
+        %tr
+          %td{:align => "center", :bgcolor => "lightblue", :colspan => "2", :tcolor => "white"}
+            %p{:style => "font-size:40px;color:#ffffff;"}
+              %b El precio justo!
+        %tr
+          %td{:align => "center", :bgcolor => "lightblue", :height => "30px", :width => "50%"}
+            %p{:style => "font-size:15px;color:#000000;"}
+              Ingrese el nombre del producto
+              %br/
+              %input{:name => "type", :onclick => "document.getElementById('producto1').disabled = false;document.getElementById('producto2').disabled = true;document.getElementById('dir1').disabled = false; document.getElementById('dir2').disabled = true;", :type => "radio"}/
+          %td{:align => "center", :bgcolor => "lightblue"}
+            %p{:style => "font-size:15px;color:#000000;"}
+              Seleccione el producto que est&aacute; buscando
+              %br/
+              %input{:name => "type", :onclick => "document.getElementById('producto1').disabled = true;document.getElementById('producto2').disabled = false;document.getElementById('dir1').disabled = true; document.getElementById('dir2').disabled = false;", :type => "radio"}/
+        %tr
+          %td{:align => "center"}
+            %input#producto1{:name => "producto", :type => "text"}/
+          %td{:align => "center"}
+            %select#producto2{:disabled => "", :name => "producto"}
+              - @productos = ['','producto1','producto2','producto3','producto4']
+              - @productos.each do |f| 
+                %option #{f} 
+        %tr
+          %td{:align => "center", :bgcolor => "lightblue", :height => "30px", :width => "50%"}
+            %p{:style => "font-size:15px;color:#000000;"} Ingrese la Direcci&oacute;n (Nombre de la calle y altura)
+          %td{:align => "center", :bgcolor => "lightblue"}
+            %p{:style => "font-size:15px;color:#000000;"} Seleccione la calle y altura
+        %tr
+          %td{:align => "center"}
+            %input#dir1{:name => "direccion", :type => "text"}/
+          %td{:align => "center"}
+            %select#dir2{:disabled => "", :name => "direccion"}
+              - @direcciones = ['','calle1','calle2','calle3','calle4']
+              - @direcciones.each do |f| 
+                %option #{f} 
+        %tr
+          %td{:align => "center", :bgcolor => "lightblue", :colspan => "2", :height => "30px"}
+            %p{:style => "font-size:15px;color:#000000;"} Ingrese un precio m&aacute;ximo
+        %tr
+          %td{:align => "center"}
+            max.
+            %input{:name => "precio_maximo", :type => "text"}/
+        %tr
+          %td{:align => "center", :bgcolor => "lightblue", :colspan => "2", :height => "30px"}
+            %input{:type => "submit", :value => "Buscar"}/
+             
