@@ -58,14 +58,14 @@ class TestFiltering < Test::Unit::TestCase
 
     def test_filters_factory
         ff = FiltersFactory.new
-        search_params = { :product => "Naranjas", :price => 30 }
+        search_params = { "product" => "Naranjas", "price" => 30 }
         filters = ff.get_filters_for search_params
         assert_equal(filters.size, 2, "Filters missing")
     end
 
     def test_search_action
         ff = FiltersFactory.new
-        search_params = { :product => "Naranjas", :price => 31 }
+        search_params = { "product" => "Naranjas", "price" => 31 }
         filters = ff.get_filters_for search_params
         data = [(Offer.new "Belgrano", "Naranjas", 30), (Offer.new "Belgrano", "Bananas", 57)]
 
@@ -75,5 +75,13 @@ class TestFiltering < Test::Unit::TestCase
 
         assert_equal(1, searched_offers.size, "Unfiltered offers =(") 
     end
+
+    def test_get_filter_keys
+        filter_keys = FilterKeys.get
+        search_params = { "product" => "Naranjas", "price" => 31 , "location" => "Balvanera"}
+
+        assert_equal(true, FilterKeys.get.map { | x|  search_params.keys.include? x }.any? , "Filter params strategy fail" ) 
+    end 
+
 
 end
