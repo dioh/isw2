@@ -3,22 +3,25 @@
     # TODO
 =end
 
+require './location'
+require './product'
+
 class Offers
     
 end
 
 class Offer
     def Offer.fromHash aHash
-        aProduct= aHash[:product] 
-        aPrice= aHash[:price]
-        aUnit= aHash[:unit]
-        anAddressLocation= AddressLocation.new aHash[:address]
-        aGeo= (aHash[:geo] != nil ? aHash[:geo] : nil)
+        aProduct= aHash["product"] 
+        aPrice= aHash["price_value"]
+        aUnit= aHash["unit"]
+        anAddressLocation= AddressLocation.new aHash["address"]
+        aGeo= (aHash["geo"] != nil ? aHash["geo"] : nil)
         aGeoLocation= GeoLocation.new aGeo.lat, aGeo.long unless aGeo.nil?
-          
-	    aLocation= aHash[:address].nil? ? aGeoLocation : anAddressLocation
+        
+        aLocation= aHash["address"].nil? ? aGeoLocation : anAddressLocation
 
-        Offer.new aLocation, aProduct, aPrice            
+        Offer.new aLocation, aProduct, (aPrice.nil? ? aPrice : aPrice.to_f)            
     end
 
     def initialize(location, product, price)
@@ -40,32 +43,6 @@ class Offer
     end
 end
 
-class GeoLocation
-    attr_reader :latitude, :longitude
-    def initialize latitude, longitude
-        @latitude= latitude
-        @longitude= longitude
-    end
-
-    def to_s
-        return @latitude.to_s + "," + @longitude.to_s 
-    end
-end
-
-class AddressLocation
-    attr_reader :address
-    def initialize address
-        @address= address
-    end
-    def to_s
-        return @address
-    end
-end
-# class Product
-#     def initialize(args)
-#         # TODO
-#     end
-# end
 
 # class InvalidProduct
 #     def ==(other)
