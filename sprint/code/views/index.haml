@@ -1,6 +1,3 @@
-- require 'yaml'
-- productos = YAML.load(File.read("productos.yaml"))
-- direcciones = YAML.load(File.read("direcciones.yaml"))
 !!!
 %html
   %head
@@ -18,26 +15,14 @@
           %td{:align => "center", :bgcolor => "lightblue", :height => "30px", :width => "50%"}
             %p{:style => "font-size:15px;color:#000000;"}
               Ingrese el nombre del producto
-              %br/
-              %input{:name => "type", :onclick => "document.getElementById('producto1').disabled = false;document.getElementById('producto2').disabled = true;document.getElementById('dir1').disabled = false; document.getElementById('dir2').disabled = true;", :type => "radio"}/
-          %td{:align => "center", :bgcolor => "lightblue"}
-            %p{:style => "font-size:15px;color:#000000;"}
-              Seleccione el producto que est&aacute; buscando
-              %br/
-              %input{:name => "type", :onclick => "document.getElementById('producto1').disabled = true;document.getElementById('producto2').disabled = false;document.getElementById('dir1').disabled = true; document.getElementById('dir2').disabled = false;", :type => "radio"}/
         %tr
           %td{:align => "center"}
             %input#producto1{:name => "product", :type => "text"}/
-          %td{:align => "center"}
-            %select#producto2{:disabled => "", :name => "product"}      
-              - productos['producto'].each do |f| 
-                %option #{f} 
         %tr
           %td{:align => "center", :bgcolor => "lightblue", :colspan => "2", :height => "30px"}
             %p{:style => "font-size:15px;color:#000000;"} Ingrese un precio m&aacute;ximo
         %tr
           %td{:align => "center"}
-            max.
             %input{:name => "price", :type => "text"}/
         %tr
           %td{:align => "center", :bgcolor => "lightblue", :colspan => "2", :height => "30px"}
