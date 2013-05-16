@@ -62,6 +62,14 @@ class Filter
     end 
 end
 
+class FilterByLocation < Filter
+    def self.for; return "location"; end
+    def initialize value
+        super
+        @condition = Proc.new{|x| x.location? == @value }
+    end
+end
+
 class FilterByPrice < Filter
     def self.for; return "price"; end
     def initialize value
@@ -78,3 +86,15 @@ class FilterByProduct < Filter
     end
 end
 
+
+class FilterKeys
+    def self.get 
+        keys = []
+        ObjectSpace.each_object(Class) do |filtro|
+            if (filtro.superclass == Filter )
+                keys << filtro.for
+            end
+        end
+        return keys
+    end
+end

@@ -7,13 +7,27 @@ require 'yaml'
 
 #FIXME: This should implement a dynamic delegation over a dynamic dispatching mechanism
 class ElPrecioJusto
+    def initialize
+        @filters_factory = FiltersFactory.new 
+    end
 
+    def validate search_params
+        # We just check if the supported keys are in the search params (otherwise no filter will be applied)
+        # And we do unicode encoding so no F413 injection is done
+        search_params.delete_if { |k,v| v == "" }
+        search_params.map { |k,v|  search_params[k] = CGI.escapeHTML v } 
+        return FilterKeys.get.map { | x|  search_params.keys.include? x }.any? 
+    end
 
     def search_action search_params
-        ff = FiltersFactory.new
-        filters = ff.get_filters_for search_params
-        sa = SearchAction.new filters, self.get_all_offers
+        if self.validate search_params
+            filters = @filters_factory.get_filters_for search_params
+            sa = SearchAction.new filters, self.get_all_offers
+        else 
+            return "Bad query"
+        end
         return sa.run 
+
     end
 
     def get_all_offers 
@@ -30,9 +44,6 @@ get '/', :provides => 'html' do
 end
 
 get '/search' do 
-    puts "Tenemos #{params} como parametro"
     search_results = ep.search_action params 
-    puts search_results.to_yaml
-end
-
-
+    search_results.to_yaml
+end 
