@@ -1,1 +1,31 @@
-.content Hello, World!
+!!!
+%html
+  %head
+    %title El Precio Justo!
+  %body
+    %center
+    %form{:action => "/search", :method => "get"}
+      %center
+      %table{:border => "0", :width => "900px"}
+        %tr
+          %td{:align => "center", :bgcolor => "lightblue", :colspan => "2", :tcolor => "white"}
+            %p{:style => "font-size:40px;color:#ffffff;"}
+              %b El precio justo!
+        %tr
+          %td{:align => "center", :bgcolor => "lightblue", :height => "30px", :width => "50%"}
+            %p{:style => "font-size:15px;color:#000000;"}
+              Ingrese el nombre del producto
+        %tr
+          %td{:align => "center"}
+            %input#producto1{:name => "product", :type => "text"}/
+        %tr
+          %td{:align => "center", :bgcolor => "lightblue", :colspan => "2", :height => "30px"}
+            %p{:style => "font-size:15px;color:#000000;"} Ingrese un precio m&aacute;ximo
+        %tr
+          %td{:align => "center"}
+            %input{:name => "price", :type => "text"}/
+        %tr
+          %td{:align => "center", :bgcolor => "lightblue", :colspan => "2", :height => "30px"}
+            %input{:type => "submit", :value => "Buscar"}/
+                     
+             

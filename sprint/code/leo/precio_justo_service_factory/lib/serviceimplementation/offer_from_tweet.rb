@@ -56,7 +56,7 @@ class TweetOfferPositionalExtractor < OfferDataFromTweetExtractor
 	   end
 	     
         aProduct= offerData["product"]
-        aPrice= offerData["price_value"]
+        aPrice= offerData["price_value"].to_f
         aUnit= offerData["unit"]
         anAddressLocation= AddressLocation.new offerData["address"]
         #for future usage

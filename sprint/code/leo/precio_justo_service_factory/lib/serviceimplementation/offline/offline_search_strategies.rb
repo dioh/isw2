@@ -69,7 +69,7 @@ class OfflineFilterByPrice < OfflineFilter
 
   def initialize value
     super
-    @condition = Proc.new { |x| x.price? <= @value.to_i }
+    @condition = Proc.new { |x| x.price? <= @value.to_f }
   end
 end
 

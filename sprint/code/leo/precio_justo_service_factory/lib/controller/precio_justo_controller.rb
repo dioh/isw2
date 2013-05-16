@@ -41,5 +41,5 @@ end
 
 get '/search' do
   search_results = ep.search_action params
-  search_results.to_yaml
+  haml :searchres, :locals => {:sr => search_results}
 end
