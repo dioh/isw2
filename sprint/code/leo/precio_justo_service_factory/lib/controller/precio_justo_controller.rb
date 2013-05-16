@@ -1,11 +1,12 @@
 require 'haml'
 require 'yaml'
 require_relative '../serviceimplementation/offline/precio_justo_offline_service_factory'
+require_relative '../serviceimplementation/online/precio_justo_online_service_factory'
 
 class PrecioJustoController
 
   def initialize
-    @precio_justo_service_factory = PrecioJustoOfflineServiceFactory.new()
+    @precio_justo_service_factory = PrecioJustoOnlineServiceFactory.new()
 
     @filter_keys = @precio_justo_service_factory.getFilterKeys()
     @filters_factory = @precio_justo_service_factory.getFiltersFactory()

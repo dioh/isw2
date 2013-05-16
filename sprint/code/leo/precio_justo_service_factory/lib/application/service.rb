@@ -1,8 +1,6 @@
 class Service
 
   def start
-    throw NotImplementedError
+    raise NotImplementedError.new('#start mus be implemented!')
   end
-
-  private_class_method(:new)
 end

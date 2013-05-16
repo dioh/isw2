@@ -7,8 +7,8 @@
   * License: TODO
 =end
 
-require '../entity/offer'
-require '../entity/location'
+require_relative '../entity/offer'
+require_relative '../entity/location'
 require 'twitter'
 
 class OfferDataFromTweetExtractor
@@ -58,9 +58,9 @@ class TweetOfferPositionalExtractor < OfferDataFromTweetExtractor
         aProduct= offerData["product"]
         aPrice= offerData["price_value"]
         aUnit= offerData["unit"]
-        anAddressLocation= AddressLocation.new offerData["adress"]
+        anAddressLocation= AddressLocation.new offerData["address"]
         #for future usage
-        anGeoLotacion= [ anAddressLocation.geoLocation, GeoLocation.new aGeo ].compact.first
+        #anGeoLotacion= [ anAddressLocation.geoLocation, GeoLocation.new aGeo ].compact.first
 
         Offer.new anAddressLocation, aProduct, aPrice, aUnit
     end

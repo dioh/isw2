@@ -1,14 +1,14 @@
 class PrecioJustoServiceFactory
 
   def getService
-    throw NotImplementedError
+    raise NotImplementedError.new('#getService must be implemented!')
   end
 
   def getFiltersFactory
-    throw NotImplementedError
+    raise NotImplementedError.new('#getFiltersFactory must be implemented!')
   end
 
   def getFilterKeys
-    throw NotImplementedError
+    raise NotImplementedError.new('#getFilterKeys must be implemented!')
   end
 end

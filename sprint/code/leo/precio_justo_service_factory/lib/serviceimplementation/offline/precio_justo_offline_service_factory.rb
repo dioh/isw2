@@ -1,4 +1,5 @@
 require_relative 'offline_search_strategies'
+require_relative 'precio_justo_offline_service'
 require_relative '../precio_justo_service_factory'
 
 class PrecioJustoOfflineServiceFactory < PrecioJustoServiceFactory

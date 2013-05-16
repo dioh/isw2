@@ -12,7 +12,7 @@ class TwitterSearchAPI
   end
 
   def search(query, page = '1', result_type = 'recent', rpp = '100')
-    @client.search(query,{:page => page, :result_type => result_type, :count => rpp}).statuses
+    @client.search(query, {:result_type => result_type, :count => rpp}).statuses
     #@client.query({:q => query, :page => page, :result_type => result_type, :rpt => rpp}).map() {|tweet|
     #  tweet.text
     #}

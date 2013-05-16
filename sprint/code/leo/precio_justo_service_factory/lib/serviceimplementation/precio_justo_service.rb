@@ -1,6 +1,6 @@
 class PrecioJustoService
 
   def search(filters)
-    throw NotImplementedError
+    raise NotImplementedError.new('#search must be implemented!')
   end
 end

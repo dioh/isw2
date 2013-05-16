@@ -1,6 +1,7 @@
 require_relative '../../application/service'
 require_relative '../../sqlite3/sqlite3_db_connection_manager_proxy'
 require_relative '../../twitter/twitter_streaming_api'
+require_relative '../offer_from_tweet'
 
 class TwitterOfflineStreaming < Service
 
@@ -19,7 +20,7 @@ class TwitterOfflineStreaming < Service
       offer = @offer_from_tweet.extractFrom(tweet)
 
       #puts "#{status.text}"
-      command = "insert into offer(product,price,unit,location) values('#{offer.product?}',#{offer.price},'#{offer.unit?}','#{offer.location?.address}')"
+      command = "insert into offer(product,price,unit,location) values('#{offer.product?}',#{offer.price?},'#{offer.unit?}','#{offer.location?.address}')"
       @connection.execute(command)
     }
   end

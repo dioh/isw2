@@ -5,7 +5,7 @@ require_relative '../precio_justo_service'
 
 class PrecioJustoOfflineService < PrecioJustoService
 
-  def initialize(connection_string,)
+  def initialize(connection_string)
     connManager = Sqlite3DBConnectionManagerProxy.instance()
     @connection = connManager.connection(connection_string)
   end
@@ -15,7 +15,7 @@ class PrecioJustoOfflineService < PrecioJustoService
 
     offers_result = @connection.execute('select * from offer;')
     offers_result.each { |offer_row|
-      offers.push(Offer.new(offer_row['location'], offer_row['product'], offer_row['price']))
+      offers.push(Offer.new(offer_row['location'], offer_row['product'], offer_row['price'], offer_row['unit']))
     }
 
     sa = OfflineSearchAction.new filters, offers

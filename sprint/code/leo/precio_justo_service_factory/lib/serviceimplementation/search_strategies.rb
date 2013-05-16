@@ -10,14 +10,14 @@
 class SearchAction;
 
   def run
-    throw NotImplementedError
+    raise NotImplementedError.new('#run must be implemented!')
   end
 end
 
 class FiltersFactory
 
   def get_filters_for search_params_dict
-    throw NotImplementedError
+    raise NotImplementedError.new('#get_filters_for must be implemented!')
   end
 
 end
@@ -25,13 +25,13 @@ end
 class Filter
 
   def apply offers
-    throw NotImplementedError
+    raise NotImplementedError.new('#apply must be implemented!')
   end
 end
 
 class FilterKeys
 
   def get
-    throw NotImplementedError
+    raise NotImplementedError.new('#get must be implemented!')
   end
 end
