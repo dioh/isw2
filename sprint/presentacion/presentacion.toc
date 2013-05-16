@@ -1,7 +1,0 @@
-\beamer@endinputifotherversion {3.10pt}
-\select@language {spanish}
-\beamer@sectionintoc {1}{!`Bienvenidos!}{1}{0}{1}
-\beamer@sectionintoc {2}{Presentaci\'on e introducci\'on}{6}{0}{2}
-\beamer@subsectionintoc {2}{1}{Decisiones tomadas}{8}{0}{2}
-\beamer@subsectionintoc {2}{2}{Demostraci\'on}{11}{0}{2}
-\beamer@sectionintoc {3}{Finalle}{14}{0}{3}
