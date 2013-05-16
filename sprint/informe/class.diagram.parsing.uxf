@@ -4,30 +4,16 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>20</x>
-      <y>280</y>
-      <w>320</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>OfferFromTweetPostionaExtractor
---
-- regexps  
---
-+ extractFrom: aTweet</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Class</type>
-    <coordinates>
-      <x>330</x>
-      <y>20</y>
-      <w>210</w>
-      <h>190</h>
+      <x>340</x>
+      <y>480</y>
+      <w>340</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>OfferFactory
 --
+  
 --
---
+#buildFrom: aProduct, aUnit, aPrice, anAddress
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -35,8 +21,109 @@
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>20</x>
-      <y>160</y>
-      <w>210</w>
+      <y>190</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>UnitFactory
+--
+  
+--
+#buildFrom: aUnitString</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>170</x>
+      <y>170</y>
+      <w>240</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=     1
+unitFactory</panel_attributes>
+    <additional_attributes>30;50;220;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>370</x>
+      <y>20</y>
+      <w>320</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>OfferFromTweetPositionalExtractor
+--
+- regexps : (regexp,string)[] 
+- offerBuilder : OfferBuilder
+--
+#extractFrom: aTweet</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>170</x>
+      <y>270</y>
+      <w>240</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=     1
+productFactory</panel_attributes>
+    <additional_attributes>30;50;220;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>390</x>
+      <y>200</y>
+      <w>260</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>OfferBuilder
+--
+ 
+--
+#buildOfferFrom: anOfferDataDict
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>460</x>
+      <y>310</y>
+      <w>198</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=                    offerFactory</panel_attributes>
+    <additional_attributes>100;170;100;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>820</x>
+      <y>300</y>
+      <w>310</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>PriceFactory
+--
+  
+--
+#buildFrom: aCurrencyString, aValueString</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>20</y>
+      <w>320</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
@@ -44,26 +131,115 @@ OfferFromTweetExtractor
 --
  
 --
-/+extractFrom: aTweet/</panel_attributes>
+/#extractFrom: aTweet/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>430</x>
+      <y>80</y>
+      <w>190</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=     1
+m2=                     offerBuilder</panel_attributes>
+    <additional_attributes>100;120;100;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>20</x>
+      <y>280</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>ProductFactory
+--
+  
+--
+#buildFrom: aUnitString</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>620</x>
+      <y>180</y>
+      <w>220</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+priceFactory</panel_attributes>
+    <additional_attributes>200;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>20</x>
+      <y>380</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>AddressFactory
+--
+  
+--
+#buildFrom: aAddressString</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>110</x>
-      <y>470</y>
-      <w>450</w>
-      <h>170</h>
+      <x>820</x>
+      <y>200</y>
+      <w>200</w>
+      <h>70</h>
     </coordinates>
-    <panel_attributes>Offer
+    <panel_attributes>GeolocalizationFactory
 --
-+ product
-+ unit
-+ price
-+ address
-+ geolocalization
+  
 --
-+ Offer: aProduct, aUnit, aPrice, anAddress, aGeolocalization</panel_attributes>
+#buildFrom: aTweeterGeo</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>190</x>
+      <y>310</y>
+      <w>342</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=     1
+m2=                           addressFactory</panel_attributes>
+    <additional_attributes>30;100;220;100;220;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>620</x>
+      <y>270</y>
+      <w>220</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+priceFactory</panel_attributes>
+    <additional_attributes>200;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>290</x>
+      <y>40</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;80;30</additional_attributes>
   </element>
 </diagram>

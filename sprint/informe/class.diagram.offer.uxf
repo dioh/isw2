@@ -4,32 +4,19 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>660</x>
-      <y>260</y>
-      <w>210</w>
-      <h>90</h>
+      <x>20</x>
+      <y>440</y>
+      <w>270</w>
+      <h>100</h>
     </coordinates>
-    <panel_attributes>Currency
+    <panel_attributes>Address
 --
-sign
-name
++ streetName
++ number
 --
-Currency:aSign, aName</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <type>com.umlet.element.Class</type>
-    <coordinates>
-      <x>650</x>
-      <y>100</y>
-      <w>210</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>Unit
---
-+name 
---
-Unit: aName</panel_attributes>
++ Create(streetName. number)
++ geolocatization
+fg=blue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -42,25 +29,39 @@ Unit: aName</panel_attributes>
     </coordinates>
     <panel_attributes>Product
 --
-+name 
++name : String
 --
-Product: aName</panel_attributes>
+Create(aName)
+fg=blue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <type>com.umlet.element.Class</type>
+    <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>590</x>
-      <y>370</y>
-      <w>280</w>
-      <h>90</h>
+      <x>290</x>
+      <y>150</y>
+      <w>102</w>
+      <h>200</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Interface&gt;&gt;
-AddressGeolocalizationCalculator
---
-+ calculateFor: anAddress
-</panel_attributes>
-    <additional_attributes/>
+    <panel_attributes>lt=&lt;-
+m1=      1
+m2=          price
+fg=blue</panel_attributes>
+    <additional_attributes>60;180;60;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>300</x>
+      <y>150</y>
+      <w>370</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=                          geolocalization
+fg=blue</panel_attributes>
+    <additional_attributes>350;100;130;100;130;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -73,41 +74,39 @@ AddressGeolocalizationCalculator
     <panel_attributes>lt=&lt;-
 m1=1
 m2=unit
-</panel_attributes>
+fg=blue</panel_attributes>
     <additional_attributes>210;30;30;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Class</type>
-    <coordinates>
-      <x>20</x>
-      <y>10</y>
-      <w>450</w>
-      <h>170</h>
-    </coordinates>
-    <panel_attributes>Offer
---
-+ product
-+ unit
-+ price
-+ address
-+ geolocalization
---
-+ Offer: aProduct, aUnit, aPrice, anAddress, aGeolocalization</panel_attributes>
-    <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>420</x>
-      <y>270</y>
-      <w>260</w>
-      <h>50</h>
+      <x>0</x>
+      <y>150</y>
+      <w>136</w>
+      <h>310</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-m1=1
-m2=currency
-</panel_attributes>
-    <additional_attributes>240;30;30;30</additional_attributes>
+m1=      1
+m2=             address
+fg=blue</panel_attributes>
+    <additional_attributes>70;290;70;80;70;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>660</x>
+      <y>330</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Currency
+--
+sign : String
+name : String
+--
+Currency:aSign, aName
+fg=blue</panel_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
@@ -120,61 +119,91 @@ m2=currency
     <panel_attributes>lt=&lt;-
 m1=1
 m2=product
-</panel_attributes>
+fg=blue</panel_attributes>
     <additional_attributes>210;30;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>0</x>
-      <y>150</y>
-      <w>136</w>
-      <h>240</h>
+      <x>420</x>
+      <y>340</y>
+      <w>260</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-m1=      1
-m2=             address
-</panel_attributes>
-    <additional_attributes>70;220;70;80;70;30</additional_attributes>
-  </element>
-  <element>
-    <type>com.umlet.element.Relation</type>
-    <coordinates>
-      <x>290</x>
-      <y>150</y>
-      <w>102</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=      1
-m2=          price
-</panel_attributes>
-    <additional_attributes>60;110;60;30</additional_attributes>
+m1=1
+m2=currency
+fg=blue</panel_attributes>
+    <additional_attributes>240;30;30;30</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>20</x>
-      <y>370</y>
-      <w>270</w>
-      <h>100</h>
+      <y>10</y>
+      <w>450</w>
+      <h>170</h>
     </coordinates>
-    <panel_attributes>Address
+    <panel_attributes>Offer
 --
-+ streetName
-+ number
++ product : Product
++ unit : Unit
++ price : Price
++ address : Address
++ geolocalization : Geolocalization
 --
-+ Address: streetName. number
-+ geolocatization
-
-</panel_attributes>
++ Create(aProduct, aUnit, aPrice, anAddress, aGeolocalization)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>260</x>
+      <y>440</y>
+      <w>350</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;uses&gt;&gt;
+fg=blue</panel_attributes>
+    <additional_attributes>330;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>590</x>
+      <y>440</y>
+      <w>280</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+AddressGeolocalizationCalculator
+--
+# calculateFor(anAddress) : Geolocatization
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>650</x>
+      <y>200</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Geolocalization
+--
++coordinates : Object
+--
+Create(aTweetGeo)
+fg=blue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>240</x>
-      <y>260</y>
+      <y>330</y>
       <w>210</w>
       <h>90</h>
     </coordinates>
@@ -183,19 +212,24 @@ m2=          price
 + currency
 + value
 --
-Price: aCurrency, aValue</panel_attributes>
+Price: aCurrency, aValue
+fg=blue</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <type>com.umlet.element.Relation</type>
+    <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>260</x>
-      <y>370</y>
-      <w>350</w>
-      <h>70</h>
+      <x>650</x>
+      <y>100</y>
+      <w>210</w>
+      <h>90</h>
     </coordinates>
-    <panel_attributes>lt=&lt;.
-&lt;&lt;uses&gt;&gt;</panel_attributes>
-    <additional_attributes>330;50;30;50</additional_attributes>
+    <panel_attributes>Unit
+--
++name : String
+--
+Unit(aName)
+fg=blue</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
