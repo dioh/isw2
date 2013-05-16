@@ -1,6 +1,6 @@
-require_relative '../lib/serviceimplementation/precio_justo_online_service'
+require_relative '../lib/serviceimplementation/precio_justo_service'
 
-service = PrecioJustoOnlineService.new()
+service = PrecioJustoService.new()
 results = service.search('tomate')
 
 results.each { |result|

@@ -1,7 +1,8 @@
+require_relative '../application/service'
 require 'drb/drb'
 require_relative 'sqlite3_db_connection_manager'
 
-class Sqlite3Server
+class Sqlite3Server  < Service
 
   def initialize(uri)
     @uri=uri
