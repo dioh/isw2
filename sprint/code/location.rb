@@ -3,23 +3,30 @@
     # TODO
 =end
 
-class GeoLocation
-    attr_reader :latitude, :longitude
-    def initialize latitude, longitude
-        @latitude= latitude
-        @longitude= longitude
-    end
+class GeoLocationFromAddress
+end
 
-    def to_s
-        return @latitude.to_s + "," + @longitude.to_s 
+
+class GeoLocation
+    attr_reader :coordinates
+    
+    def initialize aGeo
+        @coordinates= aGeo.coordinates unless aGeo.nil?
     end
 end
 
 class AddressLocation
     attr_reader :address
+
     def initialize address
         @address= address
     end
+
+    #To be implemented
+    def getGeoLocation
+        return nil
+    end
+
     def to_s
         return @address
     end
