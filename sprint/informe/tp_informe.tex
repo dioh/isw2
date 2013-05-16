@@ -1,0 +1,289 @@
+\documentclass[a4paper,8pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{listings}
+%opening
+\title{Ingeniería de Software II\\ \textbf{Sistema ``El precio justo''}}
+\author{\textbf{Grupo 6}\\ 1º Cuatrimestre 2013} 
+\date{}
+
+
+\begin{document}
+
+\maketitle
+\vspace{10cm}
+\begin{center}
+
+\begin{tabular}{|c|c|c|}
+\hline
+\hline
+\textbf{LU}&\textbf{Nombre}&\textbf{email}\\
+\hline
+667/06&Daniel Foguelman &dj.foguelman@gmail.com\\
+\hline
+767/03&Hernán Modrow&hmodrow@gmail.com\\
+\hline
+511/00&Leonardo Tilli&leotilli@gmail.com\\
+\hline
+836/02&Paula Verghelet&pverghelet@gmail.com\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\newpage
+
+\section{Parte I}
+\subsection{Introducción}
+Se nos solicita el desarrollo de una herramienta que, para poder brindarle a la comunidad información sobre los mejores lugares y precios para comprar los productos que necesite dentro de la ciudad autónoma de Buenos Aires, permita mediante el revelamiento y selección de tweets lograr tal objetivo. \\
+
+Se espera que dicha información sea correcta, precisa, independiente, y libre de segundas intenciones. Se sugiere que la forma de lograr este objetivo, es que la propia comunidad sea la que informe sobre los mejores precios.
+
+Es decir, si cada uno va twitteando dónde compró un determinado producto a un muy
+buen precio, sería posible aprovechar esa información para ayudar a otras personas a cuidar su economía.\\
+
+La aplicación se enfocará en productos de primera necesidad, los cuales incluyen: zanahorias, zapallitos, papas, tomates, leche, yogurt,
+manzanas, bananas, crema para rulos, asado, vacío, pan, harina, aceite, azúcar y yerba. Aunque es deseable prever su utilización para informar sobre todo tipo de productos. \\
+
+A partir de información volcada previamente en Twitter se espera obtener el precio y lugar de venta de estos productos, permitiendo que la aplicación pueda sugerir al usuario dónde es más conveniente comprar el/los productos de su necesidad.\\
+
+Se plantean inicialmente dos estrategias: caminando lo menos posible y gastando lo menos posible. El conjunto de estrategias puede ser ampliado posteriormente.\\
+El usuario podrá consultar por un rango de precios para los productos y obtener la información adecuada a este tipo de solicitud. \\
+
+Se espera que dicha información pueda mostrarse en un mapa de manera de facilitar la interacción con el usuario.\\\\
+
+En esta primera parte se realiza un análisis del problema que permite la especificación de requerimientos y la identificación de user stories. Esto nos permite realizar una estimación de las mismas y seleccionar aquellas pertinentes a un primer sprint.\\
+
+En las siguientes secciones se documenta el Product Backlog y el Sprint Backlog obtenido, así como una breve descripción de los ejes de discusión y las decisiones tomadas sobre el alcance del trabajo a realizar.\\
+
+\subsection{Desarrollo}
+Al momento de generar las users stories nos pasaron dos cosas, algunas las generamos con mucho nivel de detalle y otras incorporaban cosas por fuera del alcance del proyecto en sí. \\
+Las primeras, al ver que nos quedaban de una sola tarea, las fuimos agrupando en users stories más generales y pudimos generar tareas adicionales transversales a las mismas.\\
+Sobre las otras, las replanteamos de forma que queden como users stories de investigación y análisis a fin de poder reflejar aquellas cosas que fuimos discutiendo durante esta primera etapa, pero que lamentablemente requieren un mayor análisis, al menos a nivel diseño, del que nos es posible realizar durante el primer sprint. 
+
+\subsection{Product Backlog}
+Se han dejado aquí todas las users stories que entendemos están por fuera del alcance de los objetivos del sprint inicial, es decir poder generar una demo. La idea de dicha demo, entendemos, es poder mostrar que es posible procesar la información de los tweets y utilizarla como resultado de las búsqueda. \\
+Las users stories US63, US53, US59, US54 y US70 son las users stories de investigación y análisis mencionadas en la sección anterior.\\
+\newpage
+
+
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US116& Como sistema quiero poder identificar productos con errores de escritura para no descartar tweets de productos habilitados. &5.00&4\\ 
+\hline
+US44 &Como usuario quiero buscar por zona para realizar las compras cercanas a un lugar de mi elección &8.00&5\\ 
+\hline	
+US45 &Como usuario quiero buscar un producto en un rango de precios para poder seleccionar productos de acuerdo a lo que estoy dispuesto a pagar por el mismo &3.00&5\\ 
+\hline	
+US46 &Como usuario quiero buscar un conjunto de productos para minimizar las consultas puntuales, y poder elegir el lugar/precio que mejor se ajuste a mi necesidad. &3.00&6\\ 
+\hline	
+US47 &Como usuario quiero minimizar el costo total de los productos buscados para realizar un ahorro en la compra total &5.00&5\\ 
+\hline	
+US48 &Como usuario quiero minimizar el recorrido para minimizar el tiempo utilizado en la compra &21.00&5\\ 
+\hline	
+US51 &Como usuario quiero ver todos los productos, con sus precios, asociados a un punto de venta para saber que otros productos se venden a buen precio en dicho punto de venta &5.00&4\\ 
+\hline	
+US52 &Como usuario quiero ver los resultados de una búsqueda en un mapa para ubicarme fácilmente en relación al lugar en el que me encuentro& 13.00&4\\ 
+\hline
+US55 &Como administrador quiero administrar productos soportados para poder agregar quitar o editar los productos indexados &5.00&3\\ 
+\hline
+US63 &Investigar beneficios e inconvenientes de incorporar distintos formatos de dirección &21.00&2\\ 
+\hline
+US53 &Investigar beneficios e inconvenientes de que la aplicación tenga usuarios& 21.00&3\\ 
+\hline	
+US59 &Investigar beneficios e inconvenientes de identificar subproductos como productos diferenciados &21.00&1\\ 
+\hline		
+US54 &Investigar beneficios e inconvenientes de que el producto mantenga estadísticas de uso &21.00&4\\ 
+\hline	
+US70 &Investigar beneficios e inconvenientes de que el producto mantenga un sistema de veracidad/ranking de la información &21.00&3\\ 	
+\hline	
+US119 &Investigar beneficios e inconvenientes de incorporar distintas formas de referencia a productos. &21.00&2\\ 
+\hline		
+US123 &Como usuario quiero buscar puntos de venta de un producto por cercanía a un lugar para poder elegir los más cercanos a dicho lugar. &21.00&5\\ 
+\hline
+\hline
+\end{tabular}
+\newpage
+
+\subsection{Sprint Backlog}
+
+\bigskip
+\center
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US93&Como usuario quiero buscar por producto para poder elegir el lugar/precio que mejor se ajuste a mi necesidad.& 8& 7\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. El usuario puede seleccionar un producto habilitado.}\\
+\multicolumn{4}{|p{13cm}|}{2. El usuario puede iniciar una búsqueda para este producto.}\\
+\multicolumn{4}{|p{13cm}|}{3. El usuario puede ver los resultados para el producto buscado, con información de lugar y precio.}\\
+\hline
+\hline
+\end{tabular}
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US74&Investigar tecnologías de desarrollo&3&2\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. Decidir cuáles son los lenguajes y tecnologías que se van a utilizar para la implementación de las user stories del sprint}\\
+\multicolumn{4}{|p{13cm}|}{2. Generar una estrategia de testing adecuada para disminuir la cantidad de bugs generados y aumentar la cantidad de bugs detectados}\\
+\multicolumn{4}{|p{13cm}|}{3. Tener un modelo para persistir información de configuración}\\
+\multicolumn{4}{|p{13cm}|}{4. Identificar cuáles son los beneficios e inconvenientes de la utilización de dichas tecnologías}\\
+\hline
+\hline
+\end{tabular}
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US75&Investigar en la api de twitter para poder estimar las tareas de código&5&3\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. Obtener un análisis de la correcta utilización de la API teniendo en cuenta autenticación y búsqueda}\\
+\multicolumn{4}{|p{13cm}|}{2. Obtener un análisis de la factibilidad de un modelo para poder persistir información de tweets}\\
+\hline
+\hline
+\end{tabular}
+
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US72&Generar los diseños necesarios del sistema&8&2\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. Generar todos los diagramas necesarios para explicar correctamente el funcionamiento del sistema.}\\
+\hline
+\hline
+\end{tabular}
+
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US115&Como sistema quiero identificar y extraer la información útil en un tweet para poder utilizarla en las búsquedas.&5&7\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. El sistema lee un tweet para procesar.}\\
+\multicolumn{4}{|p{13cm}|}{2. El sistema extrae la información del producto.}\\
+\multicolumn{4}{|p{13cm}|}{3. El sistema extrae la información del precio.}\\
+\multicolumn{4}{|p{13cm}|}{4. El sistema extrae la información de la unidad.}\\
+\multicolumn{4}{|p{13cm}|}{5. El sistema extrae la información del lugar.}\\
+\multicolumn{4}{|p{13cm}|}{6. El sistema extrae el hashtag.}\\
+\multicolumn{4}{|p{13cm}|}{7. El sistema descarta tweets con datos faltantes.}\\
+\multicolumn{4}{|p{13cm}|}{8. El sistema descarta tweets con productos no habilitados.}\\
+\multicolumn{4}{|p{13cm}|}{9. El sistema descarta tweets con precios inválidos.}\\
+\multicolumn{4}{|p{13cm}|}{10. El sistema descarta tweets con unidades no soportadas por el producto.}\\
+\multicolumn{4}{|p{13cm}|}{11. El sistema descarta tweets sin el hashtag $\#$PrecioJusto.}\\
+\hline
+\hline
+\end{tabular}
+
+
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US114&Generar datos para la demo&1&1\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. Los datos deberán ser tweets para poder probar la aplicación}\\
+\multicolumn{4}{|p{13cm}|}{2. Los datos deberán cubrir casos de filtrado por producto, dirección, precio, unidad y hashtag}\\
+\multicolumn{4}{|p{13cm}|}{3. Los datos deben permitir la búsqueda sobre tres productos y las unidades asociadas a los mismos para que se puedan realizar búsquedas}\\
+\hline
+\hline
+\end{tabular}
+
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US93&Como usuario quiero buscar por producto para poder elegir el lugar/precio que mejor se ajuste a mi necesidad.& 8& 7\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. El usuario puede seleccionar un producto habilitado.}\\
+\multicolumn{4}{|p{13cm}|}{2. El usuario puede iniciar una búsqueda para este producto.}\\
+\multicolumn{4}{|p{13cm}|}{3. El usuario puede ver los resultados para el producto buscado, con información de lugar y precio.}\\
+\hline
+\hline
+\end{tabular}
+
+
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US42&Armar UI para soportar funcionalidades básicas& 5& 4\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. La interfaz es visualizable en un dispositivo y resolución standard.}\\
+\multicolumn{4}{|p{13cm}|}{2. Se identifica la aplicación y los logos.}\\
+\multicolumn{4}{|p{13cm}|}{3. Tiene diferenciadas las distintas secciones: opciones de búsqueda, resultados.}\\
+\multicolumn{4}{|p{13cm}|}{4. Se integra con las funcionalidades de la aplicación de una manera clara y consistente.}\\
+\multicolumn{4}{|p{13cm}|}{5. Es extensible a nuevas funcionalidades.}\\
+\hline
+\hline
+\end{tabular}
+
+\newpage
+\end{document}
