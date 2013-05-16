@@ -1,0 +1,28 @@
+Diagramas de clase:
+ * Busqueda
+ * Controller
+ * Parsing
+ * Backend
+
+Diagramas de secuencia:
+ * inicio del server
+ * inicio de la api
+ * búsqueda por producto (con la validación)
+ * búsqueda por precio (poner que es análogo)
+ * extracción información del tweet en el buen caso y en el mal caso (explicar donde debería mejorarse)
+ * Obtención online del tweet
+ * Obtención offline del tweet
+ 
+ 
+Explicaciones;
+ * Cómo es el recorde del diseño que presentamos para la demo
+ * Cómo se modificarían las extracciones
+ * Cómo se extendería el modelo
+ 
+Extras
+ * Cosas que nos encontramos
+ * decisiones de arquitectura
+ * como decidimos algunas cosas de modelado
+ * explicación de los patrones aplicados (los singleton de connection manager pej?)
+
+
