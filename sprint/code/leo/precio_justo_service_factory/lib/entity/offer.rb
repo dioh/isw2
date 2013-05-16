@@ -4,29 +4,27 @@
 =end
 
 class Offer
-    def Offer.fromHash fromHash
-        
-    end
 
-    def initialize(location, product, price)
-        @location = location
-        @prod = product
-        @price = price 
-    end 
+  def initialize(location, product, price, unit)
+    @location = location
+    @prod = product
+    @price = price
+    @unit = unit
+  end
 
-    def product?
-        return @prod
-    end
+  def location?
+    return @location
+  end
 
-    def price?
-        return @price
-    end
-end
+  def product?
+    return @prod
+  end
 
-class Product
-    def initialize(args)
-        # TODO
-    end
+  def price?
+    return @price
+  end
 
-
+  def unit?
+    return @unit
+  end
 end

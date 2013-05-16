@@ -11,12 +11,15 @@ class TwitterOfflineStreaming < Service
                                           oauth_token,
                                           oauth_token_secret)
     @search_filter = search_filter
+    @offer_from_tweet = OfferFromTweet.new(TweetOfferPositionalExtractor.new())
   end
 
   def start
-    @search_api.track(@search_filter) { |status|
+    @search_api.track(@search_filter) { |tweet|
+      offer = @offer_from_tweet.extractFrom(tweet)
+
       #puts "#{status.text}"
-      command = "insert into offer(product,price,unit,location) values('tomate',10.05,'kg','#{status.text}')"
+      command = "insert into offer(product,price,unit,location) values('#{offer.product?}',#{offer.price},'#{offer.unit?}','#{offer.location?.address}')"
       @connection.execute(command)
     }
   end
