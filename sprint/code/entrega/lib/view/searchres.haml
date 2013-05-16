@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title
+  %body
+    %table{:border => "0", :width => "900px"}
+      %tr
+        %td{:align => "center", :bgcolor => "lightblue", :colspan => "3", :tcolor => "white"}
+          %p{:style => "font-size:40px;color:#ffffff;"}
+            %b El precio justo!
+      %tr
+        %td{:align => "center", :bgcolor => "lightblue", :height => "30px", :width => "50%"}
+          %p{:style => "font-size:15px;color:#000000;"}
+            %b Producto
+      
+        %td{:align => "center", :bgcolor => "lightblue"}
+          %p{:style => "font-size:15px;color:#000000;"}
+            %b Precio (en pesos)
+
+        %td{:align => "center", :bgcolor => "lightblue"}
+          %p{:style => "font-size:15px;color:#000000;"}
+            %b Direccion
+
+      - sr.each do |s| 
+        %tr
+          %td{:align => "center", :bgcolor => "lightblue", :tcolor => "white"}
+            %p{:style => "font-size:40px;color:#ffffff;"}
+            %p= s.product?
+	    
+          %td{:align => "center", :bgcolor => "lightblue", :tcolor => "white"}
+            %p= s.price?
+
+          %td{:align => "center", :bgcolor => "lightblue", :tcolor => "white"}
+            %p= s.location?
