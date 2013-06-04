@@ -1,0 +1,17 @@
+Hola. Para tratar de aprovechar tooodo lo que apareció en el taller vamos a sumar 1 punto a los TPs que resuelvan, además del enunciado, alguna de estas cosas:
+- Accesibilidad: contemplar algún tipo de discapacidad que impacte en el diseño.
+- Carga: una evaluación mínimamente razonable.
+- Implementar alguna  PoC que ilustre cierto funcionamiento de la Arquitectura
+- Buena explicación de cómo se podría implementar alguna propuesta de recaudación adicional.
+- Diseño que garantice que mis twits/sms/etc me aparecen a mí en menos de 1 seg dde que el medio los publica.
+- Alguna otra opción de las que surgieron en clase, a confirmar con el tutor.
+
+Está en la lista el mensaje de Nico con las fotos del pizarrón.
+También nos contaron los stakeholders que se pusieron de acuerdo en la siguiente priorización de QAs:
+
+1- Usabilidad
+2- Rendimiento
+3- Integrabilidad / extensibilidad
+4- Disponibilidad
+5- Auditabilidad
+6- Seguridad
