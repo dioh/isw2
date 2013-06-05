@@ -13,7 +13,7 @@ Lista casos de Uso
     * Mostrando mapa oferta
     * Buscando información de oferta sugerida
 
-* Cargando/Consultando oferta por [Pagina Web/Red Social]
+* Cargando/Consultando oferta por Pagina Web/Red Social
 * Cargando/Consultando oferta por SMS
 
 * Asignando confiabilidad a oferta
@@ -35,3 +35,7 @@ Conflictivas
 * Guardando información de auditoría de ofertas falsas: está cubierta por otros casos de uso, asignando confiabilidad a oferta y g
 * Generando estadísticas de fraude: Generando reporte de ofertas dudosas no es lo mismo que esta?
 * Cargando oferta a traves de internet con usuario pago: no se si hay usuario pago
+
+Casos de Uso
+============
+
