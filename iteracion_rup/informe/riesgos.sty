@@ -1,0 +1,64 @@
+%~ \begin{escenario}{atributo}{comentario}
+%~ \fuente{usuario}
+%~ \estimulo{usuario}
+%~ \entorno{usuario}
+%~ \artefacto{usuario}
+%~ \respuesta{usuario}
+%~ \medida{usuario}
+%~ \end{escenario}
+
+\newcounter{riesgocount}
+\setcounter{riesgocount}{1}
+
+\newenvironment{riesgo}[2]
+{
+    %~ \def\stpoints{#2}%
+    %~ \def\busval{#3}%
+	\noindent
+	\\
+	%~ \uppercase{#1}
+    \begin{minipage}{\textwidth} 
+	\textsc{\textbf{R\arabic{riesgocount}}}: {\scriptsize Dado que} \textbf{#1} {\scriptsize existe el riesgo de que} \textbf{#2}.
+    \addtocounter{riesgocount}{1}
+    
+    \vspace*{5pt}\hspace*{30pt}\begin{minipage}[r]{0.8\textwidth} 
+    \begin{itemize}
+        \small
+        \setlength{\itemsep}{-0.8pt}% vertical
+        \setlength{\itemindent}{35pt}
+        \setlength{\parindent}{30pt}
+        %~ \setlength{\parskip}{0pt}
+}{
+	\end{itemize} %\\
+    \end{minipage}
+    %~ \textbf{Story Points: \stpoints\ - Bussines Value: \busval}
+    \end{minipage}
+	%~ \\
+}
+
+\newcommand\riesgoline[2]{
+\item[\textsc{#1}:]  {\footnotesize #2}
+}
+
+\newcommand\contexto[1]{%
+\riesgoline{Contexto}{#1}
+}
+
+\newcommand\probabilidad[1]{%
+\riesgoline{Probabilidad}{#1}
+}
+\newcommand\impacto[1]{%
+\riesgoline{Impacto}{#1}
+}
+
+\newcommand\exposicion[1]{%
+\riesgoline{Exposición}{#1}
+}
+\newcommand\mitigacion[1]{%
+\riesgoline{Mitigación}{#1}
+}
+
+\newcommand\contingencia[1]{%
+\riesgoline{Contingencia}{#1}
+}
+
