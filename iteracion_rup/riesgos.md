@@ -10,6 +10,8 @@ Lista de Riesgos
 * Información no confiada por los usuarios
 * No utilización del sistema por usuarios pagos
 
+TODO: Agregan riesgos que implequen a los equipos de desarrollo.
+
 Detalles riesgos
 ====================
 
