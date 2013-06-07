@@ -1,6 +1,9 @@
 Lista de Riesgos
 ================
+* Cluster armado con insuficiente poder de computo
+* Fondos insuficientes para pagar Spam-Buster
 * Retraso en la implementación de reporte de ofertas dudosas
+* Interfaz incomoda para usuarios
 * Congestión 
 * Ataque de Negación de Servicio
 * Robo de información de usuarios
@@ -10,7 +13,7 @@ Lista de Riesgos
 * Información no confiada por los usuarios
 * No utilización del sistema por usuarios pagos
 
-TODO: Agregan riesgos que implequen a los equipos de desarrollo.
+TODO: Agregan riesgos que impliquen a los equipos de desarrollo.
 
 Detalles riesgos
 ====================
