@@ -1,6 +1,7 @@
 \section*{Riesgos}
 
 %Template
+Alta complejidad de desarrollo precisa recursos altamente calificados
 %\begin{riesgo}{SITUACION}{CONSECUENCIA}
 %    \contexto{Texto de contexto}
 %    \probabilidad{Baja-Media-Alta}
@@ -78,11 +79,11 @@
     \probabilidad{Alta}
     \impacto{Crítico}
     \exposicion{Alta}
-    \mitigacion{Generar una arquitectura que permita la alta disponibilidad del servicio utilizando $cachés$ distribuidos para minimizar la carga en cada servidor. Armar casos de tests específicos para detectar problemas de disponibilidad en el sistema.}
+    \mitigacion{Generar una arquitectura que permita la alta disponibilidad del servicio utilizando \textbf{cachés} distribuidos para minimizar la carga en cada servidor. Armar casos de tests específicos para detectar problemas de disponibilidad en el sistema.}
     \contingencia{En caso de presentarse gran lentitud en el sistema, se deberá considerar la contratación de clusters para dar soporte a la gran demanda.}
 \end{riesgo}
 
-\begin{riesgo}{Dada la inmensa cantidad de intereses económicos involucrados}{se encuentre un alto porcentaje de ofertas dudosas}
+\begin{riesgo}{dada la inmensa cantidad de intereses económicos involucrados}{se encuentre un alto porcentaje de ofertas dudosas}
     \contexto{Las ofertas dudosas son generadas por generadores de mercado que buscan manipular el sistema en pos de un beneficio particular.}
     \probabilidad{Bajo}
     \impacto{Medio}
@@ -91,13 +92,50 @@
     \contingencia{Habilitaremos listas de productos verificados por agentes de TPA que verifiquen personalmente las ofertas.}
 \end{riesgo}
 
-
-\begin{riesgo}{SITUACION}{CONSECUENCIA}
-    \contexto{Texto de contexto}
-    \probabilidad{Baja-Media-Alta}
-    \impacto{Crítico-Medio-Bajo}
-    \exposicion{Alta-Media-Baja}
-    \mitigacion{Texto mitigacion}
-    \contingencia{Texto contingencia}
+\begin{riesgo}{dada la inmensa cantidad de intereses económicos involucrados}{se encuentre un alto porcentaje de usuarios dudosos}
+    \contexto{Los usuarios dudosos son generadores de mercado que buscan manipular el sistema en pos de un beneficio particular.}
+    \probabilidad{Bajo}
+    \impacto{Medio}
+    \exposicion{Media}
+    \mitigacion{Generaremos estratégias de validación de usuarios para minimizar la falsificación de identidad.}
+    \contingencia{Habilitaremos listas de usuarios verificados por agentes de TPA.}
 \end{riesgo}
 
+
+\begin{riesgo}{dado el contexto inflacionario y de polarización política}{información no confiada por los usuarios}
+    \contexto{La poca credibilidad en los índices inflacionarios podría inducir a la falta de confianza de los usuarios a los resultados de búsqueda.}
+    \probabilidad{Baja}
+    \impacto{Bajo}
+    \exposicion{Baja}
+    \mitigacion{Generaremos reportes de confianza para entender las necesidades de los usuarios y mejorar la confiabilidad de las ofertas sugeridas.}
+    \contingencia{Generaremos una campaña mediática para generar confianza en los usuarios. Además mostraremos en el mapa los locales cercanos a su hogar, locales conocidos por los usuarios.}
+\end{riesgo}
+
+\begin{riesgo}{No utilización del sistema por usuarios pagos}{perdida de entrada de capitales}
+    \contexto{El proyecto depende mucho de la redituabilidad de la plataforma. De no obtenerse sustentabilidad economica el proyecto podría caerse.}
+    \probabilidad{Baja}
+    \impacto{Crítico}
+    \exposicion{Media}
+    \mitigacion{Generaremos beneficios para los usuarios pagos garantizando ranking de las ofertas publicadas por ellos.}
+    \contingencia{Agregaremos publicadad en el producto.}
+\end{riesgo}
+
+
+\begin{riesgo}{integración con servicios heterogeneos es compleja}{no descubre correctamente las ofertas}
+    \contexto{Múltiples servicios integrados y alta complejidad en la detección de una oferta en lenguaje natural.}
+    \probabilidad{Media}
+    \impacto{Medio}
+    \exposicion{Media}
+    \mitigacion{Implementaremos estratégias de entrenamiento de la plataforma y generaremos múltiples casos de test para verificar la identificación de ofertas. También utilizaremos una estrategia de supervisión de la identifación de ofertas por un operario manual hasta y tanto la plataforma tenga un corpus de conocimiento adecuado para la interpretación de cualquier tipo de texto.}
+    \contingencia{Contrataremos personal que identifique las ofertas que no se están encontrando para poder generar nuevas estrategias de detección.}
+\end{riesgo}
+
+Alta complejidad de desarrollo precisa recursos altamente calificados
+\begin{riesgo}{la complejidad de desarrollo del proyecto es alta se precisa personal altamente calificado}{se generará un producto de baja calidad}
+    \contexto{La complejidad, dada por los sistemas de asignación de confiabilidad, la gran interacción con sistemas heterogeneos, la necesidad de alta disponibilidad, etc. hace que el personal técnico que desarrollará la plataforma necesite estar altamente calificado.}
+    \probabilidad{Alta}
+    \impacto{Crítico}
+    \exposicion{Alta}
+    \mitigacion{Contratar personal altamente calificado y armar workshops para compartir el conocimiento de las tecnologías utilizadas en el proyecto hacia los menos calificados. Haciendo que todos los técnicos involucrados mantengan la calidad del producto.}
+    \contingencia{Contratar un servicio de consultoría de software que permita resolver los conflictos téncnicos que pudieran darse.}
+\end{riesgo}
