@@ -1,9 +1,15 @@
-\documentclass[a4paper,8pt]{article}
+\documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{epsfig}
 \usepackage{riesgos}
+\usepackage[font=small,labelfont=bf]{caption}
+\hoffset=-2.5cm
+\textwidth=17cm
+\parskip=1ex
+
+
 
 %opening
 \title{Ingeniería de Software II\\ \textbf{Sistema ``Twitteando para Ahorrar''}}
@@ -22,7 +28,7 @@
 \hline
 \textbf{LU}&\textbf{Nombre}&\textbf{email}\\
 \hline
-667/06&Daniel Foguelman &dj.foguelman@gmail.com\\
+667/06&Daniel Foguelman &dfoguelman@dc.uba.ar\\
 \hline
 767/03&Hernán Modrow&hmodrow@gmail.com\\
 \hline
@@ -34,9 +40,15 @@
 \newpage
 
 \section{Parte I}
+
+ En este informe presentamos la planificación para el proyecto TPA para las etapas subsiguientes a lo creado en la entrega anterior. En este proceso, integraremos el Core de Twiteando para Ahorrar con múltiples servicios (Redes sociales, detección de fraude, etc), tendremos requerimientos funcionales y no-funcionales de media y gran complejidad. Esto Nos mueve del paradigma SCRUM por uno más tradicional, RUP, haciendo preponderancia en la planificación y análisis de requerimientos antes que en la adaptabilidad al cambio y visibilidad del proyecto. \\
+
+ El plan desarrollado para esta nueva etapa sigue el modelo RUP, y se documenta a continuaci\'n. Primero se describir\'an los casos de uso identificados. En base a esto se detallan las distintas iteraciones que se planificaron y de qu\'e consta cada una. En la \'ultima secci\'on se encuentra el an\'alisis de los riesgos m\'as importantes que se detectaron.
+
+
 \include{lista_cu}
-\include{plan_proyecto}
 \include{riesgos}
+\include{plan_proyecto}
 
 
 \end{document}
