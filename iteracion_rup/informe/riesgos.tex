@@ -10,13 +10,13 @@
 %    \contingencia{Texto contingencia}
 %\end{riesgo}
 
-\begin{riesgo}{cluster armado con insuficiente poder de computo}{fallar a nivel de datos de ofertas.}
-    \contexto{Dado que se espera un volumen de tr\'afico alto es posible que el cluster no de abasto y el sistema no procese correctamente las ofertas, incumpliendo con los requerimientos de b\'usqueda o quedando fuera de servicio.}
+\begin{riesgo}{el/los cluster/s armados pueden no tener suficiente poder de computo}{los tiempos de respuesta y el conjunto de datos analizados no sean los esperados.}
+    \contexto{Se espera manejar grandes volúmenes datos y de peticiones por lo tanto necesita alto poder de procesamiento y una gran cantidad de espacio para almacenarse.}
     \probabilidad{Media}
     \impacto{Crítico}
     \exposicion{Alta}
-    \mitigacion{Diseñar arquitectura que escale horizontalmente y sea f\'acil agregar capacidad de procesamiento}
-    \contingencia{Detectar puntos cr\'iticos de infraestructura para poder agregar nuevas instancias de procesamiento.}
+    \mitigacion{Diseñar arquitectura que escale horizontalmente y sea f\'acil agregar capacidad de procesamiento y de datos.}
+    \contingencia{Disminuir la cantidad de información que se puede recibir y enviar TPA a los usuarios. Analizar otros esquemas arquitectónicos, como un esquema descentralizado distribuido en regiones.}
 \end{riesgo}
 
 \begin{riesgo}{los fondos sean insuficientes durante el contrato con Spam-Buster}{haya perdida de funcionalidad control de spam}
