@@ -55,12 +55,49 @@
     \contingencia{Minimizar el tiempo de reinicialización de los servicios de TPA.}
 \end{riesgo}
 
-\begin{riesgo}{oobo de información de usuarios}{falta a la privacidad definida en el EULA}
+\begin{riesgo}{robo de información de usuarios}{falta a la privacidad definida en el EULA}
     \contexto{Dada la exposición de los usuarios y de sus preferencias de consumo, dicha información es suceptible a su comercialización.}
     \probabilidad{Alta}
     \impacto{Medio}
     \exposicion{Alta}
     \mitigacion{Anonimizar la información enviada por los usuarios para que otros usuarios vean inaccesible dicha información.}
     \contingencia{Cerrar las consultas de información y dejar solo accesible las consultas de ofertas generales.}
+\end{riesgo}
+
+\begin{riesgo}{la arquitectura se define con computadores de bajo costo}{caída de DB de Ofertas}
+    \contexto{La caída de la infraestructura de repositorios de ofertas generaría una caida del servicio completo.}
+    \probabilidad{Baja}
+    \impacto{Crítico}
+    \exposicion{Alta-Media-Baja}
+    \mitigacion{Generar un mesh de pruebas unitarias y funcionales para tener feedback constante del estado de situación de la base de datos.}
+    \contingencia{Generar alarmas de los servicios de base de datos para minizar el downtime.}
+\end{riesgo}
+
+\begin{riesgo}{mucha carga en el uso del sistema}{lentitud de respuesta en la consulta de ofertas}
+    \contexto{Dado que el sistema TPA tendrá impacto a nivel nacional y regional, es esperable una gran carga de consultas.}
+    \probabilidad{Alta}
+    \impacto{Crítico}
+    \exposicion{Alta}
+    \mitigacion{Generar una arquitectura que permita la alta disponibilidad del servicio utilizando $cachés$ distribuidos para minimizar la carga en cada servidor. Armar casos de tests específicos para detectar problemas de disponibilidad en el sistema.}
+    \contingencia{En caso de presentarse gran lentitud en el sistema, se deberá considerar la contratación de clusters para dar soporte a la gran demanda.}
+\end{riesgo}
+
+\begin{riesgo}{Dada la inmensa cantidad de intereses económicos involucrados}{se encuentre un alto porcentaje de ofertas dudosas}
+    \contexto{Las ofertas dudosas son generadas por generadores de mercado que buscan manipular el sistema en pos de un beneficio particular.}
+    \probabilidad{Bajo}
+    \impacto{Medio}
+    \exposicion{Media}
+    \mitigacion{Mitigaremos este riesgo en principio utilizando los servicios de SpamBuster por su afamada excelencia en la detección de spam. Desarrollaremos una estrategia propia para poder desvincularnos del proveedor una vez terminada la implementación.}
+    \contingencia{Habilitaremos listas de productos verificados por agentes de TPA que verifiquen personalmente las ofertas.}
+\end{riesgo}
+
+
+\begin{riesgo}{SITUACION}{CONSECUENCIA}
+    \contexto{Texto de contexto}
+    \probabilidad{Baja-Media-Alta}
+    \impacto{Crítico-Medio-Bajo}
+    \exposicion{Alta-Media-Baja}
+    \mitigacion{Texto mitigacion}
+    \contingencia{Texto contingencia}
 \end{riesgo}
 
