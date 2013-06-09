@@ -2,8 +2,6 @@ Lista de Riesgos
 ================
 * Cluster armado con insuficiente poder de computo
 * Fondos insuficientes para pagar Spam-Buster
-* Fondos insuficientes para terminar la implementación del proyecto
-* Descubrir luego de la integración que Spam-Buster no nos provee el servicio requerido
 * Retraso en la implementación de reporte de ofertas dudosas
 * Interfaz incomoda para usuarios
 * Congestión a nivel red en el cluster
@@ -17,6 +15,9 @@ Lista de Riesgos
 * No utilización del sistema por usuarios pagos
 * Integración con servicios heterogeneos no descubre correctamente las ofertas
 * Alta complejidad de desarrollo precisa recursos altamente calificados
+
+* Fondos insuficientes para terminar la implementación del proyecto
+* Descubrir luego de la integración que Spam-Buster no nos provee el servicio requerido
 
 
 TODO: Agregan riesgos que impliquen a los equipos de desarrollo.
