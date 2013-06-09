@@ -1,10 +1,13 @@
 \section*{Riesgos}
 
-\begin{riesgo}{SITUACION}{CONSECUENCIA}
-    \contexto{Texto de contexto}
-    \probabilidad{Baja-Media-Alta}
-    \impacto{Crítico-Medio-Bajo}
-    \exposicion{Alta-Media-Baja}
-    \mitigacion{Texto mitigacion}
-    \contingencia{Texto contingencia}
+\begin{riesgo}{cluster armado con insuficiente poder de computo}{fallar a nivel de datos de ofertas.}
+    \contexto{Dado que se espera un volumen de tr\'afico alto es posible que el cluster no de abasto y el sistema no procese correctamente las ofertas, incumpliendo con los requerimientos de b\'usqueda o quedando fuera de servicio.}
+    \probabilidad{Media}
+    \impacto{Crítico}
+    \exposicion{Alta}
+    \mitigacion{Diseñar arquitectura que escale horizontalmente y sea f\'acil agregar capacidad de procesamiento}
+    \contingencia{Detectar puntos cr\'iticos de infraestructura para poder agregar nuevas instancias de procesamiento.}
 \end{riesgo}
+
+
+
