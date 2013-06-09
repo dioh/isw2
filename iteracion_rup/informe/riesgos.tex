@@ -1,5 +1,15 @@
 \section*{Riesgos}
 
+%Template
+%\begin{riesgo}{SITUACION}{CONSECUENCIA}
+%    \contexto{Texto de contexto}
+%    \probabilidad{Baja-Media-Alta}
+%    \impacto{Crítico-Medio-Bajo}
+%    \exposicion{Alta-Media-Baja}
+%    \mitigacion{Texto mitigacion}
+%    \contingencia{Texto contingencia}
+%\end{riesgo}
+
 \begin{riesgo}{cluster armado con insuficiente poder de computo}{fallar a nivel de datos de ofertas.}
     \contexto{Dado que se espera un volumen de tr\'afico alto es posible que el cluster no de abasto y el sistema no procese correctamente las ofertas, incumpliendo con los requerimientos de b\'usqueda o quedando fuera de servicio.}
     \probabilidad{Media}
@@ -7,6 +17,15 @@
     \exposicion{Alta}
     \mitigacion{Diseñar arquitectura que escale horizontalmente y sea f\'acil agregar capacidad de procesamiento}
     \contingencia{Detectar puntos cr\'iticos de infraestructura para poder agregar nuevas instancias de procesamiento.}
+\end{riesgo}
+
+\begin{riesgo}{los fondos sean insuficientes durante el contrato con Spam-Buster}{haya perdida de funcionalidad control de spam}
+    \contexto{Dado el flujo en la economía argentina y los cambios en las modalidades de los proveedores existe el riesgo de no poder continuar con la contratación con Spam-Buster antes de haber terminado la funcionalidad que suplanta el servicio del proveedor.}
+    \probabilidad{Baja}
+    \impacto{Crítico}
+    \exposicion{Alta}
+    \mitigacion{Ser ceñudo en la gestión de los requerimientos de análisis de spam para que dichos CU no se retrasen.}
+    \contingencia{Plantear clausula de cesantía de contrato para que sea desfavorable para Spam-Buster desligarse del proyecto en un lapso no menor a los 60 días.}
 \end{riesgo}
 
 
