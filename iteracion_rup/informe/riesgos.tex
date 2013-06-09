@@ -46,4 +46,21 @@
     \contingencia{No hacer nada, el porcentaje de estos usuarios es menor en comparación a los usuarios activos.}
 \end{riesgo}
 
+\begin{riesgo}{ataquen con una Negación de Servicio a la aplicación}{haya cientos de miles de usuarios damnificados}
+    \contexto{Dada la puja política y económica, la aplicación podría afectar los intereses de ciertos grupos hegemónicos. Es esperable que se generen ataques de DoS.}
+    \probabilidad{Media}
+    \impacto{Crítico}
+    \exposicion{Alta}
+    \mitigacion{Generar una aplicación distribuida con buena distribución de carga para poder soportar alta carga de datos.}
+    \contingencia{Minimizar el tiempo de reinicialización de los servicios de TPA.}
+\end{riesgo}
+
+\begin{riesgo}{oobo de información de usuarios}{falta a la privacidad definida en el EULA}
+    \contexto{Dada la exposición de los usuarios y de sus preferencias de consumo, dicha información es suceptible a su comercialización.}
+    \probabilidad{Alta}
+    \impacto{Medio}
+    \exposicion{Alta}
+    \mitigacion{Anonimizar la información enviada por los usuarios para que otros usuarios vean inaccesible dicha información.}
+    \contingencia{Cerrar las consultas de información y dejar solo accesible las consultas de ofertas generales.}
+\end{riesgo}
 
