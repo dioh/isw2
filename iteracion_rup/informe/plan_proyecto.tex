@@ -13,24 +13,21 @@ Considerando las posturas de los stakeholders con los que se tuvo contacto, se d
 		  \item CU-05: Enviando sugerencia sobre el sistema
 	\end{itemize}
 
+\textbf{Detalle de la iteración}
+
 	Los casos de uso incluidos en esta primera iteraci\'on conforman un subconjunto m\'inimo que nos permite tener un recorrido completo de la aplicación. Esto \'ultimo implica tambi\'en que varios de \'estos tiene un alto impacto en la arquitectura, teniendo que tomar decisiones al respecto de la autenticaci\'on, implementaci\'on del servicio Web-API, integraci\'on del sitio Web-TPA con el servicio API, modelo de persistencia de entidades y resoluci\'on de b\'usquedas.
+	
+	La decisión de generar un recorrido completo también tiene en cuenta los riesgos relevados, dado que los riesgos de mayor exposición están relacionado con cuestiones de performance y arquitectura. Esto junto con la búsqueda de que haya una  adopción temprana del sistema por parte de los usuarios, permitirá evaluar tempranamente el funcionamiento del sistema para corregir en una fase temprana cualquier inconveniente de arquitectura que pudiera surgir y no hubiese sido relevado.
 	
 	Desde el punto de la usabilidad, incluimos el env\'io de sugerencia para tener un feedback temprano del usuario. Desde el punto de vista del rendimiento, apuntamos a utilizar una interfaz simple, que minimice el intercambio de datos por consulta. Por \'ultimo, desde el punto de vista de la integrabilidad y extensibilidad, decidimos implementar todos las funcionalidades en el servicio Web-API, reutilizándolo desde el sitio Web-TPA.
 	
-\begin{figure}[hbtp]
-\centering
-\includegraphics[height=0.75\textheight,angle=90]{TP2Planificacion}
-\caption{Diagrama de Gantt de tareas de la primera iteraci\'on, con divisi\'on de tareas y asignaci\'on de recursos}
-\label{fig:gantt}
-\end{figure}
-
 \subsubsection{Iteraci\'on 2 - Elaboraci\'on (2 semanas / 240 horas)}
 	
 	\begin{itemize}
 	  \item CU-06: Configurando oferta sugerida (24hs)
 	  \item CU-07: Buscando información de oferta sugerida (32hs)
 	  \item CU-08: Generando reporte de ofertas dudosas con Spam-Buster (64hs)
-	  \item CU-09: Invalidando oferta (56hs)
+	  \item CU-21: Configurando sistema de ofertas (56hs)
 	  \item CU-10: Cargando/Consultando oferta por P\'agina Web/Red Social [Twitter] (64hs)
 	\end{itemize}
 
@@ -38,10 +35,10 @@ Considerando las posturas de los stakeholders con los que se tuvo contacto, se d
 	
 	\begin{itemize}
 		\item CU-10: Cargando/Consultando oferta por P\'agina Web/Red Social [cont.] (64hs)
+		\item CU-09: Invalidando oferta (40hs)
 		\item CU-11: Generando reporte de ofertas dudosas con M\'odulo Propio (64hs)
 		\item CU-12: Registrar informacion de uso del sistema (24)
 		\item CU-13: Asignando confiabilidad a oferta (48)
-		\item CU-14: Asignando confiabilidad a usuario (40)
 	\end{itemize}
 
 \subsubsection{Iteraci\'on 4 - Construcci\'on (4 semanas / 480 horas)}
@@ -49,16 +46,26 @@ Considerando las posturas de los stakeholders con los que se tuvo contacto, se d
 	Las siguientes tareas se desarrollan para finalizar con el deplyment del sistema
 	
 	\begin{itemize}
-		  \item CU-10: Cargando/Consultando oferta por P\'agina Web/Red Social [cont.] (80hs)
+	  	  \item CU-14: Asignando confiabilidad a usuario (40)
+		  \item CU-10: Cargando/Consultando oferta por P\'agina Web/Red Social [cont.] (40hs)
 		  \item CU-15: Comparando SpamBuster con M\'odulo de ofertas dudosas (160hs)
 		  \item CU-16: Configurando sistema de confianza personal (136hs)
 		  \item CU-17: Mostrando mapa oferta (104hs)
 	\end{itemize}
 
-\subsubsection{Iteraci\'on 5 - Transici\'on (1 semana / 120 horas)}
+\subsubsection{Iteraci\'on 5 - Transici\'on (2 semanas / 240 horas)}
 	
 	\begin{itemize}
-		  \item CU-10: Cargando/Consultando oferta por P\'agina Web/Red Social [cont.] (40hs)
-		  \item CU-18: Analizando web en busca de ofertas (48hs)
-		  \item CU-18: Cargando/Consultando oferta por SMS (36hs)
+		  \item CU-10: Cargando/Consultando oferta por P\'agina Web/Red Social [cont.] (60hs)
+		  \item CU-18: Analizando web en busca de ofertas (60hs)
+		  \item CU-18: Cargando/Consultando oferta por SMS (64hs)
+		  \item CU-20: Consultando información estadística del sistema (56 hs)
 	\end{itemize}
+
+\subsection*{Gantt de la Primera Iteración}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[height=0.75\textheight,angle=90]{TP2Planificacion}
+\caption{Diagrama de Gantt de tareas de la primera iteraci\'on, con divisi\'on de tareas y asignaci\'on de recursos}
+\label{fig:gantt}
+\end{figure}
