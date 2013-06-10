@@ -64,24 +64,14 @@
     \contingencia{Cerrar las consultas de información y dejar solo accesible las consultas de ofertas generales.}
 \end{riesgo}
 
-\begin{riesgo}{dada la inmensa cantidad de intereses económicos involucrados}{se encuentre un alto porcentaje de ofertas dudosas}
-    \contexto{Las ofertas dudosas son generadas por generadores de mercado que buscan manipular el sistema en pos de un beneficio particular.}
+\begin{riesgo}{el sistema depende en gran parte de la información provista por lo usuarios}{haya un alto porcentaje de ofertas dudosas}
+    \contexto{Dado que el proyecto es esponsoreado por el gobierno nacional, es posible que un número importante de ofertas dudosas sean generadas que buscan manipular el sistema en pos de un beneficio personal.}
     \probabilidad{Bajo}
     \impacto{Medio}
     \exposicion{Media}
-    \mitigacion{Mitigaremos este riesgo en principio utilizando los servicios de SpamBuster por su afamada excelencia en la detección de spam. Desarrollaremos una estrategia propia para poder desvincularnos del proveedor una vez terminada la implementación.}
-    \contingencia{Habilitaremos listas de productos verificados por agentes de TPA que verifiquen personalmente las ofertas.}
+    \mitigacion{Informar a los usuarios de los beneficios de usar el sistema correctamente. Buscar la adopción temprana del sistema por parte de los usuarios para que estos generen un alto número de datos. Utilizar los servicios de SpamBuster para el filtrado de ofertas dudosas mientras se genera un módulo proprio. Invalidación de ofertas manualmente por usuarios administrativos/configuración.}
+    \contingencia{Generar listas de productos oficialmente verificados por agentes de TPA.}
 \end{riesgo}
-
-\begin{riesgo}{dada la inmensa cantidad de intereses económicos involucrados}{se encuentre un alto porcentaje de usuarios dudosos}
-    \contexto{Los usuarios dudosos son generadores de mercado que buscan manipular el sistema en pos de un beneficio particular.}
-    \probabilidad{Bajo}
-    \impacto{Medio}
-    \exposicion{Media}
-    \mitigacion{Generaremos estratégias de validación de usuarios para minimizar la falsificación de identidad.}
-    \contingencia{Habilitaremos listas de usuarios verificados por agentes de TPA.}
-\end{riesgo}
-
 
 \begin{riesgo}{dado el contexto inflacionario y de polarización política}{información no confiada por los usuarios}
     \contexto{La poca credibilidad en los índices inflacionarios podría inducir a la falta de confianza de los usuarios a los resultados de búsqueda.}
@@ -89,36 +79,61 @@
     \impacto{Bajo}
     \exposicion{Baja}
     \mitigacion{Generaremos reportes de confianza para entender las necesidades de los usuarios y mejorar la confiabilidad de las ofertas sugeridas.}
-    \contingencia{Generaremos una campaña mediática para generar confianza en los usuarios. Además mostraremos en el mapa los locales cercanos a su hogar, locales conocidos por los usuarios.}
+    \contingencia{Evaluar la realización de una campaña publicitaria para generar confianza en los usuarios. Evaluar la posibilidad de la captura de ofertas mediante fotos.}
 \end{riesgo}
 
-\begin{riesgo}{No utilización del sistema por usuarios pagos}{perdida de entrada de capitales}
-    \contexto{El proyecto depende mucho de la redituabilidad de la plataforma. De no obtenerse sustentabilidad economica el proyecto podría caerse.}
+\begin{riesgo}{el sistema depende en gran parte de la información provista por lo usuarios}{haya un gran número de usuarios no confiables}
+    \contexto{Dado que el proyecto es esponsoreado por el gobierno nacional, es posible que se registren usuarios que hagan busquen el fracaso del sistema, ej: disminuyendo la confiabilidad de las ofertas.}
+    \probabilidad{Bajo}
+    \impacto{Medio}
+    \exposicion{Baja}
+    \mitigacion{Generar estrategias de validación de usuarios para minimizar la falsificación de identidad. Evaluar la generación programas de fidelización fin de que los usuarios quieran registrarse utilizando información fidedigna y participar activamente generando información confiable.}
+    \contingencia{Los usuarios deberán verificarse personalmente para poder utilizar el sistema.}
+\end{riesgo}
+
+\begin{riesgo}{el presupuesto es acotado y se espera que el sistema genere ingresos propios a fin de mantenerse}{los fondos obtenidos de los servicios pagos ofrecidos sean insuficientes y el proyecto fracase}
+    \contexto{El proyecto depende de fondo.}
     \probabilidad{Baja}
     \impacto{Crítico}
     \exposicion{Media}
-    \mitigacion{Generaremos beneficios para los usuarios pagos garantizando ranking de las ofertas publicadas por ellos.}
-    \contingencia{Agregaremos publicadad en el producto.}
+    \mitigacion{Venta de servicios para sugerir ofertas de comerciantes. Venta de información estádistica del sistema.}
+    \contingencia{Agregar ventea publicadad al sistema. Solicitar fondos adicionales al estado nacional. Buscar fuentes de financiación adicionales.}
 \end{riesgo}
 
-
-\begin{riesgo}{integración con servicios heterogeneos es compleja}{no descubre correctamente las ofertas}
-    \contexto{Múltiples servicios integrados y alta complejidad en la detección de una oferta en lenguaje natural.}
+\begin{riesgo}{es necesario obtener información de ofertas distintos sistemas/páginas web mediante webcrawling}{no se descubran correctamente las ofertas de los mismos}
+    \contexto{La programción de analizadores de leguaje natural es una tarea compleja que requiere un alto nivel de conocmiento para implementarse correctamente.}
     \probabilidad{Media}
     \impacto{Medio}
     \exposicion{Media}
-    \mitigacion{Implementaremos estratégias de entrenamiento de la plataforma y generaremos múltiples casos de test para verificar la identificación de ofertas. También utilizaremos una estrategia de supervisión de la identifación de ofertas por un operario manual hasta y tanto la plataforma tenga un corpus de conocimiento adecuado para la interpretación de cualquier tipo de texto.}
+    \mitigacion{Alguno de los miembros del equipo asistará a una capacitación sobre el tema, para que luego realice capacitación interna. Implementaremos estratégias de entrenamiento de la plataforma y generaremos múltiples casos de test para verificar la identificación de ofertas. También utilizaremos una estrategia de supervisión de la identificación de ofertas por un operario manual a fin de mejorar la detección.}
     \contingencia{Contrataremos personal que identifique las ofertas que no se están encontrando para poder generar nuevas estrategias de detección.}
 \end{riesgo}
 
-\begin{riesgo}{la complejidad de desarrollo del proyecto es alta se precisa personal altamente calificado}{se generará un producto de baja calidad}
-    \contexto{La complejidad, dada por los sistemas de asignación de confiabilidad, la gran interacción con sistemas heterogeneos, la necesidad de alta disponibilidad, etc. hace que el personal técnico que desarrollará la plataforma necesite estar altamente calificado.}
-    \probabilidad{Alta}
-    \impacto{Crítico}
-    \exposicion{Alta}
-    \mitigacion{Contratar personal altamente calificado y armar workshops para compartir el conocimiento de las tecnologías utilizadas en el proyecto hacia los menos calificados. Haciendo que todos los técnicos involucrados mantengan la calidad del producto.}
-    \contingencia{Contratar un servicio de consultoría de software que permita resolver los conflictos téncnicos que pudieran darse.}
-\end{riesgo}
+\begin{riesgo}{es necesario almacenar la información de las ofertas en un base de datos no relacional (NOSQL) y el equipo tiene poca experiencia}{de que el proyecto se atrase o de que fracase debido al mal armado del modelo de datos}
+\contexto{Se solitica la utilización de una base de datos no relacional a fin guardar la información de las ofertas.}
+\probabilidad{Alta}
+\impacto{Crítico}
+\exposicion{Alta}
+\mitigacion{Alguno de los miembros del equipo asistará a una capacitación sobre el tema, para que luego realice capacitación interna.}
+\contigencia{Contratar a un especialista en el tema para que participe del proyecto. Alternativamente tercerizar esa parte del proyecto.}
+
+\begin{riesgo}{se utilizarán máquina es necesario armar uno (o varios) clusters y que los miembros delequipo no tienen experiencia en esto}{de que el proyecto se atrase o de que fracase en cuanto al nivel de procesamiento de datos que realiza}
+\contexto{Se dispone de PCs comunes para el deploy del sistema. Dado que se requiere un alto nivel de procesamiento es que se deberán armar clusters con las PCs a fin de generar mayor poder de computo.}
+\probabilidad{Alta}
+\impacto{Crítico}
+\exposicion{Alta}
+\mitigacion{Alguno de los miembros del equipo asistará a una capacitación sobre el tema, para que luego realice capacitación interna. Destrabar la importación de los servidores dedicados.}
+\contigencia{Contratar a un especialista en el tema para que participe del proyecto. Evaluar la contratación de un servicio externo de procesamiento de datos.}
+
+% Reemplazado por las anteriores
+% \begin{riesgo}{la complejidad de desarrollo del proyecto es alta se precisa personal altamente calificado}{se generará un producto de baja calidad}
+    % \contexto{La complejidad, dada por los sistemas de asignación de confiabilidad, la gran interacción con sistemas heterogeneos, la necesidad de alta disponibilidad, etc. hace que el personal técnico que desarrollará la plataforma necesite estar altamente calificado.}
+    % \probabilidad{Alta}
+    % \impacto{Crítico}
+    % \exposicion{Alta}
+    % \mitigacion{Contratar personal altamente calificado y armar workshops para compartir el conocimiento de las tecnologías utilizadas en el proyecto hacia los menos calificados. Haciendo que todos los técnicos involucrados mantengan la calidad del producto.}
+    % \contingencia{Contratar un servicio de consultoría de software que permita resolver los conflictos téncnicos que pudieran darse.}
+% \end{riesgo}
 
 \subsection*{Reveer}
 
