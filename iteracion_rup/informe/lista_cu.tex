@@ -2,14 +2,12 @@
  En esta sección incluiremos una lista de los casos de uso identificados para el sistema a implementar, con una breve descripción de alto nivel para cada uno. Se trata solamente de interacciones entre el sistema y agentes externos (es decir, el usuario y otros sistemas). Por esta razon, esta clasificación no contiene absolutamente todo el trabajo a realizar.  
     En particular, no se describe aquí el trabajo requerido para permitir a nuestro sistema detectar las ofertas posteadas en las diversas redes soportadas. 
 
+\textbf{CU-01: Autenticándose al sistema} Un usuario con una cuenta de usuario válida podrá utilizarla para autenticarse con el sistema. Está cuenta podrá ser una cuenta OpenId, de alguno de los sistemas externos soportados o de usuario interno para tareas de configuración y administración
 
- ́ 
-\textbf{CU-01: Autenticandose al sistema vía OpenID} Un usuario con una cuenta de usuario vinculada con OpenID podrá utilizarla para autenticarse con el sistema.
+\textbf{CU-02 Cargando oferta a través de la Web-API} Un usuario podrá cargar una nueva oferta de un producto válido en el sistema. En caso de que el usuario esté auténticado se le dará prioridad de acuerdo a . Los usuarios pagos podrán además incorporar más información a la oferta para que esta se ubique como un aviso esponsoreado.
 
-\textbf{CU-02 Cargando oferta a través de la Web-API} Un usuario autenticado podrá cargar una oferta nueva en el sistema de acuerdo a los siguientes tipos de ofertas: producto / unidad, valor y ubicación del local donde se encontró la oferta. Los usuarios pagos podrán además incorporar más información a la oferta para que esta se ubique como un aviso esponsoreado.
+\textbf{CU-03: Consultando oferta a traves de API-Internet} Un usuario podrá realizar consultas sobre las mejores ofertas que tiene el sistema. Los resultados de búsqueda estarán ordenados por las ofertas de mayor importancia, esto definido por las reglas internas.
 
-\textbf{CU-03: Consultando oferta a traves de API-Internet} Un usuario autenticado podrá realizar consultas sobre las mejores ofertas que tiene el sistema. Los resultados de búsqueda estarán ordenados por las ofertas de mayor importancia, esto definido por las reglas internas.
-
-\textbf{CU-04: Consultando oferta a través de página web TPA} Un usuario autenticado podrá realizar consultas sobre las mejores ofertas que tiene el sistema. Los resultados de búsqueda estarán ordenados por las ofertas de mayor importancia, esto definido por las reglas internas.
+\textbf{CU-04: Consultando oferta a través de página web TPA} Un usuario podrá realizar consultas sobre las mejores ofertas que tiene el sistema. Los resultados de búsqueda estarán ordenados por las ofertas de mayor importancia, esto definido por las reglas internas. En caso de lo usuarios auténticados, de tenerlo definido, se utilizarán además sus preferencias de confianza en las fuentes (ej: ciertos usuarios, webs).
 
 \textbf{CU-05: Enviando sugerencia sobre el sistema} Un usuario del sistema, sin importar si está autenticado o no, podrá enviar sugerencias sobre el sistema. Las sugerencias Spam, de haberlas, deberán ser tratadas con una estrategia anti-spam.
