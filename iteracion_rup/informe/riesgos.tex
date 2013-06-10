@@ -117,6 +117,7 @@
 \mitigacion{Alguno de los miembros del equipo asistará a una capacitación sobre el tema, para que luego realice capacitación interna.}
 \contingencia{Contratar a un especialista en el tema para que participe del proyecto. Alternativamente tercerizar esa parte del proyecto.}
 \end{riesgo}
+
 \begin{riesgo}{se utilizarán máquina es necesario armar uno (o varios) clusters y que los miembros delequipo no tienen experiencia en esto}{de que el proyecto se atrase o de que fracase en cuanto al nivel de procesamiento de datos que realiza}
 \contexto{Se dispone de PCs comunes para el deploy del sistema. Dado que se requiere un alto nivel de procesamiento es que se deberán armar clusters con las PCs a fin de generar mayor poder de computo.}
 \probabilidad{Alta}
@@ -124,6 +125,15 @@
 \exposicion{Alta}
 \mitigacion{Alguno de los miembros del equipo asistará a una capacitación sobre el tema, para que luego realice capacitación interna. Destrabar la importación de los servidores dedicados.}
 \contingencia{Contratar a un especialista en el tema para que participe del proyecto. Evaluar la contratación de un servicio externo de procesamiento de datos.}
+\end{riesgo}
+
+\begin{riesgo}{los fondos destinados al contrato de Spam-Bust son acotados}{haya perdida de funcionalidad control de spam}
+    \contexto{Dado la partida presupuestaria a destinada al pago de acotado e incluso podría no materializarse.}
+    \probabilidad{Baja}
+    \impacto{Crítico}
+    \exposicion{Alta}
+    \mitigacion{Gestionar adecuadamente los requerimientos de análisis de spam para que dichos CU no se retrasen. Contratar el servicio con la posibilidad de poder diferir/postergar los pagos.}
+    \contingencia{Que el equipo de desarrollo se aboque al desarrollo de la funcionalidad. Evaluar la tercerización del desarrollo}
 \end{riesgo}
 
 %% Reemplazado por las anteriores
@@ -140,15 +150,6 @@
 
 Estos riesgos no se leen como \textit{DADO QUE condicion EXISTE EL RIESGO QUE evento}.
 O no quedan claras las mitigaciones y/o contigencias.
-
-\begin{riesgo}{los fondos sean insuficientes durante el contrato con Spam-Buster}{haya perdida de funcionalidad control de spam}
-    \contexto{Dado el flujo en la economía argentina y los cambios en las modalidades de los proveedores existe el riesgo de no poder continuar con la contratación con Spam-Buster antes de haber terminado la funcionalidad que suplanta el servicio del proveedor.}
-    \probabilidad{Baja}
-    \impacto{Crítico}
-    \exposicion{Alta}
-    \mitigacion{Ser ceñudo en la gestión de los requerimientos de análisis de spam para que dichos CU no se retrasen.}
-    \contingencia{Plantear clausula de cesantía de contrato para que sea desfavorable para Spam-Buster desligarse del proyecto en un lapso no menor a los 60 días.}
-\end{riesgo}
 
 \begin{riesgo}{surja un retraso en la implementación de reporte de ofertas dudosas}{se falte a la necesidades del sector Defensa al Consumidor}
     \contexto{La gente asociada al sector Defensa al Consumidor precisa este reporte para poder tomar las deciciones adecuadas, sin este el proyecto carece del aval institucional que prové DC.}
