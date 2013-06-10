@@ -1,6 +1,35 @@
-\section*{Lista de Casos de Uso}
- En esta sección incluiremos una lista de los casos de uso identificados para el sistema a implementar, con una breve descripción de alto nivel para cada uno. Se trata solamente de interacciones entre el sistema y agentes externos (es decir, el usuario y otros sistemas). Por esta razon, esta clasificación no contiene absolutamente todo el trabajo a realizar.  
-    En particular, no se describe aquí el trabajo requerido para permitir a nuestro sistema detectar las ofertas posteadas en las diversas redes soportadas. 
+\section*{Casos de Uso}
+
+\subsection*{Listado de Casos de Uso}
+\begin{description}
+\item[CU-01] Autentic\'andose al sistema
+\item[CU-02] Cargando oferta a trav\'es de la Web-API
+\item[CU-03] Consultando oferta a trav\'es de API-Internet
+\item[CU-04] Consultando oferta a trav\'es de p\'agina web TPA
+\item[CU-05] Enviando sugerencia sobre el sistema
+\item[CU-06] Configurando oferta sugerida %(24hs)
+\item[CU-07] Buscando información de oferta sugerida %(32hs)
+\item[CU-08] Generando reporte de ofertas dudosas con Spam-Buster %(64hs)
+\item[CU-09] Invalidando oferta %(56hs)
+\item[CU-10] Cargando/Consultando oferta por P\'agina Web/Red Social 
+\item[CU-11] Generando reporte de ofertas dudosas con M\'odulo Propio %(64hs)
+\item[CU-12] Registrar información de uso del sistema %(24)
+\item[CU-13] Asignando confiabilidad a oferta %(48)
+\item[CU-14] Asignando confiabilidad a usuario %(40)
+\item[CU-15] Comparando SpamBuster con M\'odulo de ofertas dudosas %(160hs)
+\item[CU-16] Configurando sistema de confianza personal %(136hs)
+\item[CU-17] Mostrando mapa oferta %(104hs)
+\item[CU-18] Analizando web en busca de ofertas %(48hs)
+\item[CU-19] Cargando/Consultando oferta por SMS %(36hs)
+\item[CU-20] Consultando información estadística del sistema %(80 hs)
+\item[CU-21] Configurando sistema de ofertas
+\end{description}
+
+\subsection*{Detalle de los Casos de Uso}
+
+En esta sección incluiremos una lista de los casos de uso identificados para el sistema a implementar durante la primera iteración, con una breve descripción de alto nivel para cada uno. Se trata solamente de interacciones entre el sistema y agentes externos (es decir, el usuario y otros sistemas). Por esta razon, esta clasificación no contiene absolutamente todo el trabajo a realizar.  
+
+En particular, no se describe aquí el trabajo requerido para permitir a nuestro sistema detectar las ofertas posteadas en las diversas redes soportadas. 
 
 \textbf{CU-01: Autenticándose al sistema} Un usuario con una cuenta de usuario válida podrá utilizarla para autenticarse con el sistema. Está cuenta podrá ser una cuenta OpenId, de alguno de los sistemas externos soportados o de usuario interno para tareas de configuración y administración
 
