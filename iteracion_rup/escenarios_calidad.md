@@ -73,12 +73,19 @@ Escenarios de calidad
 
 3.    Integrabilidad / extensibilidad
 
-	  **Fuente:**   
-      **Estímulo:**  
-      **Artefacto:**    
-      **Ambiente:**   
-      **Respuesta:**   
-      **Medición de la respuesta:**  
+	  **Fuente:** Desarrollador  
+      **Estímulo:** Adaptar interfaz web a un tipo de dispositivo nuevo   
+      **Artefacto:** Interfaz de usuario web      
+      **Ambiente:** Desarrollo  
+      **Respuesta:** Adapta exitosamente la interfaz  
+      **Medición de la respuesta:** El esfuerzo de es menor a 40 horas  
+
+	  **Fuente:** Administrador del sistema  
+      **Estímulo:** Agregar un nodo al cluster     
+      **Artefacto:** Sistema       
+      **Ambiente:** En ejecución  
+      **Respuesta:** El nodo se agrega y comienza a procesar exitosamente   
+      **Medición de la respuesta:** El nodo está operativo en menos 2 horas  
 
 4.    Disponibilidad
 	  
