@@ -44,10 +44,65 @@ Escenarios de calidad
 2.    Rendimiento
 
 	  **Fuente:** Usuario  
-      **Estímulo:**   
+      **Estímulo:** Realiza consulta sobre ofertas de un producto
       **Artefacto:** Sistema   
-      **Ambiente:** En ejecución  
-      **Respuesta:**   
-      **Medición de la respuesta:**   
+      **Ambiente:** Modo normal  
+      **Respuesta:** El sistema procesa la consulta y obtiene el listado de ofertas acuerdo a la confianza personal del usuario
+      **Medición de la respuesta:** El pedido es procesado en promedio en menos de 2 segundos
       
+	  **Fuente:** Usuario  
+      **Estímulo:** Solicita visualizar el resultado de una consulta en un mapa 
+      **Artefacto:** Sistema   
+      **Ambiente:** Modo normal  
+      **Respuesta:** El sistema ingresa las ofertas en el mapa y envía el mapa al usuario
+      **Medición de la respuesta:** El pedido es procesado en promedio en menos de 10 segundos
 
+	  **Fuente:** Usuario  
+      **Estímulo:** Envía información de una oferta a través de la página Web de TPA
+      **Artefacto:** Sistema   
+      **Ambiente:** Modo normal  
+      **Respuesta:** El sistema ingresa la oferta al repositorio de ofertas  
+      **Medición de la respuesta:** La oferta es tenida en cuenta en promedio 5 segundos después de envíada la información al sistema
+
+	  **Fuente:** Administrador de configuración  
+      **Estímulo:** Anula una oferta 
+      **Artefacto:** Sistema   
+      **Ambiente:** Modo normal  
+      **Respuesta:** El sistema no tiene en cuenta la oferta para los resultados de consultas  
+      **Medición de la respuesta:** La oferta no es tenida en cuenta en promedio 5 segundos después de ser anulada
+
+3.    Integrabilidad / extensibilidad
+
+	  **Fuente:**   
+      **Estímulo:**  
+      **Artefacto:**    
+      **Ambiente:**   
+      **Respuesta:**   
+      **Medición de la respuesta:**  
+
+4.    Disponibilidad
+	  
+	  **Fuente:**   
+      **Estímulo:**  
+      **Artefacto:**    
+      **Ambiente:**   
+      **Respuesta:**   
+      **Medición de la respuesta:**  
+      
+5.    Auditabilidad
+	  
+	  **Fuente:**   
+      **Estímulo:**  
+      **Artefacto:**    
+      **Ambiente:**   
+      **Respuesta:**   
+      **Medición de la respuesta:**  
+      
+6.    Seguridad
+
+	  **Fuente:**   
+      **Estímulo:**  
+      **Artefacto:**    
+      **Ambiente:**    
+      **Respuesta:**    
+      **Medición de la respuesta:**  
