@@ -80,6 +80,13 @@ Escenarios de calidad
       **Respuesta:** Adapta exitosamente la interfaz  
       **Medición de la respuesta:** El esfuerzo de es menor a 40 horas  
 
+	  **Fuente:** Administrador de configuración
+      **Estímulo:** Modifica realición entre productos    
+      **Artefacto:** Módulo de sugerencias (?)       
+      **Ambiente:** En ejecución  
+      **Respuesta:** El sistema utiliza la nueva configuración para relacionar productos a sugerir    
+      **Medición de la respuesta:** La modificación demora menos de 2 minutos
+
 	  **Fuente:** Administrador del sistema  
       **Estímulo:** Agregar un nodo al cluster     
       **Artefacto:** Sistema       
@@ -89,27 +96,35 @@ Escenarios de calidad
 
 4.    Disponibilidad
 	  
-	  **Fuente:**   
-      **Estímulo:**  
-      **Artefacto:**    
-      **Ambiente:**   
-      **Respuesta:**   
-      **Medición de la respuesta:**  
+	  **Fuente:** Usuario  
+      **Estímulo:** Realiza una consulta de ofertas  
+      **Artefacto:** Sistema    
+      **Ambiente:** Normal   
+      **Respuesta:** El sistema responde a la consulta   
+      **Medición de la respuesta:** El sistema devuelva la información el 99,9% de las veces  
       
 5.    Auditabilidad
 	  
-	  **Fuente:**   
-      **Estímulo:**  
-      **Artefacto:**    
-      **Ambiente:**   
-      **Respuesta:**   
-      **Medición de la respuesta:**  
+	  **Fuente:** Administrador de configuración    
+      **Estímulo:** Anular oferta  
+      **Artefacto:** Sistema    
+      **Ambiente:** En ejecución   
+      **Respuesta:** El sistema audita la anulación   
+      **Medición de la respuesta:** (?) 
       
 6.    Seguridad
 
-	  **Fuente:**   
+	  **Fuente:** Atacante   
+      **Estímulo:** Denegación de servicio distribuido 
+      **Artefacto:** Sistema    
+      **Ambiente:** En ejecución    
+      **Respuesta:** El sistema informa de sobrecarga en el sistema anómala    
+      **Medición de la respuesta:** El sistema detecta el ataque en menos de 2 minutos (?)  
+
+Plantilla: 
+	  **Fuente:** 
       **Estímulo:**  
       **Artefacto:**    
       **Ambiente:**    
       **Respuesta:**    
-      **Medición de la respuesta:**  
+      **Medición de la respuesta:**
