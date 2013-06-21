@@ -96,7 +96,6 @@ Integrabilidad / extensibilidad
 -------------------------------
 Derivados de los items de QAWs
 * Interactibilidad con redes sociales
-* SpamBust
 * interacción con usuarios de múltiples plataformas
 
 
@@ -144,19 +143,48 @@ Derivados de los items de QAWs
 **Ambiente:** Normal   
 **Respuesta:** El sistema responde a la consulta   
 **Medición de la respuesta:** El sistema devuelva la información el 99,9% de las veces  
+
+**Fuente:** Nodo del cluster
+**Estímulo:** Se invalida, queda inutilizado
+**Artefacto:** Sistema
+**Ambiente:** Normal
+**Respuesta:** El sistema se adapta a los n-1 nodos, si fuera un nodo distinguido reasigna esta responsabilidad en otro nodo que se encuentre online.
+**Medición de la respuesta:** El sistema se adapta en menos de 1 minuto desde la detección de la caida. Se detecta la caída en menos de 30 segundos.
       
 Auditabilidad
 ------------- 
+* SpamBust
 
 **Fuente:** Administrador de configuración 
 **Estímulo:** Anular oferta  
 **Artefacto:** Sistema    
 **Ambiente:** En ejecución   
 **Respuesta:** El sistema audita la anulación   
-**Medición de la respuesta:** (?) 
+**Medición de la respuesta:** La anulación se efectiviza inmeditamente en las búsquedas futuras.
+
+**Fuente:** Usuarios
+**Estímulo:** Envian ofertas spam
+**Artefacto:** Detector de Spam
+**Ambiente:** En ejecución   
+**Respuesta:** El sistema audita las ofertas y marca las ofertas como spam.
+**Medición de la respuesta:** El sistema detecta spam con un 95% de probabilidad.
+
+**Fuente:** Confianza de usuario
+**Estímulo:** Supera el threshold de confianza
+**Artefacto:** Sistema    
+**Ambiente:** En ejecución
+**Respuesta:** El sistema marca al usuario como spammer y lo blacklistea
+**Medición de la respuesta:** Los usuarios sin confianza se detectan con probabilidad del 90%
       
 Seguridad
 ---------
+
+**Fuente:** Usuario
+**Estímulo:** Se autentica
+**Artefacto:** Sistema    
+**Ambiente:** En ejecución    
+**Respuesta:** El sistema valida las credenciales de usuario.
+**Medición de la respuesta:** El sistema resiste ataques de fuerza bruta sobre las credenciales y ataques de MiTM mediante certificados.
 
 **Fuente:** Atacante   
 **Estímulo:** Denegación de servicio distribuido 
@@ -165,25 +193,3 @@ Seguridad
 **Respuesta:** El sistema informa de sobrecarga en el sistema anómala    
 **Medición de la respuesta:** El sistema detecta el ataque en menos de 2 minutos (?)  
 
-
-Escenarios extraidos de QAWs
-============================
-
-Usabilidad
-----------
-#. 
-      **fuente:** 
-      **estímulo:**  
-      **artefacto:**    
-      **ambiente:**    
-      **respuesta:**    
-      **medición de la respuesta:**
-
-
-Plantilla: 
-	  **fuente:** 
-      **estímulo:**  
-      **artefacto:**    
-      **ambiente:**    
-      **respuesta:**    
-      **medición de la respuesta:**
