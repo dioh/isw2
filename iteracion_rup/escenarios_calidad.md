@@ -18,8 +18,9 @@ Extraidos de items QAWs:
 * Que Todos  y Todas lo puedan usar
 
 Dani dice: No confundir escenarios de usabilidad con casos de uso. Me parece que estos como están tienen demasiado ese flavour.
+Modrow: Justifique su afirmación. Sugiero mirar ejemplos.
 
-
+Tipo de escenario: Aprender a usar sistema
 **Fuente:** Usuario  
 **Estímulo:** Desea realizar por primera vez una consulta simple (ofertas de un producto o cercanas a un dirección)  
 **Artefacto:** Sistema  
@@ -27,6 +28,7 @@ Dani dice: No confundir escenarios de usabilidad con casos de uso. Me parece que
 **Respuesta:** Realiza la consulta sin inconvenientes  
 **Medición de la respuesta:** Realiza la consulta en menos de 30 segundos  
 
+Tipo de escenario: Minimizar errores del usuario
 **Fuente:** Usuario  
 **Estímulo:** Desea ingresar bien el producto o dirección  
 **Artefacto:** Sistema  
@@ -34,6 +36,7 @@ Dani dice: No confundir escenarios de usabilidad con casos de uso. Me parece que
 **Respuesta:** Texto predictivo al ingresar un producto o dirección en base a valores aceptados por el sistema   
 **Medición de la respuesta:** La lista de predicciones aparece en menos de 1 s. de ingresar una letra  
 
+Tipo de escenario: Aprender a usar el sistema
 **Fuente:** Usuario  
 **Estímulo:** Desea asignar confiabilidad a un usuario u oferta  
 **Artefacto:** Sistema  
@@ -41,6 +44,7 @@ Dani dice: No confundir escenarios de usabilidad con casos de uso. Me parece que
 **Respuesta:** Se asigna la confiabilidad solicitada por el usuario  
 **Medición de la respuesta:** La asiganción se realiza en menos de 10 segundos  
 
+Tipo de escenario: Aprender a usar sistema/Usar sistema eficientemente
 **Fuente:** Usuario  
 **Estímulo:** Desea agregar un ítem a su listado de confianza personal  
 **Artefacto:** Sistema  
@@ -58,22 +62,23 @@ Rendimiento
 Dani dice: Están mal encarados, la fuente del estímuno en los escenarios de
 performance son o los usuarios en su totalidad o eventos internos. No hay
 escenarios con el sistema en sobrecarga.
+Modrow: No es claro el comentario. La pluralidad se arregla de la fuente se arregla fácil con una 's'. Sos libre de agregar escenarios de sobrecarga.
 
-**Fuente:** Usuario  
+**Fuente:** Usuarios  
 **Estímulo:** Realiza consulta sobre ofertas de un producto
 **Artefacto:** Sistema   
 **Ambiente:** Modo normal  
 **Respuesta:** El sistema procesa la consulta y obtiene el listado de ofertas acuerdo a la confianza personal del usuario
 **Medición de la respuesta:** El pedido es procesado en promedio en menos de 2 segundos
 
-**Fuente:** Usuario  
+**Fuente:** Usuarios  
 **Estímulo:** Solicita visualizar el resultado de una consulta en un mapa 
 **Artefacto:** Sistema   
 **Ambiente:** Modo normal  
 **Respuesta:** El sistema ingresa las ofertas en el mapa y envía el mapa al usuario
 **Medición de la respuesta:** El pedido es procesado en promedio en menos de 10 segundos
 
-**Fuente:** Usuario  
+**Fuente:** Usuarios  
 **Estímulo:** Envía información de una oferta a través de la página Web de TPA
 **Artefacto:** Sistema   
 **Ambiente:** Modo normal  
@@ -116,6 +121,7 @@ Derivados de los items de QAWs
 **Respuesta:** El nodo se agrega y comienza a procesar exitosamente   
 **Medición de la respuesta:** El nodo está operativo en menos 2 horas  
 Dani dice: esta medida es excesiva
+Modrow: Sos libre de cambiarla, puse algo por ponerla.
 
 Disponibilidad
 --------------
