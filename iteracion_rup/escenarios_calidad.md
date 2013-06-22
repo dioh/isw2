@@ -153,6 +153,7 @@ Derivados de los items de QAWs
 * Que nunca se caiga
 * Servicios cloud
 
+Modrow: ¿En que CU se cumpliría con este escenario? No me queda claro. 
 Tipo de escenario: Capacidad de uso offline
 **Fuente:** Usuario
 **Estímulo:** Realiza consulta / envía oferta
