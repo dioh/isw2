@@ -18,13 +18,11 @@ M Content management de siempre (modificabilidad runtime por administrador/comer
 	Proveedores podrán ser marcados y sus productos destacados
 	Se deberá poder desaparecer productos
 	Habrá publicidad
-M Estratégias de confianza por usuarios uploaders por participación (modificabilidad runtime por usuario)
 
 
 D Deberá funcionar incluso si no hay conectividad (contingencia offline)
 D Que nunca se caiga (available time)
-D Servicios cloud
-D Nube accesible? 
+
 
 
 S Datos buenos vs usuarios buenos
@@ -37,10 +35,12 @@ B Habrá publicidad
 B Recolectar es costoso
 B Combatir inflacion
 B Realizaremos colaboraciones económicas con otras entidades
+B Nube accesible? (desde el punto de vista de costo)
 
 ---------------------------------------------------------------
 Ítems que no mueven la aguja a nival atributo calidad
 
+X Servicios cloud
 X Elegante, lindo, 2.0 (¿concern?)
 X Acceso completo (?)
 X Firme
