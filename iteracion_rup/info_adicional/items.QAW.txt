@@ -3,11 +3,9 @@ U Estratégias de confianza por usuarios uploaders por participación (personali
 U por qué se da de baja (feedback usabilidad)
 U Reclamos lento, la herramienta debería resolver un poco esto (feedback usabilidad)
 
-
 P Instantáneo (delay)
 P Que sea rápido (delay)
 P No hay dinero para el servidor, utilizaremos máquinas baratas (verificar éste, capaz pasa por el lado de business y vista de alocación)
-
 
 M Interactibilidad con redes sociales (integrabilidad)
 M SpamBust (intercambio transparente por implementación propia)
@@ -19,11 +17,8 @@ M Content management de siempre (modificabilidad runtime por administrador/comer
 	Se deberá poder desaparecer productos
 	Habrá publicidad
 
-
 D Deberá funcionar incluso si no hay conectividad (contingencia offline)
 D Que nunca se caiga (available time)
-
-
 
 S Datos buenos vs usuarios buenos
 S Banning de usuarios
