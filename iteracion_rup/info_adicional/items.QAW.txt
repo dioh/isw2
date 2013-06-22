@@ -12,7 +12,7 @@ P No hay dinero para el servidor, utilizaremos máquinas baratas (verificar ést
 M Interactibilidad con redes sociales (integrabilidad)
 M SpamBust (intercambio transparente por implementación propia)
 M interacción con usuarios de múltiples plataformas (portabilidad)
-M Que funcione a escala nacional (capacidad)
+M Que funcione a escala nacional (capacidad - aunque podría interpretarse diferente, como algo de business o de disponibilidad)
 M Content management de siempre (modificabilidad runtime por administrador/comercial)
 	Deberá proveer productos destacados
 	Proveedores podrán ser marcados y sus productos destacados
