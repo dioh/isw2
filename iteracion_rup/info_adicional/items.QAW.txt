@@ -1,32 +1,48 @@
-? Banning de usuarios
-? Combatir inflacion
-? Content management de siempre
-? Costo de cada módulo
-? Datos buenos vs usuarios buenos
-? Deberá proveer productos destacados
-? Estratégias de confianza por usuarios uploaders por participación
-? Habrá publicidad
-? Proveedores podrán ser marcados y sus productos destacados
-? Realizaremos colaboraciones económicas con otras entidades
-? Recolectar es costoso
-? Se deberá poder desaparecer productos
-? Se deberá poder informar cuanto ahorró cada usuario
+U Que Todos  y Todas lo puedan usar (aprender a usar el sistema)
+U Estratégias de confianza por usuarios uploaders por participación (personalización: +satisfacción +utilidad)
+U por qué se da de baja (feedback usabilidad)
+U Reclamos lento, la herramienta debería resolver un poco esto (feedback usabilidad)
 
-D Deberá funcionar incluso si no hay conectividad
-D Nube accesible?
-D Que nunca se caiga
+
+P Instantáneo (delay)
+P Que sea rápido (delay)
+P No hay dinero para el servidor, utilizaremos máquinas baratas (verificar éste, capaz pasa por el lado de business y vista de alocación)
+
+
+M Interactibilidad con redes sociales (integrabilidad)
+M SpamBust (intercambio transparente por implementación propia)
+M interacción con usuarios de múltiples plataformas (portabilidad)
+M Que funcione a escala nacional (capacidad)
+M Content management de siempre (modificabilidad runtime por administrador/comercial)
+	Deberá proveer productos destacados
+	Proveedores podrán ser marcados y sus productos destacados
+	Se deberá poder desaparecer productos
+	Habrá publicidad
+M Estratégias de confianza por usuarios uploaders por participación (modificabilidad runtime por usuario)
+
+
+D Deberá funcionar incluso si no hay conectividad (contingencia offline)
+D Que nunca se caiga (available time)
 D Servicios cloud
-M Interactibilidad con redes sociales
-M SpamBust
-M interacción con usuarios de múltiples plataformas
-P Instantáneo
-P No hay dinero para el servidor, utilizaremos máquinas baratas
-P Que sea rápido
-P Reclamos lento, la herramienta debería resolver un poco esto
-U Elegante, lindo, 2.0
-U Que Todos  y Todas lo puedan usar
+D Nube accesible? 
+
+
+S Datos buenos vs usuarios buenos
+S Banning de usuarios
+
+-----------------------------------------------------------------
+Business
+B Costo de cada módulo
+B Habrá publicidad
+B Recolectar es costoso
+B Combatir inflacion
+B Realizaremos colaboraciones económicas con otras entidades
+
+---------------------------------------------------------------
+Ítems que no mueven la aguja a nival atributo calidad
+
+X Elegante, lindo, 2.0 (¿concern?)
 X Acceso completo (?)
 X Firme
 X Nada amarillo
-X Que funcione a escala nacional
-x q se da de baja
+X Se deberá poder informar cuanto ahorró cada usuario
