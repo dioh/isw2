@@ -34,8 +34,8 @@ Tipo de escenario: Minimizar errores del usuario
 **Estímulo:** Desea ingresar bien el producto o dirección  
 **Artefacto:** Sistema  
 **Ambiente:** En ejecución  
-**Respuesta:** Texto predictivo al ingresar un producto o dirección en base a valores aceptados por el sistema   
-**Medición de la respuesta:** La lista de predicciones aparece en menos de 1 s. de ingresar una letra  
+**Respuesta:** Se sugieren valores para el producto o dirección en base a valores aceptados por el sistema   
+**Medición de la respuesta:** Las sugerencias aparecen en menos de 1 s. de ingresar una letra  
 
 Tipo de escenario: Aprender a usar el sistema
 **Fuente:** Usuario  
