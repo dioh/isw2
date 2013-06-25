@@ -48,7 +48,22 @@ El servicio de SpamBust es utilizado por los componentes de Crawling para filtra
 Por \'ultimo, el repositorio es utilizado para consultar configuraci\'on de proveedores, usuarios, y redes sociales, y tambi\'en para persistir todos los datos de ofertas obtenidos en el proceso de crawling.
 
 
+\subsubsection*{Administraci\'on}
+
+\includegraphics[scale=0.5]{ISW2_cNc_Administracion}
+
+En el diagrama se identifican los componentes servidor y cliente de Administraci\'on. Adem\'as, el diagrama nos muestra el repositorio de datos de configuraci\'on.
+
+El componente servidor de Administraci\'on provee tanto la UI como el contenido din\'amico de la aplicaci\'on de adminsitraci\'on, que se utiliza para el ABM de proveedores, publicidad, y otras variables que puedan afectar el comportamiento de la aplicaci\'on. Adem\'as, maneja un esquema de autenticaci\'on y autorizaci\'on propio, independiente de la aplicaci\'on principal, ya que la administraci\'on es realizada por usuarios internos. El acceso del componente cliente a la aplicaci\'on de adminitraci\'on se representa mediante un conector de tipo cliente/servidor.
+
+Por \'ultimo, el repositorio es utilizado para persistir toda la informaci\'on de configuraci\'on, para ser utilizada por el resto de los sistemas.
+
+
+
+
 \subsection*{Diagrama de Alocaci\'on}
+
+
 
 
 \subsection*{Arquitectura y Calidad}
