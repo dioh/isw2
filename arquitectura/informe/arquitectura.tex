@@ -1,9 +1,8 @@
 \section*{Explicaci\'on de la Arquitectura}
 
-
 \subsection*{Diagrama de Componentes y Conectores}
 
-\subsubsection*{Visi\'on global de la arquitectura}
+\subsubsection*{Arquitectura Global}
 
 \includegraphics[scale=0.5]{ISW2_cNc_Global}
 
@@ -34,6 +33,19 @@ La interacci\'on con el proveedor de mapas asumimos que se puede resolver direct
 El acceso al repositorio de datos y configuraci\'on lo hace \'unicamente el componente servidor API, para poder satisfacer los distintos requests, que agrupar\'ian todo el contenido din\'amico de la aplicaci\'on.
 
 Por \'ultimo vale destacar que la cardinalidad del componente servidor API puede ser distinta a la del componente servidor Web, y dado que el primero atiende a consultas din\'amicas, con workflows m\'as complejos (como el de autenticaci\'on), y con mayor utilizaci\'on de recursos, podr\'ia ser necesario escalarlo en mayor medida que al segundo, que s\'olo responde a requests de contenido est\'atico. Adem\'as s\'olo es necesario implementar el proceso de autenticaci\'on en el componente servidor API, sustentado por el hecho de que s\'olo \'este tiene acceso al repositorio, simplificando la arquitectura.
+
+
+\subsubsection*{Crawling de Redes Sociales y Sitios Web}
+
+\includegraphics[scale=0.5]{ISW2_cNc_Crawling}
+
+En el diagrama de crawling se identifica el componente de Crawling, el servicio de SpamBust, y el proveedor de red social (o sitio web de proveedor). Nuevamente, el diagrama nos muestra el repositorio de datos de configuraci\'on y consulta.
+
+Los componentes de Crawling utilizan las distintas APIs provistas por las redes sociales para hacer las b\'usquedas de productos y ofertas; representamos esta interacci\'on mediante un conector de tipo cliente/servidor, para generalizar el comportamiento de las distintas APIs. Podemos tener distintos componentes de Crawling, trabajando de manera independiente, cada uno realizando b\'usquedas distintas sobre la misma red social, o a distintas redes sociales.
+
+El servicio de SpamBust es utilizado por los componentes de Crawling para filtrar ofertas de dudosa integridad, o que provienen de usuarios con baja reputaci\'on. Esta interacci\'on tambi\'en es representada mediante un conector tipo cliente/servidor, para generalizar las posibles implementaciones.
+
+Por \'ultimo, el repositorio es utilizado para consultar configuraci\'on de proveedores, usuarios, y redes sociales, y tambi\'en para persistir todos los datos de ofertas obtenidos en el proceso de crawling.
 
 
 \subsection*{Diagrama de Alocaci\'on}
