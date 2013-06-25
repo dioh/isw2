@@ -68,3 +68,39 @@ Por \'ultimo, el repositorio es utilizado para persistir toda la informaci\'on d
 
 \subsection*{Arquitectura y Calidad}
 
+La arquitectura descripta en las secciones anteriores fue definida para cubrir los distintos escenarios detallados al comienzo del informe, y as\'i cumplir con los atributos de calidad identificados.
+
+Desde el punto de vista de usabilidad, el mayor aporte de la arquitectura es la separaci\'on total de la interfaz de usuario. Esto permite, en gran medida, independizar caracter\'isticas de la UI que inciden directamente en la experiencia de usuario, como puede ser el maquetado.
+
+Esta mayor independencia en el desarrollo de la UI nos ofrece varias ventajas:
+
+\begin{itemize}
+\item proveer distintas vistas que se adapten mejor a las preferencias del usuario, atacando temas como el uso eficiente, la personalizaci\'on, y la sensaci\'on de confort
+\item ofrecer contenido est\'atico de ayuda para toda la UI, accesible r\'apidamente y cacheable, cubriendo necesidades como el aprendizaje del sistema
+\item incluir validaciones simples y complejas del lado de cliente, minimizando la posibilidad de errores
+\end{itemize}
+
+Otro aspecto que aporta a la adaptabilidad y personalizaci\'on, es el soporte de la arquitectura para identificar usuarios y permitirles persistir configuraci\'on propia.
+
+El siguiente atributo de calidad m\'as relevante, es el de rendimiento; en este caso la arquitectura lo ataca desde varios puntos. La arquitectura presenta varios componentes con responsabilidades diversas, y con bajo acoplamiento entre s\'i, facilitando partir las estrategias de performance entre todos estos componentes.
+
+Desde el punto de vista de la experiencia de usuario, la arquitectura separa todos los request de contenido est\'atico, de los requests de contenido din\'amico, permitiendo paralelizar con distinta cardinalidad cada uno de esto puntos, destinando mayor cantidad de recursos a los componentes que m\'as lo requieren. 
+
+En el caso de los componentes servidor API, se impulsa un aplicaci\'on stateless, en donde cada request tiene toda la informaci\'on necesaria para ser atendido (header de autenticaci\'on y par\'ametros), lo que permite repartirlos de acuerdo a una estrategia de cola predefinida (round robin, recursos disponibles, etc.), aumentando el throughput (y disminuyendo el delay al no saturar recursos). Al alocar componentes relacionados en el mismo recurso f\'isico, como una partici\'on del repositorio y un componente servidor API, se minimiza el tr\'afico de red para requests que se puedan responder con esa partici\'on, y as\'i tambi\'en el delay.
+
+Desde el punto de vista de los componentes de crawling, se paraleliza el trabajo en distintos recursos f\'isicos, aumentando el throughput.
+
+El atributo de integrabilidad/extensibilidad se cubre desde varios puntos:
+
+\begin{itemize}
+\item el bajo acoplamiento entre componentes, permite su f\'acil modificaci\'on, en particular si el cambio no requiere cambiar la interfaz, y a\'un en estos casos se puede recurrir al uso de patrones conocido como el de adapter, bridge, etc
+\item la separaci\'on de la UI, da mayor flexibilidad a la hora de soportar nuevos dispositivos y plataformas
+\item los componentes de Administraci\'on dan soporte a la capacidad del sistema de modificarse en tiempo de ejecuci\'on.
+\item el acceso al servicio de SpamBust como un componente separado facilita el reemplazo de \'este por una implementaci\'on propia, mientras que se respete la interfaz
+\item el escalamiento horizontal de recursos cr\'iticos, como el repositorio, permite adaptar su capacidad en tiempo de ejecuci\'on
+\item el acceso a las redes sociales de manera agn\'ostica de la API (utilizando patrones como Adapter, etc), agiliza la incorporaci\'on de nuevas redes sociales y sus APIs
+\end{itemize}
+  
+
+
+ 
