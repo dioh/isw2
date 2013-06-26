@@ -1,0 +1,63 @@
+%~ \begin{escenario}{atributo}{comentario}
+%~ \fuente{usuario}
+%~ \estimulo{usuario}
+%~ \entorno{usuario}
+%~ \artefacto{usuario}
+%~ \respuesta{usuario}
+%~ \medida{usuario}
+%~ \end{escenario}
+
+\newenvironment{escenario}[2]
+{
+    %~ \def\stpoints{#2}%
+    %~ \def\busval{#3}%
+	\noindent
+	\\
+	%~ \uppercase{#1}
+    \begin{minipage}{\textwidth} 
+	\textsc{Atributo}: \textbf{#1}\\
+	\textsc{Comentario}: #2 
+    
+    \vspace*{5pt}\hspace*{30pt}\begin{minipage}[r]{0.8\textwidth} 
+    \begin{framed}
+    \begin{itemize}
+        \small
+        \setlength{\itemsep}{-0.8pt}% vertical
+        \setlength{\itemindent}{30pt}
+        \setlength{\parindent}{30pt}
+        %~ \setlength{\parskip}{0pt}
+}{
+	\end{itemize} %\\
+    \end{framed}
+    \end{minipage}
+    %~ \textbf{Story Points: \stpoints\ - Bussines Value: \busval}
+    \end{minipage}
+	%~ \\
+}
+
+\newcommand\escenarioline[2]{
+\item[\textsc{#1}:]  #2
+}
+
+\newcommand\fuente[1]{%
+\escenarioline{Fuente}{#1}
+}
+
+\newcommand\estimulo[1]{%
+\escenarioline{Estímulo}{#1}
+}
+\newcommand\entorno[1]{%
+\escenarioline{Entorno}{#1}
+}
+
+\newcommand\artefacto[1]{%
+\escenarioline{Artefacto}{#1}
+}
+\newcommand\respuesta[1]{%
+\escenarioline{Respuesta}{#1}
+}
+
+\newcommand\medida[1]{%
+\escenarioline{Medida}{#1}
+}
+

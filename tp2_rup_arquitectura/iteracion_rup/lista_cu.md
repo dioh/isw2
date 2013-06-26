@@ -62,9 +62,9 @@ Lista casos de Uso
 * Registrar informacion de uso del sistema
 	+ Modrow: Idem anterior
 * Configurando sistema de confianza personal
-	* Agregando contactos [Red Social] a confianza personal
+	* Agregando contactos [Nombre Red Social] a confianza personal
 	* Agregando usuario TPA a confianza personal
-	* Agregando [Web] a confianza personal (? Tal vez sea mejor asignar usuarios a las Webs?)
+	* Agregando [Nombre Web] a confianza personal (? Tal vez sea mejor asignar usuarios a las Webs?)
 	
 Conflictivas
 =============

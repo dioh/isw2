@@ -1,0 +1,164 @@
+\section*{Atributos de Calidad y Escenarios}
+
+\begin{escenario}{Performance}{Se quiere que los juegos se carguen rápido}
+	\fuente{Jugadores}
+	\estimulo{Pedidos de juegos (alrededor de 1000 pedidos por minuto)}
+	\entorno{Funcionamiento normal}
+	\artefacto{Generador de juegos}
+	\respuesta{Se env'ia un juego cargado de una base de datos o generado \emph{ad hoc}}
+	\medida{El juego se env'ia en a lo sumo un segundo}
+\end{escenario}
+
+\begin{escenario}{Usabilidad}{Aprender a usar sistema}
+\fuente{Usuario}
+\estimulo{Desea realizar por primera vez una consulta simple (ofertas de un producto o cercanas a un direccion)}\artefacto{Sistema}
+\entorno{En ejecucion}
+\respuesta{Realiza la consulta sin inconvenientes }
+\medida{Realiza la consulta en menos de 30 segundos}
+\end{escenario}
+
+\begin{escenario}{Usabilidad}{Usar sistema eficientemente} 
+\fuente{Usuario}
+\estimulo{Desea agregar un item a su listado de confianza personal}
+\artefacto{Sistema}
+\entorno{En ejecucion}
+\respuesta{El item es configurado exitosamente en la posicion indicada de la lista}
+\medida{El item se agrega en menos de 2 minutos}
+\end{escenario}
+
+\begin{escenario}{Usabilidad}{Minimizar errores del usuario} 
+\fuente{Usuario}
+\estimulo{Desea ingresar bien el producto o direccion}
+\artefacto{Sistema}
+\entorno{En ejecucion}
+\respuesta{Se sugieren valores para el producto o direccion en base a valores aceptados por el sistema}
+\medida{Las sugerencias aparecen en menos de 1 s. de ingresar una letra}
+\end{escenario}
+
+\begin{escenario}{Usabilidad}{Personalizar sistema} 
+\fuente{Usuario}
+\estimulo{Desea asignar confiabilidad a un usuario u oferta}
+\artefacto{Sistema}
+\entorno{En ejecucion} 
+\respuesta{Se asigna la confiabilidad solicitada por el usuario }
+\medida{El usuario encuentra satisfactorio poder personalizar la configuracion de confianza}
+\end{escenario}
+
+%\begin{escenario}{}{Feedback}\fuente{Usuario}\estimulo{Desea dar feedback sobre la funcionalidad de búsqueda, y la ayuda provista para esta por el sistema}\artefacto{Sistema}\entorno{En ejecucion}\respuesta{Se registra el feedback del usuario }\medida{Tiempo entre la publicacion de la funcionalidad/mejora y el feedback de usuario.\end{escenario}
+
+\begin{escenario}{Modificabilidad}{Interoperabilidad}
+\fuente{Desarrollador}
+\estimulo{Integrar el sistema con una nueva red social}
+\artefacto{Sistema}
+\entorno{Desarrollo}
+\respuesta{Interfaz modificada o nueva interfaz para integrar con red social }
+\medida{El esfuerzo de desarrollo es menor a 40 horas}
+\end{escenario}
+
+\begin{escenario}{Modificabilidad}{Modularidad} 
+\fuente{Desarrollador} 
+\estimulo{Intercambiar Spambust por implementacion propia} 
+\artefacto{Sistema} 
+\entorno{Desarrollo} 
+\respuesta{Intercambio de implementacion de interfaz (inyeccion de nueva dependencia)} 
+\medida{El esfuerzo de desarrollo es menor a 8 horas}
+\end{escenario}
+
+\begin{escenario}{Modificabilidad}{Portabilidad}
+\fuente{Desarrollador}
+\estimulo{Adaptar interfaz web a un tipo de dispositivo nuevo }
+\artefacto{Interfaz de usuario web }
+\entorno{Desarrollo}
+\respuesta{Adapta exitosamente la interfaz }
+\medida{El esfuerzo de es menor a 40 horas}
+\end{escenario}
+
+\begin{escenario}{Disponibilidad}{Es posible utilizar el sistema sin conexión}
+	\fuente{Usuario} 
+	\estimulo{Realiza consulta / envia oferta }
+	\artefacto{Aplicacion cliente}
+	\entorno{Sin conectividad}
+	\respuesta{El sistema guarda la operacion para sincronizar cuando vuelva la conectividad. }\medida{Disponibilidad offline}
+\end{escenario}
+
+\begin{escenario}{Disponibilidad}{Tiempo de disponibilidad} 
+	\fuente{ Usuario} 
+	\estimulo{Realiza una consulta de ofertas}
+	\artefacto{Sistema}
+	\entorno{Normal}
+	\respuesta{El sistema responde a la consulta}
+	\medida{El sistema devuelva la informacion el 99,9\% de las veces}
+\end{escenario}
+
+\begin{escenario}{Disponibilidad}{Tiempo de Reparacion} 
+	\fuente{Nodo del cluster}
+	\estimulo{Se invalida, queda inutilizado}
+	\artefacto{Sistema}
+	\entorno{Normal}
+	\respuesta{El sistema se adapta a los n-1 nodos, si fuera un nodo distinguido reasigna esta responsabilidad en otro nodo que se encuentre online. }
+	\medida{El sistema se adapta en menos de 1 minuto desde la deteccion de la caida. Se detecta la caida en menos de 30 segundos.}
+\end{escenario}
+
+
+\begin{escenario}{Modificabilidad}{Capacidad}
+\fuente{Administrador del sistema}
+\estimulo{Agregar un nodo al cluster }
+\artefacto{Sistema }
+\entorno{En ejecucion}
+\respuesta{El nodo se agrega y comienza a procesar exitosamente}
+\medida{El nodo esta operativo en menos 2 horas}
+\end{escenario}
+
+\begin{escenario}{Modificabilidad}{Content Management} 
+\fuente{Administrador de configuracion}
+\estimulo{Modifica realicion entre productos}
+\artefacto{Modulo de sugerencias (?)}
+\entorno{En ejecucion}
+\respuesta{El sistema utiliza la nueva configuracion para relacionar productos a sugerir} 
+\medida{La modificacion demora menos de 2 minutos}
+\end{escenario}
+
+\begin{escenario}{Seguridad}{Auditoria} 
+\fuente{Administrador de configuracion}
+\estimulo{Anular oferta} 
+\artefacto{Sistema} 
+\entorno{En ejecucion} 
+\respuesta{El sistema audita la anulacion} 
+\medida{Se identifica con una probabilidad mayor al 99\% al responsable de la modificacion.}
+\end{escenario}
+
+\begin{escenario}{Calidad de datos}{Deteccion de Spam} 
+\fuente{Usuarios}
+\estimulo{Envian ofertas spam}
+\artefacto{Detector de Spam}
+\entorno{En ejecucion }
+\respuesta{El sistema marca las ofertas como spam. }
+\medida{El sistema detecta spam con un 95\% de probabilidad.}
+\end{escenario}
+
+\begin{escenario}{Calidad de datos}{Deteccion de Spammers} 
+\fuente{Confianza de usuario}
+\estimulo{Supera el threshold de confianza}
+\artefacto{ Sistema }
+\entorno{En ejecucion }
+\respuesta{El sistema marca al usuario como spammer y lo blacklistea } 
+\medida{Los usuarios sin confianza se detectan con probabilidad del 90\%}
+\end{escenario}
+
+\begin{escenario}{Seguridad}{Autenticacion (Assurance)}
+\fuente{Usuario}
+\estimulo{Se autentica}
+\artefacto{Sistema}
+\entorno{En ejecucion}
+\respuesta{El sistema valida las credenciales de usuario.}
+\medida{El sistema resiste ataques de fuerza bruta sobre las credenciales y ataques de MiTM mediante certificados.}
+\end{escenario}
+
+\begin{escenario}{Seguridad}{Ataques/Disponibilidad}
+\fuente{Atacante}
+\estimulo{Denegacion de servicio distribuido}
+\artefacto{ Sistema }
+\entorno{En ejecucion }
+\respuesta{El sistema informa de sobrecarga en el sistema anomala}
+\medida{El sistema detecta el ataque en menos de 2 minutos (?)}
+\end{escenario}
