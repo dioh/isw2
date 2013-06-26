@@ -109,4 +109,8 @@ En cuanto al repositorio, adem\'as de escalar horizontalmente mediante nuevas pa
 
 Por \'ultimo, tanto el sistema de Crawling como los componentes de Administraci\'on ofrecen un esquema de alta disponibilidad, replic\'andose cada uno en varios recursos.
 
+Respecto a los aspectos de seguridad y auditor\'ia, todo el acceso a contenido din\'amico se hace desde componentes que implementan un esquema estricto de autenticaci\'on, y en el caso de administraci\'on implementan tambi\'en un esquema de autorizaci\'on. Esto \'ultimo permite que todo acceso al repositorio est\'e acompa\~nado de credenciales que identifican al usuario responsable por el acceso, y as\'i poder auditar la interacci\'on.
 
+Al separar la API de acceso p\'ublico de los componentes de Administraci\'on, podemos llevar la mayor parte de las operaciones de modificaci\'on de la aplicaci\'on a un ambiente privado y controlado, dejando en la API p\'ublica \'unicamente operaciones de consulta y de configuraci\'on personal del usuario.
+
+Para finalizar, respecto a la calidad e integridad de datos, la arquitectura presenta un esquema modular para el intercambio del componente Spambust, de acuerdo a la evaluaci\'on de resultados; adem\'as \'este se encuentra conectado de una manera que lo acerca lo m\'as posible al origen de los datos, que es al momento de recolecci\'on.
