@@ -101,6 +101,12 @@ El atributo de integrabilidad/extensibilidad se cubre desde varios puntos:
 \item el acceso a las redes sociales de manera agn\'ostica de la API (utilizando patrones como Adapter, etc), agiliza la incorporaci\'on de nuevas redes sociales y sus APIs
 \end{itemize}
   
+La arquitectura cubre los aspectos de disponibilidad ofreciendo redundancia en cada uno de los subsistemas.
+
+En el caso de los componentes servidor Web y API, se ofrece alta disponibilidad paralelizando los requests entre varias instancias de \'estos, controlando activamente el estado de cada uno para detectar ca\'idas y redireccionar cuando sea necesario.
+
+En cuanto al repositorio, adem\'as de escalar horizontalmente mediante nuevas particiones, ofrece redundancia activa para cada una de \'estas; desde el punto de vista de la alocaci\'on, esta redundancia va de la mano con la replicaci\'on de los otros componentes que conviven en el mismo recurso (como el servidor API).
+
+Por \'ultimo, tanto el sistema de Crawling como los componentes de Administraci\'on ofrecen un esquema de alta disponibilidad, replic\'andose cada uno en varios recursos.
 
 
- 
