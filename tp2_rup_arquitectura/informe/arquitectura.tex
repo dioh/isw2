@@ -4,6 +4,8 @@
 
 \subsubsection*{Arquitectura Global}
 
+En el siguiente diagrama, mostramos la arquitectura completa. Sin entrar en los detalles de los componentes principales que se detallan en las subsiguientes secciones.
+
 \includegraphics[scale=0.5]{ISW2_cNc_Global}
 
 
@@ -34,6 +36,8 @@ El acceso al repositorio de datos y configuraci\'on lo hace \'unicamente el comp
 
 Por \'ultimo vale destacar que la cardinalidad del componente servidor API puede ser distinta a la del componente servidor Web, y dado que el primero atiende a consultas din\'amicas, con workflows m\'as complejos (como el de autenticaci\'on), y con mayor utilizaci\'on de recursos, podr\'ia ser necesario escalarlo en mayor medida que al segundo, que s\'olo responde a requests de contenido est\'atico. Adem\'as s\'olo es necesario implementar el proceso de autenticaci\'on en el componente servidor API, sustentado por el hecho de que s\'olo \'este tiene acceso al repositorio, simplificando la arquitectura.
 
+A la hora de resolver las b\'usquedas, la interacci\'on con el componente Proveedor de datos es atendida por la cach\'e de b\'usquedas. Esta se encuentra precargada con b\'usquedas frecuentes y se encarga de negociar los look-ups con el Administrador (m\'as detalle en secci\'on Proveedor de datos).
+
 
 \subsubsection*{Crawling de Redes Sociales y Sitios Web}
 
@@ -43,9 +47,9 @@ En el diagrama de crawling se identifica el componente de Crawling, el servicio 
 
 Los componentes de Crawling utilizan las distintas APIs provistas por las redes sociales para hacer las b\'usquedas de productos y ofertas; representamos esta interacci\'on mediante un conector de tipo cliente/servidor, para generalizar el comportamiento de las distintas APIs. Podemos tener distintos componentes de Crawling, trabajando de manera independiente, cada uno realizando b\'usquedas distintas sobre la misma red social, o a distintas redes sociales.
 
-El servicio de SpamBust es utilizado por los componentes de Crawling para filtrar ofertas de dudosa integridad, o que provienen de usuarios con baja reputaci\'on. Esta interacci\'on tambi\'en es representada mediante un conector tipo cliente/servidor, para generalizar las posibles implementaciones.
+El servicio de SpamBust se comunica con el Proveedor de datos a trav\'es de un adaptador. Este \'ultimo se encarga de enviar las transformaciones de los datos (para generar los indices de confianza) al Proveedor de Datos. Este nivel de indirecci\'on nos habilita agregar nuevos detectores de spam simplemente hookeandolos a la interfaz de la Cola de Transofrmaciones. Las ofertas detectadas como spam ser\'an almacenadas en nodos del Proveedor de Datos que permitir\'an el posterior an\'alisis de dichas anulaciones.
 
-Por \'ultimo, el repositorio es utilizado para consultar configuraci\'on de proveedores, usuarios, y redes sociales, y tambi\'en para persistir todos los datos de ofertas obtenidos en el proceso de crawling.
+%% Por \'ultimo, el repositorio es utilizado para consultar configuraci\'on de proveedores, usuarios, y redes sociales, y tambi\'en para persistir todos los datos de ofertas obtenidos en el proceso de crawling.
 
 
 \subsubsection*{Administraci\'on}
@@ -56,17 +60,60 @@ En el diagrama se identifican los componentes servidor y cliente de Administraci
 
 El componente servidor de Administraci\'on provee tanto la UI como el contenido din\'amico de la aplicaci\'on de adminsitraci\'on, que se utiliza para el ABM de proveedores, publicidad, y otras variables que puedan afectar el comportamiento de la aplicaci\'on. Adem\'as, maneja un esquema de autenticaci\'on y autorizaci\'on propio, independiente de la aplicaci\'on principal, ya que la administraci\'on es realizada por usuarios internos. El acceso del componente cliente a la aplicaci\'on de adminitraci\'on se representa mediante un conector de tipo cliente/servidor.
 
-Por \'ultimo, el repositorio es utilizado para persistir toda la informaci\'on de configuraci\'on, para ser utilizada por el resto de los sistemas.
+El componente Admin Server se comunica con el Proveedor de Datos a trav\'es de la cola de transformaciones para generar anulaciones de ofertas. Estas ser\'an almacenadas en nodos del Proveedor de Datos que permitir\'an el posterior an\'alisis de dichas anulaciones.
 
 
 \subsubsection*{Proveedor de datos}
 
 \includegraphics[scale=0.5]{backend}
 
+La \textbf{Cache de b\'usquedas} gestiona los pedidos  de b\'usqueda:
 
-\subsection*{Diagrama de Alocaci\'on}
+\begin{itemize}
+    \item Su carga es on-demand, cuando no se encuentra una b\'usqueda se solicita al Administrador. 
+    \item Los resultados de b\'usqueda se retornan inmediatamente en mejor caso, los lookups demoran en funci\'on de la distribuci\'on de carga de los nodos.
+    \item Adem\'as por su comportamiento interno, permitimos escalabilidad dentro del componente.
+\end{itemize}
+
+La \textbf{cola de transformaciones} se encarga de la admisi\'on de los datos y de generar nuevos cortes de la informaci\'on en los nodos. 
+
+\begin{itemize}
+    \item Ingresa nueva informaci\'on al Proveedor de Datos.
+    \item Genera nuevas transformaciones de los datos, al estilo $Map-Reduce$.
+    \item Escala al estar desacoplado del administrador de datos.
+\end{itemize} 
+El componente de transformaci\'on de datos admite generar nuevos cortes de la informaci\'on para poder generar nuevas transformaciones generando nuevos conocimientos en base a los datos obtenidos y generados.
+
+El \textbf{Administrador de Datos} gestiona la informaci\'on con sus dos delegados principales
+\begin{itemize}
+    \item El proveedor de transformaciones para generar la vista nueva de los datos si no existieran 
+    \item El proveedor de nombres para poder solicitar a los Nodos de Datos la informaci\'on requerida. 
+
+\end{itemize}
 
 
+Los Nodos de Datos escalan horizontalmente. Los punteros a los datos se encuentran en el proveedor de nombres que es basicamente una tabla con punteros a los nodos. La t\'actica de  disponibilidad utilizada por los nodos para informar al Administrador es el Heartbeat.
+
+As\'i mismo la informaci\'on que contienen estos es heterogenea, en principio se tiene visibilidad de los siguientes datos que ser\'an almacenados:
+\begin{itemize}
+    \item Ofertas
+    \item B\'usquedas realizadas o por realizarse
+    \item Informaci\'on de auditor\'ia de ofertas y usuarios dudosos
+\end{itemize}
+
+
+El \textbf{Administrador r\'eplica} detecta y suple al Administrador en tanto se detecta una ca\'ida.
+\\
+\\
+
+\textbf{La distribuci\'on f\'isica} de estos componentes, ser\'a de la siguiente manera:
+
+\begin{itemize}
+    \item Cada nodo est\'a distribuido en dos m\'aquinas. Una con el repositorio y otra con la r\'eplica.
+    \item El admnistrador y su r\'eplica se encuentran alojados en distintas m\'aquinas.
+    \item La cache puede estar distribuida en una o varias m\'aquinas dentro de un mismo segmento de red con alta conectividad.
+    \item El rol de administrador y de r\'eplica  puede ser tomado por otras m\'aquinas para poder mantener disponible sus servicios.
+\end{itemize}
 
 
 \subsection*{Arquitectura y Calidad}
