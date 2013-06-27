@@ -1,14 +1,5 @@
 \section*{Atributos de Calidad y Escenarios}
 
-\begin{escenario}{Performance}{Se quiere que los juegos se carguen r\'apido}
-	\fuente{Jugadores}
-	\estimulo{Pedidos de juegos (alrededor de 1000 pedidos por minuto)}
-	\entorno{Funcionamiento normal}
-	\artefacto{Generador de juegos}
-	\respuesta{Se env'ia un juego cargado de una base de datos o generado \emph{ad hoc}}
-	\medida{El juego se env'ia en a lo sumo un segundo}
-\end{escenario}
-
 \begin{escenario}{Usabilidad}{Aprender a usar sistema}
 \fuente{Usuario}
 \estimulo{Desea realizar por primera vez una consulta simple (ofertas de un producto o cercanas a una direcci\'on)}\artefacto{Sistema}
@@ -46,12 +37,31 @@
 
 %\begin{escenario}{}{Feedback}\fuente{Usuario}\estimulo{Desea dar feedback sobre la funcionalidad de b\'usqueda, y la ayuda provista para esta por el sistema}\artefacto{Sistema}\entorno{En ejecucion}\respuesta{Se registra el feedback del usuario }\medida{Tiempo entre la publicacion de la funcionalidad/mejora y el feedback de usuario.\end{escenario}
 
+\begin{escenario}{Rendimiento}{} 
+\fuente{Usuarios}  
+\estimulo{Realiza consulta sobre ofertas de un producto}
+\artefacto{Sistema}   
+\entorno{Modo normal}  
+\respuesta{El sistema procesa la consulta y obtiene el listado de ofertas acuerdo a la confianza personal del usuario}
+\medida{El pedido es procesado en promedio en menos de 2 segundos}
+\end{escenario}
+
+\begin{escenario}{Rendimiento}{}
+\fuente{Usuarios} 
+\estimulo{Solicita visualizar el resultado de una consulta en un mapa} 
+\artefacto{Sistema}   
+\entorno{Sistema sobrecargado}  
+\respuesta{El sistema ingresa las ofertas en el mapa y envía el mapa al usuario}
+\medida{El pedido es procesado en promedio en menos de 10 segundos}
+\end{escenario}
+
+
 \begin{escenario}{Modificabilidad}{Interoperabilidad}
 \fuente{Desarrollador}
 \estimulo{Integrar el sistema con una nueva red social}
 \artefacto{Sistema}
 \entorno{Desarrollo}
-\respuesta{Interfaz modificada o nueva interfaz para integrar con red social }
+\respuesta{Interfaz modificada o nueva interfaz para integrar con red social}
 \medida{El esfuerzo de desarrollo es menor a 40 horas}
 \end{escenario}
 
@@ -112,7 +122,7 @@
 \begin{escenario}{Modificabilidad}{Content Management} 
 \fuente{Administrador de configuraci\'on}
 \estimulo{Modifica relaci\'on entre productos}
-\artefacto{Modulo de sugerencias (?)}
+\artefacto{Modulo de sugerencias}
 \entorno{En ejecuci\'on}
 \respuesta{El sistema utiliza la nueva configuraci\'on para relacionar productos a sugerir} 
 \medida{La modificaci\'on demora menos de 2 minutos}
