@@ -46,6 +46,15 @@
 \medida{El pedido es procesado en promedio en menos de 2 segundos}
 \end{escenario}
 
+\begin{escenario}{Rendimiento}{La actualización de la información debe realizarse al momento de realizarse su publicaciòn} 
+\fuente{Usuarios}  
+\estimulo{Se envía una oferta}
+\artefacto{Sistema}   
+\entorno{Modo normal}  
+\respuesta{El sistema ingresa la oferta al repositorio de ofertas}
+\medida{La oferta es tenida en cuenta en promedio 5 segundos después de envíada la información al sistema}
+\end{escenario}
+
 \begin{escenario}{Rendimiento}{Las ofertas deben poder visualizase en un mapa}
 \fuente{Usuarios} 
 \estimulo{Solicita visualizar el resultado de una consulta en un mapa} 
