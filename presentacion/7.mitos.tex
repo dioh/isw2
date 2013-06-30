@@ -8,6 +8,10 @@
 \usepackage{xspace}
 \usepackage{latexsym}
 
+\setlength{\paperwidth}{4.75in}
+\setlength{\paperheight}{3.4in}
+\setlength{\textwidth}{3.96in}
+\setlength{\textheight}{3.4in}
 %\beamertemplateshadingbackground{green!5}{yellow!10}
 %\beamertemplatetransparentcovereddynamic
 %\setbeamertemplate{blocks}[rounded][shadow=false] 
@@ -18,7 +22,7 @@
 \parskip=1ex
 
 \title{Papers Fundacionales}
-\subtitle{7 Mitos de los Métodos Formales}
+\subtitle{7 Mitos acerca de los M\'etodos Formales}
 \author{Foguelman - Modrow - Tilli}
 \institute{DC - UBA}
 
@@ -33,11 +37,15 @@
 \section{Mitos}
 \begin{frame}{Mito 1: Pueden garantizar que el software es perfecto }
 \begin{itemize}[<+->]
+\item[-] L\'imite en las demostraciones (mundo real vs modelo)
+\item[-] Error en la especificaci\'on
+\item[+] Demostraci\'on de correctitud: propiedades globales, y relaci\'on entre programa y especificaci\'on
+\item[+] Encontrar errores
 \item \textbf{Hecho:} Los m\'etodos formales son muy \'utiles para encontrar errores de manera temprana y pueden eliminar casi completamente algunas clases de errores
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Mito 2: Funcionan probando que los programas son correctos}
+\begin{frame}{Mito 2: Son \'utiles s\'olo para probar correctitud}
 \begin{itemize}[<+->]
 \item \textbf{Hecho:} Trabajan generalmente haciendo que pienses mucho sobre el sistema que pretendes construir
 \end{itemize}
