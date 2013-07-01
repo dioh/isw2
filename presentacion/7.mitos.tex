@@ -39,7 +39,7 @@
 \item especializado en m\'etodos formales
 \item qu\'imico
 \end{itemize}
-\item Trabajaba en proyecto CASE (soporte para SSADM) al momento del art\'iculo
+\item Trabajaba en proyecto CASE (herramienta para SSADM) al momento del art\'iculo
 \end{itemize}
 
 \end{frame}
@@ -47,16 +47,18 @@
 \section{Mitos}
 \begin{frame}{Mito 1: Pueden garantizar que el software es perfecto }
 \begin{itemize}[<+->]
+\item[-] Las demostraciones son falibles 
 \item[-] L\'imite en las demostraciones (mundo real vs modelo)
 \item[-] Error en la especificaci\'on
 \item[+] Demostraci\'on de correctitud: propiedades globales, y relaci\'on entre programa y especificaci\'on
 \item[+] Encontrar errores
 \end{itemize}
-\uncover<5->{\textbf{Hecho:} Los m\'etodos formales son muy \'utiles para encontrar errores de manera temprana y pueden eliminar casi completamente algunas clases de errores}
+\uncover<6->{\textbf{Hecho:} Los m\'etodos formales son muy \'utiles para encontrar errores de manera temprana y pueden eliminar casi completamente algunas clases de errores}
 \end{frame}
 
 \begin{frame}{Mito 2: Son \'utiles s\'olo para probar correctitud}
 \begin{itemize}[<+->]
+\item[+] Ayuda a la clarificaci\'on de requerimientos
 \item[+] Construcci\'on de la especificaci\'on y detecci\'on temprana de errores
 \item[+] Demostraci\'on de propiedades de la especificaci\'on
 \item[+] Implementaci\'on semiautom\'atica e iterativa
@@ -77,27 +79,26 @@
  
 \begin{frame}{Mito 4: Involucran matem\'atica compleja}
 \begin{itemize}[<+->]
-\item[+] Principalmente l\'ogica y teor\'ia de conjuntos
-\item[+] Conocimientos requeridos similares a los de lenguajes de programaci\'on
-\item[+] En general epecificaci\'on m\'as corta que implementaci\'on
 \item[-] Dificultad en modelar el mundo real
-\item[-] Muy abstracto o muy espec\'ifico
+\item[-] Muy abstracto o muy espec\'ifico 
+\item[+] Mayormente sólo se necesita l\'ogica y teor\'ia de conjuntos
+\item[+] En general epecificaci\'on m\'as corta y sencilla que implementaci\'on
 \end{itemize}
 \uncover<6->{\textbf{Hecho:} Se basan en especifaciones matem\'aticas que son m\'as f\'aciles de entender que un programa}
 \end{frame}
  
 \begin{frame}{Mito 5: Incrementan los costos de desarrollo}
 \begin{itemize}[<+->]
+\item[-] D\'ificil de medir avance durante especificaci\'on{}
+\item[-] Las especificaciones nunca son perfectas
 \item[+] Evidencia de mejores medidores de productividad
-\item[-] Administrar proceso de especificaci\'on
-\item[-] Medir avance durante especificaci\'on
 \end{itemize}
 \uncover<4->{\textbf{Hecho:} Pueden decrementar los costos de desarrollo}
 \end{frame}
  
 \begin{frame}{Mito 6: Son incomprensibles para los clientes}
 \begin{itemize}[<+->]
-\item[+] Traducci\'on al lenguaje natural
+\item[+] Inclusi\'on de traducci\'on al lenguaje natural
 \item[+] Demostraci\'on de cumplimiento de funcionalidad
 \item[+] Uso de prototipos, o animar la especificaci\'on
 \end{itemize}
