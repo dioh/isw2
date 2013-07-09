@@ -1,5 +1,5 @@
-\section{Product Increment}
-\subsection{Arquitectura} % (fold)
+\subsection{Product Increment}
+\subsubsection{Arquitectura} % (fold)
 \label{sub:Arquitectura}
 
 Durante el an\'alisis generamos diversas User Stories de investigaci\'on, estas nos permitieron hacer un an\'alisis de la arquitectura antes de comenzar a implementarla.
@@ -7,7 +7,7 @@ Con pruebas de concepto que nos permitieron entender la factibilidad de dicha im
 
 Los resultados de dicho an\'alisis se encuentra al final de esta secci\'on, en los siguientes parrafos haremos un an\'alisis de la tecnolog\'ia elegida.
 
-\subsection{Lenguaje}
+\subsubsection{Lenguaje}
 La decisi\'on de utilizar un lenguaje de tipado din\'amico fue t\'acita, quisimos evitar las restricciones sem\'anticas que nos impone un lenguaje de tipado est\'atico.  
 Tambi\'en buscamos un lenguaje de Objetos Puro, dejando Python afuera de esta decisi\'on.  
 Finalmente optamos por Ruby, din\'amicamente tipado, de objetos puro, con closures.
@@ -20,16 +20,16 @@ No es casualidad que la elecci\'on del lenguaje nos afectara tambi\'en en la ele
     \item Engine de templating para las vistas
 \end{itemize}
 
-\subsection{Servidor SQL}
+\subsubsection{Servidor SQL}
 Utilizamos SQLite 3 por su portabilidad y facilidad de instalaci\'on.
 
-\subsection{Server}
+\subsubsection{Server}
 
 Para brindar los servicios al usuario, utilizamos HTML con una api HTTPRest. Nuestro servidor es Sinatra. De f\'acil utilizaci\'on solo es necesario conectar los servicios HTTP a la capa del controlador. ¿Por qué decimos que es REST? B\'asicamente no depende del estado, es orientado a cliente-servidor y est\'a orientado en capas.
 
 Esto nos permite desacoplar la aplicaci\'on de la interfaz de usuario, en la versi\'on actual entregamos una interfaz modesta en HAML, un lenguaje de templating cuya transormaci\'on a HTML es nativa en Ruby + Sinatra.
 
-\subsection{Modelo}
+\subsubsection{Modelo}
 
 Para el modelo de aplicaci\'on aplicamos una versi\'on reducida de MVC.
 
@@ -37,7 +37,7 @@ Por un lado tenemos el servidor de aplicaci\'on (sinatra como comentabamos en la
 
 Los servicios que actualmente soporta el controlador son los de b\'usqueda.
 
-\subsection{Extensibilidad}
+\subsubsection{Extensibilidad}
 
 Nuestro dise\~no como veremos (y justificaremos) en las siguientes secciones, es extensible en:
 
