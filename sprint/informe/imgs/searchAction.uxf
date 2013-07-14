@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.SequenceDiagram</type>
+    <coordinates>
+      <x>80</x>
+      <y>100</y>
+      <w>870</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>title: Obtención resultados consulta
+_precioJustoController~id1_|_precioJustoService~id2_|_twitterSearchApi~id3_|_searchAction~id4_
+id1-&gt;&gt;id2:id1,id2:search {:prod =&gt; "ajo"}
+id2-&gt;id3:id1,id2,id3:search "#PrecioJusto"
+id3.&gt;id2:id1,id2,id3:^tweets
+id2-&gt;id2:id1,id2:tweets.map {|t| offer_from_tweet.extract(t) }
+id2.&gt;id2:id1,id2:^offers
+id2-&gt;id4:id1,id2,id4:run {:prod=&gt;"ajo"}, offers
+id4.&gt;id2:id1,id2,id4:^search_result
+id2.&gt;id1:id1,id2:^search_result
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>30</x>
+      <y>160</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;</panel_attributes>
+    <additional_attributes>130;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>30</x>
+      <y>370</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;</panel_attributes>
+    <additional_attributes>30;30;140;30</additional_attributes>
+  </element>
+</diagram>
