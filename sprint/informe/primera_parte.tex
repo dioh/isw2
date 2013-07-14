@@ -99,8 +99,6 @@ El siguiente es el listado de tareas que registramos durante el sprint, varias d
 \hline
 \textbf{User Story}&\textbf{Tarea}&\textbf{Descripcion}&\textbf{Tiempo Estimado}&\textbf{Due\~no}\\
 \hline
-US42&TA133&Dise\~no y maquetado&12&Paula V\\
-\hline
 US72	&TA120	&Generar DOO	&8	&Daniel F\\
 \hline
 US72	&TA121	&Generar Diagrama de Clases &8	&Modrow\\
@@ -122,6 +120,8 @@ US75&TA115&Investigación y Prototipado de Autenticación con Twitter&4&Leonardo
 US75	&TA116	&Investigación y Prototipado de Búsqueda en Twitter.	&8	&Leonardo T\\
 \hline
 US75	&TA117	&Modelo de persistencia de la información de un tweet.	&6	&Leonardo T\\
+\hline
+US94&TA133&Dise\~no y maquetado (anteriormete parte de la US42)&12&Paula V\\
 \hline
 US93	&TA72	&Diseñar interfaz de búsqueda para un producto	&2	&Daniel F\\
 \hline
@@ -150,13 +150,12 @@ US115	&TA129	&Reconocer hashtag en un tweet&1	&Leonardo T\\
 US115	&TA130	&Aplicar validaciones y descartar tweet inválido&4	&Modrow\\
 \hline
 \hline
-\end{tabular}
+\end{tabular} \\
 
-
+\emph{NOTA:} La tarea TA133 entendemos debería formar parte de las tareas de la US93, dado que se elimina la US42 por poder adaptarla al esquema de User Story correctamente.
 
 \subsection{Sprint Backlog}
 
-\bigskip
 \begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
 \hline
 \hline
@@ -169,12 +168,46 @@ US93&Como usuario quiero buscar por producto para poder elegir el lugar/precio q
 \multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
 \hline
 \hline
-\multicolumn{4}{|p{13cm}|}{1. El usuario ingresa tomate en el formulario de busqueda.}\\
-\multicolumn{4}{|p{13cm}|}{2. El usuario cliquea en buscar y la busqueda es enviada al sistema.}\\
-\multicolumn{4}{|p{13cm}|}{3. El usuario puede ver los resultados para tomates con información de lugar y precio, tomados de tweets reales}\\
+\multicolumn{4}{|p{13cm}|}{\textbf{Caso 1}}\\
+\multicolumn{4}{|p{13cm}|}{1. El sistema obtiene una oferta de tomate.}\\
+\multicolumn{4}{|p{13cm}|}{2. El usuario ingresa a la web de ``El Precio Justo''.}\\
+\multicolumn{4}{|p{13cm}|}{3. El usuario ingresa tomate en el formulario de busqueda.}\\
+\multicolumn{4}{|p{13cm}|}{4. El usuario cliquea en buscar y la búsqueda es enviada al sistema.}\\
+\multicolumn{4}{|p{13cm}|}{5. El usuario puede ver la oferta obtenida por el sistema en el paso 1.}\\
+\multicolumn{4}{|p{13cm}|}{\textbf{Caso 2}}\\
+\multicolumn{4}{|p{13cm}|}{1. El sistema obtiene una oferta de leche a \$5.}\\
+\multicolumn{4}{|p{13cm}|}{2. El usuario ingresa a la web de ``El Precio Justo''.}\\
+\multicolumn{4}{|p{13cm}|}{3. El usuario ingresa leche y con precio menor a \$6 en el formulario de busqueda.}\\
+\multicolumn{4}{|p{13cm}|}{5. El usuario cliquea en buscar y la búsqueda es enviada al sistema.}\\
+\multicolumn{4}{|p{13cm}|}{6. El usuario puede ver la oferta obtenida por el sistema en el paso 1.}\\
 \hline
 \hline
 \end{tabular}
+
+\bigskip
+\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
+\hline
+\hline
+\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
+\hline
+\hline
+US115&Como product owner quiero que el sistema obtenga inforamción de ofertas de Tweeter para los usuarios puedan buscar dicha información en ``El Precio Justo''.&5&7\\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
+\hline
+\hline
+\multicolumn{4}{|p{13cm}|}{1. Se general el tweet ``Tomate \$6 kilo Libertad 600 $\#$PrecioJusto''.}\\
+\multicolumn{4}{|p{13cm}|}{2. El sistema lee los tweets con $\#$PrecioJusto de Twitter y captura el tweet generado en el paso 1.}\\
+\multicolumn{4}{|p{13cm}|}{3. El sistema extrae ``tomate'' como producto del tweet del paso 1.}\\
+\multicolumn{4}{|p{13cm}|}{4. El sistema extrae ``6'' como precio del tweet del paso 1.}\\
+\multicolumn{4}{|p{13cm}|}{4. El sistema extrae ``kilo'' como unidad del tweet del paso 1.}\\
+\multicolumn{4}{|p{13cm}|}{5. El sistema extrae ``Libertad 600'' como dirección del tweet del paso 1.}\\
+\multicolumn{4}{|p{13cm}|}{6. Genera un oferta con los datos obtenidos de 3,4,5 y 6 para que pueda ser buscada.}\\
+\hline
+\hline
+\end{tabular}
+
 
 \bigskip
 \begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
@@ -234,34 +267,6 @@ US72&Generar los diseños necesarios del sistema&8&2\\
 \hline
 \end{tabular}
 
-\bigskip
-\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
-\hline
-\hline
-\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
-\hline
-\hline
-US115&Como sistema quiero identificar y extraer la información útil en un tweet para poder utilizarla en las búsquedas.&5&7\\
-\hline
-\hline
-\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
-\hline
-\hline
-\multicolumn{4}{|p{13cm}|}{1. El sistema lee un tweet para procesar.}\\
-\multicolumn{4}{|p{13cm}|}{2. El sistema extrae la información del producto.}\\
-\multicolumn{4}{|p{13cm}|}{3. El sistema extrae la información del precio.}\\
-\multicolumn{4}{|p{13cm}|}{4. El sistema extrae la información de la unidad.}\\
-\multicolumn{4}{|p{13cm}|}{5. El sistema extrae la información del lugar.}\\
-\multicolumn{4}{|p{13cm}|}{6. El sistema extrae el hashtag.}\\
-\multicolumn{4}{|p{13cm}|}{7. El sistema descarta tweets con datos faltantes.}\\
-\multicolumn{4}{|p{13cm}|}{8. El sistema descarta tweets con productos no habilitados.}\\
-\multicolumn{4}{|p{13cm}|}{9. El sistema descarta tweets con precios inválidos.}\\
-\multicolumn{4}{|p{13cm}|}{10. El sistema descarta tweets con unidades no soportadas por el producto.}\\
-\multicolumn{4}{|p{13cm}|}{11. El sistema descarta tweets sin el hashtag $\#$PrecioJusto.}\\
-\hline
-\hline
-\end{tabular}
-
 
 \bigskip
 \begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
@@ -283,26 +288,4 @@ US114&Como desarollador quiero generar datos para la demo para tener informació
 \hline
 \end{tabular}
 
-
-\bigskip
-\begin{tabular}{|p{1cm}|p{10cm}|p{1cm}|p{1cm}|}
-\hline
-\hline
-\textbf{ID}&\textbf{Descripción}&\textbf{Est}&\textbf{Value}\\
-\hline
-\hline
-US42&Armar UI para soportar funcionalidades básicas& 5& 4\\
-\hline
-\hline
-\multicolumn{4}{|p{13cm}|}{ \textbf{Criterios de Aceptación}} \\
-\hline
-\hline
-\multicolumn{4}{|p{13cm}|}{1. La interfaz es visualizable en un dispositivo y resolución standard.}\\
-\multicolumn{4}{|p{13cm}|}{2. Se identifica la aplicación y los logos.}\\
-\multicolumn{4}{|p{13cm}|}{3. Tiene diferenciadas las distintas secciones: opciones de búsqueda, resultados.}\\
-\multicolumn{4}{|p{13cm}|}{4. Se integra con las funcionalidades de la aplicación de una manera clara y consistente.}\\
-\multicolumn{4}{|p{13cm}|}{5. Es extensible a nuevas funcionalidades.}\\
-\hline
-\hline
-\end{tabular}
-
+\emph{NOTA:} Se eliminó la US42 por no poder adaptarla al esquema de User Story, la tarea que estaba vínculada se asoció a la US93. Si bien esto no se reflejó en el sprint, entendemos que es como debería haber armado.

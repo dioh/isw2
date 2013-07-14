@@ -2,52 +2,76 @@
 
 \subsubsection{Ciclo de vida de una consulta}
 
-El siguiente diagrama (figura \ref{fig:sequence_sinatra}) muestra la interacción en los distintos componentes de la aplicaciones. Los distintos componentes serán explicados en las sucesivas secciones.
+El siguiente diagrama (figura \ref{fig:sequence_sinatra}) muestra la interacci\'on en los distintos componentes de la aplicaciones.
+
+La primera interacci\'on es el request de la p\'agina principal index.html, que es la interfaz de usuario del prototipo, y contiene los formularios de b\'usqueda. El usuario hace un request tipo GET de la p\'agina, el cual es atendido por el componente Sinatra. Este \'ultimo tiene una ruta registrada que indica que este tipo de request debe ser atendido directamente por el componente HAML (pasand por par\'ametro el nombre del recurso solicitado). El componente HAML reconstruye el contenido html en base al recurso indicado, y lo devuelve a Sinatra para ser enviado al usuario.
+
+La segunda interacci\'on es el request de resultados de b\'usqueda. El usuario hace un request tipo GET del recurso search, pasando los par\'ametros de b\'usqueda, el cual es atendido por el componente Sinatra. Este \'ultimo tiene una ruta registrada que indica que este tipo de request debe ser atendido primero por el componente PrecioJustoController, el cual valida los par\'ametros, crea los filtros (a trav\'es de FiltersFactory), y hace el llamado al componente PrecioJustoService para procesar la b\'usqueda. Una vez resuelta la b\'usqueda, se llama al componente HAML para que construya el html con los resultados, el cual se pasa al componente Sinatra para ser enviado al usuario.
+
+Los componentes de PrecioJustoService y de FiltesFactory ser\'an explicados con mayor profundidad en las sucesivas secciones.
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=0.9\paperwidth]{./imgs/sequence_diagram_sinatra.png}}
+\centerline{\includegraphics[width=0.6\paperwidth]{./imgs/sequence_diagram_sinatra.png}}
 \caption{Diagrama de secuencia de sinatra}
 \label{fig:sequence_sinatra}
 \end{figure}
 
 
 \subsubsection{Factory de servicios}
-Dado que twitter permite dos tipos de obtención de tweets, vía streaming o por búsquedas, es que implementamos dos formas de trabajar con los tweets, pero que desde el lado de clientes de la búqueda de ofertas de El Precio de Justo mantienen la misma interfaz.
+Twitter expone varias APIs para la obtenci\'on de tweets; las dos m\'as relevantes son la API de Streaming y la API de Search. Estas dos APIs tiene comportamientos muy diferentes.
 
-Para esto último decidimos utlizar el patrón de \texttt{abstract factory} con dos
-implementaciones, una online y otra offline. Cada una de estas implementaciones nos permiten crear la clase de servicio apropiada (la clase que encapsula la lógica de la aplicación), los filtros permitidos y la implementación específica de estos.
+\begin{itemize}
+\item Streaming: requiere establecer una conexi\'on persistente HTTP (Chunked Encoding, Streaming), usando autenticaci\'on (OAuth). Devuelve los tweets que contienen los t\'erminos buscados, en tiempo real, o sea que los resultados ya devueltos no vuelven a aparecer. No impone l\'imites a las b\'usquedas y cantidad de conexiones, aunque s\'i tiene pol\'iticas para las reconexiones.
+\item Search: recibe, procesa y responde cada request en su totalidad, finalizando en el request en el momento, sin requerir autenticaci\'on. Tiene un l\'imite para la cantidad de resultados devueltos, y para la antig\"uedad de \'estos; adem\'as impone l\'imites para la cantidad de requests.
+\end{itemize}
 
-Esto puede verse en la figura \ref{fig:class_service_factory}.
+En el caso de la API de Streaming, una posibilidad de uso es mantener una o varias b\'usquedas del maestro de productos y as\'i ir actualizando un repositorio interno/intermedio, el cual es utilizado para responder a las b\'usquedas de los usuarios de la aplicaci\'on.
+
+Para la API de Search, un uso posible es resolver las b\'usquedas de los usuarios de la aplicaci\'on directamente contra \'esta.
+
+En nuestro caso, implementamos ambas formas de trabajar con los tweets, asegur\'andonos que el intercambio de una por otra sea transparente: desde el lado de clientes de la b\'uqueda de ofertas de El Precio de Justo mantienen la misma interfaz.
+
+Para esto \'ultimo decidimos utlizar el patr\'on de \texttt{abstract factory} con dos
+implementaciones, una online (contra Twitter - API Search) y otra offline (contra un repositorio intermedio - API Streaming). Cada una de estas implementaciones nos permiten crear la clase de servicio apropiada (la clase que encapsula la l\'ogica de la aplicaci\'on), los filtros permitidos y la implementaci\'on espec\'ifica de \'estos.
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=0.9\paperwidth]{./imgs/class_diagram_service_factory_v2.png}}
-\caption{Diagrama de clases de creación de servicios}
+\centerline{\includegraphics[width=0.44\paperwidth]{./imgs/class_diagram_service_factory_v2.png}}
+\caption{Diagrama de clases de creaci\'on de servicios}
 \label{fig:class_service_factory} 
 \end{figure}
 
+
+Esto \'ultimo puede verse en la figura \ref{fig:class_service_factory}. La clase abstracta PrecioJustoServiceFactory declara los m\'etodos getService, que devueve el tipo PrecioJustoService, getFiltersFactory, que devuelve el tipo FiltersFactory, y getFilterKeys, que devuelve el tipo FilterKeys. A su vez tenemos ambas familias de clases concretas, Online y Offline, que implementan los tipos definidos  previamente.
+
+Los tipos de FilterKeys y FiltersFactory (y Filters), son utilizados por la clase de PrecioJustoController para traducir los filtros recibidos en los requests de usuario a filtros que sabe utilizar la implementaci\'on de PrecioJustoService (este tema se ver\'a en mayor detalle en el pr\'oximo punto).
+
+Las clases de PrecioJustoOnlineService y PrecioJustoOfflineService implementan el tipo PrecioJustoService, y encapsulan la l\'ogica para resolver las b\'usquedas (accediendo directamente a Twitter en el primer caso, y accediendo a un repositorio interno en el segundo).
+
+
+
 \subsubsection{Filtros}
 
-Dado que el filtrado de los tweets de las ofertas búscadas se realizan de distinta manera, los filtros si bien deberán proveer las misma funcionalidad son implementativamente distintos.
+Dado que el filtrado de los tweets de las ofertas b\'uscadas se realizan de distinta manera, los filtros si bien deber\'an proveer las misma funcionalidad son implementativamente distintos.
 
-En un caso filtrarán las ofertas que se vayan obtienendo de twitter en vivo y en el otro caso se realizará un búsqueda sobre el motor de base de datos.
+En un caso filtrar\'an las ofertas que se vayan obtienendo de twitter en vivo y en el otro caso se realizar\'a un b\'usqueda sobre el motor de base de datos.
 
-Los filtros modelados son por porducto, precio y ubicación, si bien es posible extenderlos.
+Los filtros modelados son por porducto, precio y ubicaci\'on, si bien es posible extenderlos.
 
 Esto puede verse en el diagrama de la figura \ref{fig:class_filter_factory}. 
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=\textwidth]{./imgs/class_diagram_filters_factory.png}}
-\caption{Diagrama de clases de creación de filtros}
+\caption{Diagrama de clases de creaci\'on de filtros}
 \label{fig:class_filter_factory} 
 \end{figure}
 
-\subsubsection{Extracción de datos de un tweet}
-La extracción de las información de las ofertas que se encuentra en los tweets se realizar mediante objetos de la clase \texttt{OfferFromTweetExtractor} (clase abstracta).
-Para la demostración realizamos una implementación que extrae la información mediante expresiones regulares para cada pedazo de información dentro del texto, salvo para la geolocalización del tweet.
-Si bien no está implementado para la demo, es deseable delegar la creación de las instancias de Offer. Para ello pensamos realizar mediante un \texttt{OfferBuilder}, la tarea del mismo sería realizar las acciones necesarias para crear una nueva instanacia.
+\subsubsection{Extracci\'on de datos de un tweet}
+La extracci\'on de las informaci\'on de las ofertas que se encuentra en los tweets se realizar mediante objetos de la clase \texttt{OfferFromTweetExtractor} (clase abstracta).
+Para la demostraci\'on realizamos una implementaci\'on que extrae la informaci\'on mediante expresiones regulares para cada pedazo de informaci\'on dentro del texto, salvo para la geolocalizaci\'on del tweet.
+Si bien no est\'a implementado para la demo, es deseable delegar la creaci\'on de las instancias de Offer. Para ello pensamos realizar mediante un \texttt{OfferBuilder}, la tarea del mismo ser\'ia realizar las acciones necesarias para crear una nueva instanacia.
 
-La idea es que cada pedazo de información genere una instancia de un objeto polimórfico de la información que modela (ej: el precio, producto, unidad).
-Cuando nos referímos a objetos polimórficos, queremos decir que la información podría no poder generar un objeto válido y queremos que resulte transparente para los objetos con los que interactuan con dicho objeto (la idea es poder implementar \texttt{Null Object Pattern})
+La idea es que cada pedazo de informaci\'on genere una instancia de un objeto polim\'orfico de la informaci\'on que modela (ej: el precio, producto, unidad).
+Cuando nos refer\'imos a objetos polim\'orficos, queremos decir que la informaci\'on podr\'ia no poder generar un objeto v\'alido y queremos que resulte transparente para los objetos con los que interactuan con dicho objeto (la idea es poder implementar \texttt{Null Object Pattern})
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=\textwidth]{./imgs/class_diagram_parsing.png}}
@@ -62,8 +86,8 @@ Cuando nos referímos a objetos polimórficos, queremos decir que la informació
 \end{figure}
 
 \subsubsection{Servicio Online}
-En este caso la clase PrecioJustoOnlineService encapsula la lógica de la aplicación utilizando como fuente de información las búsquedas directas en \texttt{Twitter} mediante la \texttt{API} de \texttt{Search}.
-Para aplicar los filtros utiliza las clases derivadas de \texttt{OnlineFilter} y utiliza \texttt{OfferFromTweetPositionalExtractor} para la extracción de las ofertas.
+En este caso la clase PrecioJustoOnlineService encapsula la l\'ogica de la aplicaci\'on utilizando como fuente de informaci\'on las b\'usquedas directas en \texttt{Twitter} mediante la \texttt{API} de \texttt{Search}.
+Para aplicar los filtros utiliza las clases derivadas de \texttt{OnlineFilter} y utiliza \texttt{OfferFromTweetPositionalExtractor} para la extracci\'on de las ofertas.
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=\textwidth]{./imgs/class_diagram_online_service.png}}
@@ -75,7 +99,7 @@ Para aplicar los filtros utiliza las clases derivadas de \texttt{OnlineFilter} y
 
 \textbf{PrecioJustoOfflineService}\\
 
-En este caso la clase \texttt{PrecioJustoOfflineService} encapsula la lógica de la aplicación utilizando como fuente de información una base de datos \texttt{SQLite3}. La cual es alimentada mediante un servicio independiente.
+En este caso la clase \texttt{PrecioJustoOfflineService} encapsula la l\'ogica de la aplicaci\'on utilizando como fuente de informaci\'on una base de datos \texttt{SQLite3}. La cual es alimentada mediante un servicio independiente.
 Para aplicar los filtros utiliza las clases derivadas de \texttt{OfflineFilter}. Las ofertas
 ya fueron parseadas antes de ser insertadas en la base de datos.
 
@@ -88,7 +112,7 @@ ya fueron parseadas antes de ser insertadas en la base de datos.
 \textbf{Servicio de Streaming}\\
 
 Este proceso independiente utiliza la \texttt{API} de \texttt{Streaming} de \texttt{Twitter} para obtener las ofertas y persistirlas en la base de datos.
-Para la extracción de las ofertas de los tweets utiliza el extractor \texttt{OfferFromTweetPositionalExtractor}.
+Para la extracci\'on de las ofertas de los tweets utiliza el extractor \texttt{OfferFromTweetPositionalExtractor}.
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=\textwidth]{./imgs/class_diagram_offline_streaming.png}}
@@ -100,7 +124,7 @@ Para la extracción de las ofertas de los tweets utiliza el extractor \texttt{Of
 \textbf{Cliente/Servidor SQLite3}\\
 
 Dado la base de datos \texttt{SQLite3} es un archivo, el mismo se bloquea al accederlo
-directamente. Para evitar esto generamos un proceso independiente que es el único que bloque el archivo, pero expone mediante \texttt{DRB (remoting)} la conexión a esta base para poder ser usada concurrentemente por distintos proceso.
+directamente. Para evitar esto generamos un proceso independiente que es el \'unico que bloque el archivo, pero expone mediante \texttt{DRB (remoting)} la conexi\'on a esta base para poder ser usada concurrentemente por distintos proceso.
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=\textwidth]{./imgs/class_diagram_sqlite3_client_server.png}}
@@ -110,9 +134,9 @@ directamente. Para evitar esto generamos un proceso independiente que es el úni
 
 \textbf{Ofertas y colaboradores}
 
-El siguiente diagramas muestra el modelo de las ofertas (\texttt{Offer}) y sus colaboradores. Dichos colaboradores no están modelados en la demostración.
-El siguiente diagramas muestra la idea de creación de los distintos objetos
-con la idea de poder generar objetos no válidos polimórficos a los válidos.
+El siguiente diagramas muestra el modelo de las ofertas (\texttt{Offer}) y sus colaboradores. Dichos colaboradores no est\'an modelados en la demostraci\'on.
+El siguiente diagramas muestra la idea de creaci\'on de los distintos objetos
+con la idea de poder generar objetos no v\'alidos polim\'orficos a los v\'alidos.
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=\textwidth]{./imgs/class_diagram_offer.png}}
@@ -122,7 +146,7 @@ con la idea de poder generar objetos no válidos polimórficos a los válidos.
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=\textwidth]{./imgs/class_diagram_Offer_Factory.png}}
-\caption{Diagrama de clases de creación de offer}
+\caption{Diagrama de clases de creaci\'on de offer}
 \label{fig:class_Offer_Factory}
 \end{figure}
 
