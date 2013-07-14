@@ -40,13 +40,11 @@ implementaciones, una online (contra Twitter - API Search) y otra offline (contr
 \label{fig:class_service_factory} 
 \end{figure}
 
-
 Esto \'ultimo puede verse en la figura \ref{fig:class_service_factory}. La clase abstracta PrecioJustoServiceFactory declara los m\'etodos getService, que devueve el tipo PrecioJustoService, getFiltersFactory, que devuelve el tipo FiltersFactory, y getFilterKeys, que devuelve el tipo FilterKeys. A su vez tenemos ambas familias de clases concretas, Online y Offline, que implementan los tipos definidos  previamente.
 
 Los tipos de FilterKeys y FiltersFactory (y Filters), son utilizados por la clase de PrecioJustoController para traducir los filtros recibidos en los requests de usuario a filtros que sabe utilizar la implementaci\'on de PrecioJustoService (este tema se ver\'a en mayor detalle en el pr\'oximo punto).
 
 Las clases de PrecioJustoOnlineService y PrecioJustoOfflineService implementan el tipo PrecioJustoService, y encapsulan la l\'ogica para resolver las b\'usquedas (accediendo directamente a Twitter en el primer caso, y accediendo a un repositorio interno en el segundo).
-
 
 
 \subsubsection{Filtros}
@@ -60,7 +58,7 @@ Los filtros modelados son por porducto, precio y ubicaci\'on, si bien es posible
 Esto puede verse en el diagrama de la figura \ref{fig:class_filter_factory}. 
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=\textwidth]{./imgs/class_diagram_filters_factory.png}}
+\centerline{\includegraphics[width=0.6\paperwidth]{./imgs/class_diagram_filters_factory.png}}
 \caption{Diagrama de clases de creaci\'on de filtros}
 \label{fig:class_filter_factory} 
 \end{figure}
