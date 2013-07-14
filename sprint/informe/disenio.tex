@@ -53,7 +53,7 @@ Dado que el filtrado de los tweets de las ofertas b\'uscadas se realizan de dist
 
 En un caso filtrar\'an las ofertas que se vayan obtienendo de twitter en vivo y en el otro caso se realizar\'a un b\'usqueda sobre el motor de base de datos.
 
-Los filtros modelados son por porducto, precio y ubicaci\'on, si bien es posible extenderlos.
+Los filtros modelados son por producto, precio y ubicaci\'on, si bien es posible extenderlos.
 
 Esto puede verse en el diagrama de la figura \ref{fig:class_filter_factory}. 
 
@@ -64,7 +64,8 @@ Esto puede verse en el diagrama de la figura \ref{fig:class_filter_factory}.
 \end{figure}
 
 \subsubsection{Extracci\'on de datos de un tweet}
-La extracci\'on de las informaci\'on de las ofertas que se encuentra en los tweets se realizar mediante objetos de la clase \texttt{OfferFromTweetExtractor} (clase abstracta).
+La extracci\'on de las informaci\'on de las ofertas que se encuentra en los tweets se realiza mediante objetos de la clase \texttt{OfferFromTweetExtractor} (clase abstracta).
+
 Para la demostraci\'on realizamos una implementaci\'on que extrae la informaci\'on mediante expresiones regulares para cada pedazo de informaci\'on dentro del texto, salvo para la geolocalizaci\'on del tweet.
 Si bien no est\'a implementado para la demo, es deseable delegar la creaci\'on de las instancias de Offer. Para ello pensamos realizar mediante un \texttt{OfferBuilder}, la tarea del mismo ser\'ia realizar las acciones necesarias para crear una nueva instanacia.
 
@@ -98,6 +99,7 @@ Para aplicar los filtros utiliza las clases derivadas de \texttt{OnlineFilter} y
 \textbf{PrecioJustoOfflineService}\\
 
 En este caso la clase \texttt{PrecioJustoOfflineService} encapsula la l\'ogica de la aplicaci\'on utilizando como fuente de informaci\'on una base de datos \texttt{SQLite3}. La cual es alimentada mediante un servicio independiente.
+
 Para aplicar los filtros utiliza las clases derivadas de \texttt{OfflineFilter}. Las ofertas
 ya fueron parseadas antes de ser insertadas en la base de datos.
 
@@ -110,6 +112,7 @@ ya fueron parseadas antes de ser insertadas en la base de datos.
 \textbf{Servicio de Streaming}\\
 
 Este proceso independiente utiliza la \texttt{API} de \texttt{Streaming} de \texttt{Twitter} para obtener las ofertas y persistirlas en la base de datos.
+
 Para la extracci\'on de las ofertas de los tweets utiliza el extractor \texttt{OfferFromTweetPositionalExtractor}.
 
 \begin{figure}[h]
@@ -117,7 +120,6 @@ Para la extracci\'on de las ofertas de los tweets utiliza el extractor \texttt{O
 \caption{Diagrama de clases de streaming de twitter}
 \label{fig:class_offline_streaming}
 \end{figure}
-
 
 \textbf{Cliente/Servidor SQLite3}\\
 
