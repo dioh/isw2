@@ -16,6 +16,23 @@ Los componentes de PrecioJustoService y de FiltesFactory ser\'an explicados con 
 \label{fig:sequence_sinatra}
 \end{figure}
 
+\subsubsection{B\'usqueda de ofertas}
+\begin{figure}[h]
+\centerline{\includegraphics[width=0.6\paperwidth]{./imgs/sequence_searchAction.png}}
+\caption{Diagrama de secuencia de procesamiento b\'usqueda}
+\label{fig:sequence_sinatra}
+\end{figure}
+
+Mostramos en el diagrama de secuencia que se encuentra a continuaci\'on c\'omo se procesa una consulta desde $elPrecioJustoController$ hasta las capas inferiores de aplicaci\'on.
+El procesamiento de una b\'usqueda luego de ser atendida por Sinatra, se delega en $elPrecioJustoController$, este delega la b\'usqueda en $elPrecioJustoService$. Veremos en las subsiguientes secciones, c\'omo  se generan los servicios por lo pronto veamos las delegaciones y como se procesan las b\'usquedas.
+
+Por un lado observemos que el servicio toma como entrada un diccionario de filtros clave, valor. Estos son los filtros que aplicar\'a a cada oferta.
+En un primer paso obtiene los tweets cuyo hashtag coincide con $\#PrecioJusto$. Luego, se transforma cada tweet en una oferta. Esto \'ultimo es delegado en el responsable de esta tarea $offer_from_tweet$.
+
+A partir de este momento se tiene por un lado, un iterador de las ofertas y por otro, los filtros a aplicar cada una. El encargado de aplicar unos a otros es el $searchAction$ que por cada oferta aplica el filtro. Este resultado parcial es pasado por cada filtro hasta retornar la lista de ofertas filtradas de acuerdo a todos los criterios de b\'usqueda.
+
+
+
 
 \subsubsection{Factory de servicios}
 Twitter expone varias APIs para la obtenci\'on de tweets; las dos m\'as relevantes son la API de Streaming y la API de Search. Estas dos APIs tiene comportamientos muy diferentes.
