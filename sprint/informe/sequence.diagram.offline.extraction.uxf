@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="12.0">
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
   <zoom_level>10</zoom_level>
   <element>
     <type>com.umlet.element.SequenceDiagram</type>
@@ -13,14 +12,14 @@
 _aService:TwitterOfflineStreaming~id1_|_aSearchAPI:TwitterStreamingAPI~id2_|_aBlock:Block~id6_|_anOfferExtractor:OfferFromTweetExtractor~id4_|_aConnection:Sqlite3DBConnectionManagerProxy_~id5
 id1-&gt;&gt;id2:id1,id2:(trackUsing: aFilter) do aBlock end
 id2-&gt;&gt;id6:id2,id6,id1:call aTweet
-id6-&gt;&gt;id2:id2,id6,id1:^
-id2-&gt;&gt;id1:id2,id1:^
+id6.&gt;&gt;id2:id2,id6,id1:^
+id2.&gt;&gt;id1:id2,id1:^
 
 iframe{:Colaboraciones aBlock 
 id6-&gt;&gt;id4:id6,id4:extractFrom: aTweet
-id4-&gt;&gt;id6:id6,id4:^anOffer
+id4.&gt;&gt;id6:id6,id4:^anOffer
 id6-&gt;&gt;id5:id6,id5:execute:"insert into offer(product,price,unit,location) values(anOffer.product,anOffer.price,anOffer.unit,anOffer.address)"
-id5-&gt;&gt;id6:id6,id5:^
+id5.&gt;&gt;id6:id6,id5:^
 iframe}</panel_attributes>
     <additional_attributes/>
   </element>

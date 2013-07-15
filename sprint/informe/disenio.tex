@@ -94,19 +94,22 @@ Cuando nos refer\'imos a objetos polim\'orficos, queremos decir que la informaci
 \label{fig:class_parsing}
 \end{figure}
 
-Respecto a la secuencia
 
 \begin{figure}[h]
 \centerline{\includegraphics[keepaspectratio,width=\paperwidth,height=\paperheight,keepaspectratio,angle=90]{./imgs/sequence_diagram_offline_extraction.png}}
 \caption{Diagrama de secuencia de obtención de ofertas a partir de tweets del servicio offline}
 \label{fig:sequence_diagram_offline_extraction}
 \end{figure}
+Respecto a la secuencia de extracci\'on a partir del servicio offline podemos observar que a medida que se van trayendo los tweets se genera la transformaci\'on (posicional como hemos discutido) para generar la oferta. Luego de esto, la lista de ofertas generada es ingresada dentro de la base de datos.
 
 \begin{figure}[h]
 \centerline{\includegraphics[keepaspectratio,width=\paperwidth,height=\paperheight,keepaspectratio,angle=90]{./imgs/sequence_diagram_online_extraction.png}}
 \caption{Diagrama de secuencia de obtención de ofertas a partir de tweets del servicio online}
-\label{fig:sequence_diagram_offline_extraction}
+\label{fig:sequence_diagram_online_extraction}
 \end{figure}
+
+La secuencia de extracci\'on del servicio on-line es similar aunque var\'ia la estrategia de iteraci\'on de los tweets, estos se van iterando en tiempo real. A medida que vamos obteniendolos aplicamos los filtros.
+
 
 
 \begin{figure}[h]
@@ -114,6 +117,11 @@ Respecto a la secuencia
 \caption{Diagrama de secuencia de extraccion de datos de tweet}
 \label{fig:secuence_parsing}
 \end{figure}
+
+En este diagrama observamos la extracci\'on de informaci\'on del tweet. Como podemos observar esto es posicional. En la posici\'on 1 se encuentra el producto, en la posici\'on 2 el precio, y as\'i sucesivamente.
+Luego realizamos una validaci\'on sobre los datos para evaluar si podemos, con los datos obtenidos, generar una oferta v\'alida.
+De no poder, implementamos el $NullObjectPattern$ que devuelve una oferta no valida.
+
 
 \subsubsection{Servicio Online}
 En este caso la clase PrecioJustoOnlineService encapsula la l\'ogica de la aplicaci\'on utilizando como fuente de informaci\'on las b\'usquedas directas en \texttt{Twitter} mediante la \texttt{API} de \texttt{Search}.

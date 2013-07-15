@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="12.0">
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
   <zoom_level>10</zoom_level>
   <element>
     <type>com.umlet.element.SequenceDiagram</type>
@@ -12,7 +11,7 @@
     <panel_attributes>title: Offline Streaming Service
 _aService:PrecioJustoOnlineService~id1_|_aSearchAPI:TwitterSearchAPI~id2_|_aTweeterCollection:Collection~id7_|_aBlock:Block~id6_|_anOfferExtractor:OfferFromTweetExtractor~id4_|_anAction:OnlineSearchAction_~id5
 id1-&gt;&gt;id2:id1,id2:searchUsing: aFilter
-id2-&gt;&gt;id1:id2,id1:^aTweeterCollection
+id2.&gt;&gt;id1:id2,id1:^aTweeterCollection
 id1-&gt;&gt;id7:id1,id7:each: aBlock
 id7-&gt;&gt;id1:id1,id7:^anOfferCollection
 id1-&gt;&gt;id1:id1:OnlineSearchAction new(filters,anOfferCollection)
