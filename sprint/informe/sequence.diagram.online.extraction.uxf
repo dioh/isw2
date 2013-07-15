@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.SequenceDiagram</type>
+    <coordinates>
+      <x>20</x>
+      <y>50</y>
+      <w>2250</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>title: Offline Streaming Service
+_aService:PrecioJustoOnlineService~id1_|_aSearchAPI:TwitterSearchAPI~id2_|_aTweeterCollection:Collection~id7_|_aBlock:Block~id6_|_anOfferExtractor:OfferFromTweetExtractor~id4_|_anAction:OnlineSearchAction_~id5
+id1-&gt;&gt;id2:id1,id2:searchUsing: aFilter
+id2-&gt;&gt;id1:id2,id1:^aTweeterCollection
+id1-&gt;&gt;id7:id1,id7:each: aBlock
+id7-&gt;&gt;id1:id1,id7:^anOfferCollection
+id1-&gt;&gt;id1:id1:OnlineSearchAction new(filters,anOfferCollection)
+id1-&gt;&gt;id5:id1,id5:run
+id5-&gt;&gt;id1:id1,id5:^filteredOffers
+iframe{:Colaboraciones aBlock 
+id6-&gt;&gt;id4:id6,id4:extractFrom: aTweet
+id4-&gt;&gt;id6:id6,id4:^anOffer
+iframe}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>0</x>
+      <y>90</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+search: filters
+</panel_attributes>
+    <additional_attributes>180;50;30;50</additional_attributes>
+  </element>
+</diagram>
