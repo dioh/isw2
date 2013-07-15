@@ -54,7 +54,7 @@ Para esto \'ultimo decidimos utlizar el patr\'on de \texttt{abstract factory} co
 implementaciones, una online (contra Twitter - API Search) y otra offline (contra un repositorio intermedio - API Streaming). Cada una de estas implementaciones nos permiten crear la clase de servicio apropiada (la clase que encapsula la l\'ogica de la aplicaci\'on), los filtros permitidos y la implementaci\'on espec\'ifica de \'estos.
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=0.44\paperwidth]{./imgs/class_diagram_service_factory_v2.png}}
+\centerline{\includegraphics[width=0.9\textwidth]{./imgs/class_diagram_service_factory_v2.png}}
 \caption{Diagrama de clases de creaci\'on de servicios}
 \label{fig:class_service_factory} 
 \end{figure}
@@ -96,7 +96,7 @@ Si bien no est\'a implementado para la demo, es deseable delegar la creaci\'on d
 La idea es que cada pedazo de informaci\'on genere una instancia de un objeto polim\'orfico de la informaci\'on que modela (ej: el precio, producto, unidad). Cuando nos refer\'imos a objetos polim\'orficos, queremos decir que la informaci\'on podr\'ia no poder generar un objeto v\'alido y queremos que resulte transparente para los objetos con los que interactuan con dicho objeto (la idea es poder implementar \texttt{Null Object Pattern})
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=0.6\paperwidth]{./imgs/sequence_diagram_offline_extraction.png}}
+\centerline{\includegraphics[width=1.5\textwidth]{./imgs/sequence_diagram_offline_extraction.png}}
 \caption{Diagrama de secuencia de obtención de ofertas a partir de tweets del servicio offline}
 \label{fig:sequence_diagram_offline_extraction}
 \end{figure}
@@ -104,7 +104,7 @@ La idea es que cada pedazo de informaci\'on genere una instancia de un objeto po
 Respecto a la secuencia de extracci\'on a partir del servicio offline podemos observar que a medida que se van trayendo los tweets se genera la transformaci\'on (posicional como hemos discutido) para generar la oferta. Luego de esto, la lista de ofertas generada es ingresada dentro de la base de datos.
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=0.6\paperwidth]{./imgs/sequence_diagram_online_extraction.png}}
+\centerline{\includegraphics[width=1.5\textwidth]{./imgs/sequence_diagram_online_extraction.png}}
 \caption{Diagrama de secuencia de obtención de ofertas a partir de tweets del servicio online}
 \label{fig:sequence_diagram_online_extraction}
 \end{figure}
@@ -112,7 +112,7 @@ Respecto a la secuencia de extracci\'on a partir del servicio offline podemos ob
 La secuencia de extracci\'on del servicio on-line es similar aunque var\'ia la estrategia de iteraci\'on de los tweets, estos se van iterando en tiempo real. A medida que vamos obteniendolos aplicamos los filtros.
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=0.6\paperwidth]{./imgs/sequence_diagram_parsing.png}}
+\centerline{\includegraphics[width=1.5\textwidth]{./imgs/sequence_diagram_parsing.png}}
 \caption{Diagrama de secuencia de extraccion de datos de tweet}
 \label{fig:secuence_parsing}
 \end{figure}
@@ -154,7 +154,7 @@ Este proceso independiente utiliza la \texttt{API} de \texttt{Streaming} de \tex
 Para la extracci\'on de las ofertas de los tweets utiliza el extractor \texttt{OfferFromTweetPositionalExtractor}.
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=0.4\paperwidth]{./imgs/class_diagram_offline_streaming.png}}
+\centerline{\includegraphics[width=1.5\textwidth]{./imgs/class_diagram_offline_streaming.png}}
 \caption{Diagrama de clases de streaming de twitter}
 \label{fig:class_offline_streaming}
 \end{figure}
@@ -165,7 +165,7 @@ Dado la base de datos \texttt{SQLite3} es un archivo, el mismo se bloquea al acc
 directamente. Para evitar esto generamos un proceso independiente que es el \'unico que bloque el archivo, pero expone mediante \texttt{DRB (remoting)} la conexi\'on a esta base para poder ser usada concurrentemente por distintos proceso.
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=0.6\paperwidth]{./imgs/class_diagram_sqlite3_client_server.png}}
+\centerline{\includegraphics[width=1.5\textwidth]{./imgs/class_diagram_sqlite3_client_server.png}}
 \caption{Diagrama de clases de BD SQLite3}
 \label{fig:class_sqlite3_client_server}
 \end{figure}
@@ -177,13 +177,13 @@ El siguiente diagramas muestra la idea de creaci\'on de los distintos objetos
 con la idea de poder generar objetos no v\'alidos polim\'orficos a los v\'alidos.
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=0.5\paperwidth]{./imgs/class_diagram_offer.png}}
+\centerline{\includegraphics[width=1.5\textwidth]{./imgs/class_diagram_offer.png}}
 \caption{Diagrama de clases de offer y colaboradores}
 \label{fig:class_offer}
 \end{figure}
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=0.5\paperwidth]{./imgs/class_diagram_Offer_Factory.png}}
+\centerline{\includegraphics[width=1.5\textwidth]{./imgs/class_diagram_Offer_Factory.png}}
 \caption{Diagrama de clases de creaci\'on de offer}
 \label{fig:class_Offer_Factory}
 \end{figure}
